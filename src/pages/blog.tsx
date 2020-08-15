@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
@@ -10,10 +11,21 @@ export const blogPosts = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
-            path
+            date
             description
+            tldr
+            image {
+              childImageSharp {
+                fixed(height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
@@ -27,9 +39,19 @@ const BlogPosts = ({ data }) => (
     <h1>John Fay's Blog</h1>
     <p>Blog posts</p>
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <Link key={node.id} to={`/blog/${node.frontmatter.path}`}>
-        <h2>{node.frontmatter.title}</h2>
-        <p>{node.frontmatter.description}</p>
+      <Link
+        className="box columns"
+        key={node.id}
+        to={`/blog${node.fields.slug}`}
+      >
+        <div className="column">
+          <h2>{node.frontmatter.title}</h2>
+          <p>TLDR: {node.frontmatter.tldr}</p>
+          <p>{node.frontmatter.description}</p>
+        </div>
+        {node.frontmatter.image && (
+          <Img fixed={node.frontmatter.image.childImageSharp.fixed} />
+        )}
       </Link>
     ))}
     <Link to="/">Go back to the homepage</Link>

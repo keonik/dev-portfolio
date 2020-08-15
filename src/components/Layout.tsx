@@ -6,11 +6,12 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-import Header from "./Header"
+import Nav from "./Nav"
 
 import "./layout.css"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,24 +25,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-        className="has-background-dark"
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div className="hero is-primary is-fullheight">
+      <header className="hero-head">
+        <Nav siteTitle={data.site.siteMetadata.title} />
+      </header>
+      <main className="hero-body">{children}</main>
+      <footer className="hero-footer">
+        <Footer />
+      </footer>
+    </div>
   )
 }
 
