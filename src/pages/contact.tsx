@@ -55,7 +55,9 @@ const Contact = () => (
           </div>
         </div>
         <div className="control">
-          <button className="button is-primary">Submit</button>
+          <button className="button is-primary" type="submit">
+            Submit
+          </button>
         </div>
       </form>
     </div>
