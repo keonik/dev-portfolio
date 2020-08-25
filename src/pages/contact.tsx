@@ -12,6 +12,7 @@ const Contact = () => (
         name="contact"
         className="form box"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <div className="field">
           <label className="label">Name*</label>
           <div className="control">
