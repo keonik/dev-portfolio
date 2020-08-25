@@ -36,25 +36,28 @@ export const blogPosts = graphql`
 const BlogPosts = ({ data }) => (
   <Layout>
     <SEO title="Blog - John Fay's curation of blog posts" />
-    <h1>John Fay's Blog</h1>
-    <p>Blog posts</p>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <Link
-        className="box columns"
-        key={node.id}
-        to={`/blog${node.fields.slug}`}
-      >
-        <div className="column">
-          <h2>{node.frontmatter.title}</h2>
-          <p>TLDR: {node.frontmatter.tldr}</p>
-          <p>{node.frontmatter.description}</p>
-        </div>
-        {node.frontmatter.image && (
-          <Img fixed={node.frontmatter.image.childImageSharp.fixed} />
-        )}
-      </Link>
-    ))}
-    <Link to="/">Go back to the homepage</Link>
+    <div className="content">
+      <h1>My writing</h1>
+      <div className="columns is-desktop">
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Link
+            className="column box"
+            key={node.id}
+            to={`/blog${node.fields.slug}`}
+          >
+            <div className="">
+              <h2>{node.frontmatter.title}</h2>
+              <p>TLDR: {node.frontmatter.tldr}</p>
+              <p>{node.frontmatter.description}</p>
+            </div>
+            {node.frontmatter.image && (
+              <Img fixed={node.frontmatter.image.childImageSharp.fixed} />
+            )}
+          </Link>
+        ))}
+      </div>
+      <Link to="/">Go back to the homepage</Link>
+    </div>
   </Layout>
 )
 
