@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-developer-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Netlify CMS, Netlify Forms, Gatsby, Developer site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "John Fay <john.k.fay@gmail.com>",
   "dependencies": {
     "@mdi/js": "^5.5.55",
     "@mdi/react": "^1.4.0",
@@ -31,7 +31,11 @@
     "prettier": "2.0.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "typescript",
+    "netlify",
+    "forms",
+    "cms"
   ],
   "license": "0BSD",
   "scripts": {
@@ -45,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/keonik/dev-portfolio"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/keonik/dev-portfolio/issues"
   }
 }

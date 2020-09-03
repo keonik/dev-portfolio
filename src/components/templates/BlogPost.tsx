@@ -26,28 +26,6 @@ import { mdiCalendar, mdiCalendarSync } from "@mdi/js"
 import Layout from "../Layout"
 import Tags from "../Tags"
 import SEO from "../seo"
-// import "../../assets/sass/components/tilpost.scss"
-
-// export const BlogPostTemplateQuery = graphql`
-//   query BlogPostTemplateQuery($slug: String) {
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       frontmatter {
-//         title
-//         path
-//         description
-//         tldr
-//         lastlastUpdated
-//         image {
-//           childImageSharp {
-//             fixed(width: 200) {
-//               ...GatsbyImageSharpFixed
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
 
 export const BlogPostQuery = graphql`
   query BlogPostQuery($slug: String) {
