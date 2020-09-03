@@ -22,6 +22,7 @@ const Contact = () => (
               placeholder="e.g Alex Smith"
               required
               id="name"
+              name="name"
             />
           </div>
         </div>
@@ -34,6 +35,7 @@ const Contact = () => (
               placeholder="e.g. alexsmith@gmail.com"
               required
               id="email"
+              name="email"
             />
           </div>
         </div>
@@ -46,6 +48,7 @@ const Contact = () => (
               placeholder="111-111-1111"
               required
               id="phone"
+              name="phone"
             />
           </div>
         </div>
@@ -56,6 +59,7 @@ const Contact = () => (
               className="textarea is-info"
               placeholder="Hey John! I'd love to chat about working together"
               id="message"
+              name="message"
             />
           </div>
         </div>
