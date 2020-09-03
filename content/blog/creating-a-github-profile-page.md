@@ -2,7 +2,7 @@
 path: your-github-profile-readme
 date: 2020-08-13T02:12:58.029Z
 lastUpdated: 2020-08-13T02:18:56.039Z
-title: Creating a GitHub profile page
+title: "Creating a GitHub profile page "
 description: Creating a GitHub page is easy, but not obvious. Let's clear that up.
 tldr: Create a new repo in github with the same name as your username and add a
   README.md 🤙🏼
