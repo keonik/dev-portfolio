@@ -6,12 +6,12 @@ const Contact = () => (
     <div className="content">
       <span className="title is-3 ">Feel free to contact me</span>
       <form
-        method="post"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
         name="contact"
-        className="form box"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
         <div className="field">
           <label className="label">Name*</label>
