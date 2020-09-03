@@ -23,7 +23,7 @@ import dayjs from "dayjs"
 import Icon from "@mdi/react"
 import { mdiCalendar, mdiCalendarSync } from "@mdi/js"
 
-import Layout from "../layout"
+import Layout from "../Layout"
 import Tags from "../Tags"
 import SEO from "../seo"
 // import "../../assets/sass/components/tilpost.scss"
