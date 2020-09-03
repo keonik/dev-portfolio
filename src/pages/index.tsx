@@ -5,8 +5,6 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
-import "../assets/styles.css"
-
 export const query = graphql`
   query {
     file(relativePath: { eq: "profile.jpg" }) {
