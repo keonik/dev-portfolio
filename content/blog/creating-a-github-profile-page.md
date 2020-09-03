@@ -6,6 +6,7 @@ title: Creating a GitHub profile page
 description: Creating a GitHub page is easy, but not obvious. Let's clear that up.
 tldr: Create a new repo in github with the same name as your username and add a
   README.md 🤙🏼
+image: assets/readme.png
 tags:
   - github
   - markdown
