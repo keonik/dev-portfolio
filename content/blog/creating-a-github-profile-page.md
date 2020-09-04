@@ -12,7 +12,6 @@ tags:
   - markdown
   - profile
 ---
-
 ## Create a new repo
 
 Make sure it's the same name as your GitHub username. While you're creating that you should see this
