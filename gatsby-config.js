@@ -10,28 +10,27 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-image`,
+    `gatsby-remark-images`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/`,
+        name: "static",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
-        path: `${__dirname}/static/assets`,
+        name: `img`,
+        path: `${__dirname}/content/img`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `John Fay's Dev Site`,
-        short_name: `Dev Site`,
-        start_url: `/`,
-        background_color: `#212121`,
-        theme_color: `#212121`,
-        display: `minimal-ui`,
-        icon: `static/assets/profile.jpg`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,12 +38,16 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
-    `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        path: `${__dirname}/static/assets`,
-        name: "images",
+        name: `John Fay's Dev Site`,
+        short_name: `JFay`,
+        start_url: `/`,
+        background_color: `#212121`,
+        theme_color: `#212121`,
+        display: `minimal-ui`,
+        icon: `content/img/profile.jpg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -56,6 +59,17 @@ module.exports = {
             options: {
               // Path to your Netlify CMS config file
               cmsConfig: `/static/admin/config.yml`,
+            },
+          },
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              quality: 100,
+              withWebp: true,
+              loading: "lazy",
+              linkImagesToOriginal: false,
             },
           },
         ],
