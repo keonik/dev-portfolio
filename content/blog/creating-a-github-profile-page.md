@@ -43,7 +43,7 @@ As long as the repository name matches your username you should see this secret 
 
 ### 3. Select `Create Repository`
 
-### 4. Visit \`https://github.com/{your_username}/{your_username}\` to view the default read me profile made
+### 4. Visit github.com/your_username/your_username to view the default read me profile made
 
 ### 5. Click Edit on the right-hand side
 
