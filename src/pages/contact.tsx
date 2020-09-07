@@ -4,13 +4,15 @@ import Layout from "../components/Layout"
 const Contact = () => (
   <Layout>
     <div className="content">
-      <span className="title is-3 ">Feel free to contact me</span>
+      <span className="title is-3 pb-1">Feel free to contact me</span>
       <form
         name="contact"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         action="/success"
+        className="has-background-dark"
+        style={{ padding: "2em", margin: "1em", borderRadius: "1em" }}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />

@@ -51,6 +51,9 @@ const Header = ({ siteTitle = "" }: HeaderProps) => {
             <Link className="navbar-item" to="/blog">
               Blog
             </Link>
+            <Link className="navbar-item" to="/contact">
+              Contact Me
+            </Link>
           </div>
         </div>
       )}

@@ -1,23 +1,5 @@
-// import React from "react"
-// import { graphql } from "gatsby"
-// import Img from "gatsby-image"
-// import SEO from "../seo"
-
-// const BlogPost = ({ data }) => (
-//   <div>
-//     <SEO title={data.markdownRemark.frontmatter.title} />
-//     <div>
-//       <h2>{data.markdownRemark.frontmatter.title}</h2>
-//       <div> {data.markdownRemark.frontmatter.tldr}</div>
-//       <Img
-//         fixed={data.markdownRemark.frontmatter.image.childImageSharp.fixed}
-//       />
-//     </div>
-//   </div>
-// )
-
 import React, { ReactElement } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import dayjs from "dayjs"
 import Icon from "@mdi/react"
@@ -26,6 +8,7 @@ import { mdiCalendar, mdiCalendarSync } from "@mdi/js"
 import Layout from "../Layout"
 import Tags from "../Tags"
 import SEO from "../seo"
+import Subscribe from "../Subscribe"
 
 export const BlogPostQuery = graphql`
   query BlogPostQuery($slug: String) {
@@ -133,6 +116,7 @@ const BlogPost = ({ data }): ReactElement => {
           </section>
           <Tags tags={tags} />
         </div>
+        <Subscribe />
       </section>
     </Layout>
   )

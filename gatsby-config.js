@@ -82,6 +82,14 @@ module.exports = {
         trackingId: process.env.GA_TRACKING_ID,
       },
     },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://dev.us17.list-manage.com/subscribe/post?u=0af2d5129a2b0469b24e057f6&amp;id=8fbb0c7ac0", // string; add your MC list endpoint here; see instructions below
+        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,

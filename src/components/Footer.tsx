@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react"
-
 import { Link } from "gatsby"
 import { Icon } from "@mdi/react"
 import { mdiNpm, mdiGithub, mdiLinkedin } from "@mdi/js"
@@ -12,7 +11,7 @@ const ICON_COLOR = "white"
 export default function Footer({}: Props): ReactElement {
   return (
     <div className="section has-background-dark columns">
-      <div className="column is-half buttons">
+      <div className="column buttons">
         <Link
           to="https://github.com/keonik"
           target="_blank"
@@ -41,7 +40,7 @@ export default function Footer({}: Props): ReactElement {
           npm
         </Link>
       </div>
-      <div className="column" />
+      <div className="column"></div>
       <div className="column">
         © {new Date().getFullYear()}, Built by
         {` `}
