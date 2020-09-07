@@ -35,7 +35,7 @@ export const blogPosts = graphql`
 
 const BlogPosts = ({ data }) => (
   <Layout>
-    <SEO title="Blog - John Fay's curation of blog posts" />
+    <SEO title="My Writing" />
     <div className="content">
       <h1>My writing</h1>
       <div className="columns is-desktop">

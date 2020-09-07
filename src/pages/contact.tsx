@@ -1,8 +1,11 @@
 import React from "react"
+
 import Layout from "../components/Layout"
+import SEO from "../components/seo"
 
 const Contact = () => (
   <Layout>
+    <SEO title="Contact" />
     <div className="content">
       <span className="title is-3 pb-1">Feel free to contact me</span>
       <form

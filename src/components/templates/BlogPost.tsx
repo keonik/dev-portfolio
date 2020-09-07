@@ -106,6 +106,9 @@ const BlogPost = ({ data }): ReactElement => {
               </div>
             </div>
           </section>
+          <section className="content">
+            <Tags tags={tags} />
+          </section>
           <section className="section">
             {html && (
               <div
@@ -114,7 +117,6 @@ const BlogPost = ({ data }): ReactElement => {
               />
             )}
           </section>
-          <Tags tags={tags} />
         </div>
         <Subscribe />
       </section>

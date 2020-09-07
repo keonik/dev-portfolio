@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home - John Fay's developer website" />
+      <SEO title="Home" />
       <div className="columns">
         <div className="column">
           <div className="content">

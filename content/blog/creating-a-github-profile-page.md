@@ -13,15 +13,22 @@ tags:
   - markdown
   - profile
 ---
-Github recently added a new feature to allow users to create a profile page when visiting. 
+
+# Table of Contents
+
+```toc
+# This code block gets replaced with the TOC
+```
 
 ## Why
+
+Github recently added a new feature to allow users to create a profile page when visiting.
 
 Having a Github readme is a great way to show viewers what you have going on at a quick glance. Not everyone has the time to create a developer site but we all can make time to create a profile readme
 
 ## Existing examples
 
-For an up to date curation visit [awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) to view examples for some inspiration. 
+For an up to date curation visit [awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) to view examples for some inspiration.
 
 I personally enjoy the integrations on [Thomas Guibert's](https://github.com/thmsgbrt) profile with his actions to list his most recent blog posts
 
@@ -35,7 +42,7 @@ Make sure it's the same name as your GitHub username. While you're creating that
 
 ![Create your repository](/img/creating_readme.png)
 
-As long as the repository name matches your username you should see this secret message. 
+As long as the repository name matches your username you should see this secret message.
 
 ### 2. Ensure you check the following option
 
