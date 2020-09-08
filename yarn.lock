@@ -3860,7 +3860,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -12765,6 +12765,11 @@ react-input-autosize@^2.2.1:
   dependencies:
     prop-types "^15.5.8"
 
+react-intersection-observer@^8.26.2:
+  version "8.28.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.28.1.tgz#1c6a2351ab9a9ab6f9d33be7c4aef4aee5a72f07"
+  integrity sha512-b23y8UWiBI1FjghfV6PMaOsYzV3CBMyiid/56occuEpdUfGUaSOzy34YTWOtS1FLjk7q33g/1zc9Z+K1pGQJ5A==
+
 react-is@16.13.1, react-is@^16.12.0, react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -12991,6 +12996,15 @@ react-transition-group@^2.2.1, react-transition-group@^2.6.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
+
+react-vertical-timeline-component@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-3.0.2.tgz#e1c39139b0732c896f6b52b92a3db634784dd5aa"
+  integrity sha512-k56en5bb1WRHjr1B8mXRmnGpiHIWvf4lgL26T0yQJEkHVhj3G5lKGXmJrpdRftLSrvYsDmY428obERAG7hmtjA==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react-intersection-observer "^8.26.2"
 
 react-virtualized-auto-sizer@^1.0.2:
   version "1.0.2"

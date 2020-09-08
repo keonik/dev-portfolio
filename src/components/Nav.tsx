@@ -15,8 +15,14 @@ const Header = ({ siteTitle = "" }: HeaderProps) => {
         <Link to="/" className="navbar-item">
           {siteTitle}
         </Link>
+        <Link className="is-hidden-touch navbar-item" to="/about">
+          About
+        </Link>
         <Link className="is-hidden-touch navbar-item" to="/blog">
           Writing
+        </Link>
+        <Link className="is-hidden-touch navbar-item" to="/projects">
+          Projects
         </Link>
         <Link className="is-hidden-touch navbar-item" to="/contact">
           Contact Me
@@ -48,8 +54,14 @@ const Header = ({ siteTitle = "" }: HeaderProps) => {
             <Link to="/" className="navbar-item">
               Home
             </Link>
+            <Link className="navbar-item" to="/about">
+              About
+            </Link>
             <Link className="navbar-item" to="/blog">
-              Blog
+              Writing
+            </Link>
+            <Link className="navbar-item" to="/projects">
+              Projects
             </Link>
             <Link className="navbar-item" to="/contact">
               Contact Me

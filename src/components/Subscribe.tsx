@@ -10,6 +10,7 @@ export default function Subscribe({}: Props): ReactElement {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
+    // @ts-ignore
     const { result, msg } = await addToMailchimp(email)
     if (result === "success") {
       setSuccess(msg)
