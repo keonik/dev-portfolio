@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -7,17 +7,15 @@ import {
   mdiAccountSupervisorCircle,
   mdiBriefcase,
   mdiGraphql,
-  mdiHiking,
-  mdiPartyPopper,
   mdiReact,
-  mdiRocket,
   mdiRocketLaunch,
   mdiSchool,
 } from "@mdi/js"
-import Layout from "../components/Layout"
 import Icon from "@mdi/react"
 import dayjs from "dayjs"
 
+import Layout from "../components/Layout"
+import SEO from "../components/seo"
 import Tags from "../components/Tags"
 
 import "react-vertical-timeline-component/style.min.css"
@@ -110,6 +108,7 @@ const JOBS: Job[] = [
 const about = () => {
   return (
     <Layout>
+      <SEO title="About Me" />
       <div className="content">
         <h2 className="is-2 title">About me</h2>
         <p>
