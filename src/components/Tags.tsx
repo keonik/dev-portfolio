@@ -15,7 +15,9 @@ export default function Tags({
   maxTags,
   background = "is-secondary",
 }: Props): ReactElement {
-  const items: Tag[] = maxTags ? tags.slice(0, maxTags) : tags
+  const items: Tag[] = maxTags ? tags?.slice(0, maxTags) : tags
+  console.log(tags)
+
   return (
     <>
       {tags && tags.length ? (
