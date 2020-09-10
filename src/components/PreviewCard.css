@@ -1,0 +1,29 @@
+.preview {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "gatsby-image"
+    "overview"
+    "details";
+}
+
+/* .preview > .overview > .details {
+  display: none;
+} */
+
+.preview:hover {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "gatsby-image"
+    "overview"
+    "details";
+}
+
+/* .preview:hover > .overview > .details {
+  display: initial;
+} */
+
+.gatsby-image-wrapper {
+  grid-area: gatsby-image;
+}
