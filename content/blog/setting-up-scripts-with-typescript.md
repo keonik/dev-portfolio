@@ -25,7 +25,7 @@ Scripts typically require some level of tinkering and tweaking to get the necess
 We are going to take output from [the covid tracking api](https://api.covidtracking.com/v1/us/daily.json) and format it in a slightly different output. 
 
 ```json
-[{"date":20200916,"states":56,"positive":6597783,"negative":81976741,"pending":10587,"hospitalizedCurrently":30278,"hospitalizedCumulative":390624,"inIcuCurrently":6308,"inIcuCumulative":18961,"onVentilatorCurrently":1651,"onVentilatorCumulative":2090,"recovered":2525573,"dateChecked":"2020-09-16T00:00:00Z","death":188802,"hospitalized":390624,"lastModified":"2020-09-16T00:00:00Z","total":88585111,"totalTestResults":88574524,"posNeg":88574524,"deathIncrease":1202,"hospitalizedIncrease":1517,"negativeIncrease":625601,"positiveIncrease":40021,"totalTestResultsIncrease":665622,"hash":"e66c44b8b93e51c84321a2933d4031d75084a04c"},]
+[{"date":20200916,"states":56,"positive":6597783,"negative":81976741,"pending":10587,"hospitalizedCurrently":30278,"hospitalizedCumulative":390624,"inIcuCurrently":6308,"inIcuCumulative":18961,"onVentilatorCurrently":1651,"onVentilatorCumulative":2090,"recovered":2525573,"dateChecked":"2020-09-16T00:00:00Z","death":188802,"hospitalized":390624,"lastModified":"2020-09-16T00:00:00Z","total":88585111,"totalTestResults":88574524,"posNeg":88574524,"deathIncrease":1202,"hospitalizedIncrease":1517,"negativeIncrease":625601,"positiveIncrease":40021,"totalTestResultsIncrease":665622,"hash":"e66c44b8b93e51c84321a2933d4031d75084a04c"}]
 ```
 
 Instead of starting with a fully functional javascript script... we'll get a script running and switch to typescript to start building out the structure and documenting for future changes
