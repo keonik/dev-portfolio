@@ -36,7 +36,7 @@ const JOBS: Job[] = [
   {
     title: "Senior Software Engineer",
     employer: "Mile Two",
-    startDate: new Date(2019, 2),
+    startDate: new Date(2020, 3),
     endDate: new Date(),
     description:
       "I've had opportunities to bring new quality tools and libraries such as typescript and graphql to further advance the software development experience and throughput. At this time I took on more leadership roles to help share my knowledge and progress the people around me. It's been a wonderful experience thus far!",
@@ -60,7 +60,7 @@ const JOBS: Job[] = [
   {
     title: "Software Engineer Team Lead",
     employer: "Pretalen",
-    startDate: new Date(2017, 12),
+    startDate: new Date(2018, 1),
     endDate: new Date(2019, 0),
     description:
       "Promotion! I led multiple full stack projects to include a charting slide deck generator and a radio frequency fuzzing application",
@@ -73,7 +73,7 @@ const JOBS: Job[] = [
     title: "Software Engineer",
     employer: "Pretalen",
     startDate: new Date(2017, 1),
-    endDate: new Date(2017, 12),
+    endDate: new Date(2018, 0),
     description:
       "Full Stack software development to create a government time tracking system. Integration of various GNSS receivers into commercial applications",
     location: "Beavercreek, OH.",
