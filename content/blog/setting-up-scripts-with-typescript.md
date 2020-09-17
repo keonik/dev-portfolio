@@ -63,6 +63,40 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 
 1. Setup a project space
 
-   - This could be things like opening terminal and running `mkdir script-in-ts`, changing directory into the project space `cd script-in-ts`, and `npm init --y` to create
+   This could be things like opening terminal and running `mkdir script-in-ts`, changing directory into the project space `cd script-in-ts`, and `npm init --y` to create a package.json file
 
+2. Open `package.json` and add a start script like so
+
+   `"start": "babel-node index.js"`
+
+3. We're going to get the script running in javascript first so lets install the necessary dependencies
+
+   `npm install @babel/core @babel/node @babel/preset-env`
+
+4. create a `.babelrc` file with the following
+
+   ```json
+      {       
+         "presets": [
+            [
+               "@babel/preset-env",
+               {
+                  "targets": {
+                     "node": "10"
+                  }
+                }
+           ]
+         ]
+      }
+   ```
+
+5. Lets create a `index.js` file to test the script
+
+   How about a basic hello world
+   
+   ```js
+      console.log('hello world')
+   ```
+
+6. Run the script and make sure you get the expected output by running `npm run start`
  
