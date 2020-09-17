@@ -59,21 +59,26 @@ We are going to take output from [the covid tracking api](https://api.covidtrack
 
 Instead of starting with a fully functional javascript script... we'll get a script running and switch to typescript to start building out the structure and documenting for future changes
 
-## Getting Started
+## Getting Started with a javascript example
 
-1. Setup a project space
+#### Setup a project space
 
    This could be things like opening terminal and running `mkdir script-in-ts`, changing directory into the project space `cd script-in-ts`, and `npm init --y` to create a package.json file
 
-2. Open `package.json` and add a start script like so
+#### Open `package.json` and add a start script like so
 
-   `"start": "babel-node index.js"`
+```
+"scripts": {
+    "start": "babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
 
-3. We're going to get the script running in javascript first so lets install the necessary dependencies
+#### We're going to get the script running in javascript first so lets install the necessary dependencies
 
    `npm install @babel/core @babel/node @babel/preset-env`
 
-4. create a `.babelrc` file with the following
+#### Create a `.babelrc` file with the following
 
    ```json
       {       
@@ -90,7 +95,7 @@ Instead of starting with a fully functional javascript script... we'll get a scr
       }
    ```
 
-5. Lets create a `index.js` file to test the script
+####  Create a `index.js` file to test the script
 
    How about a basic hello world
    
@@ -98,5 +103,60 @@ Instead of starting with a fully functional javascript script... we'll get a scr
       console.log('hello world')
    ```
 
-6. Run the script and make sure you get the expected output by running `npm run start`
- 
+#### Run the script and make sure you get the expected output by running `npm run start`
+
+
+## Migrating javascript to typescript
+
+There are a few ways to accomplish this part. Since we're just running a script in typescript we can easily do this by adding the extensions flag to the cli command or the `.babelrc` file presets. But first...
+
+#### Install dependencies
+
+`npm install typescript`
+
+#### Create a `tsconfig.json` file 
+
+We could quickly do this by running the initialization after install typescript
+
+`npx tsc --init`
+
+#### Rename `index.js` to `index.ts`
+
+Now lets move onto your options. As I mentioned there are two. Read through both of these and decide on a path that seems cleaner to you. I personally enjoy option 2 for when I have many typescript scripts. It allows me to forget to add the extensions flag and just setup in one file
+
+### Option 1: Using an extension flag
+
+#### Update your start script in `package.json`
+
+`"start": "babel-node index.ts --extensions=[\".ts\"]",`
+
+#### Revalidate your hello world script runs!
+
+### Option 2: Adding a package to support the typescript extension
+
+#### Install dependencies
+
+`npm install @babel/preset-typescript`
+
+#### Update `.babelrc` to include the preset
+
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-typescript",
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ]
+  ]
+}
+```
+
+#### Revalidate your hello world script runs!
+
+
+
