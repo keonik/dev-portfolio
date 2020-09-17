@@ -52,10 +52,17 @@ We are going to take output from [the covid tracking api](https://api.covidtrack
    "positiveIncrease":40021,
    "totalTestResultsIncrease":665622,
    "hash":"e66c44b8b93e51c84321a2933d4031d75084a04c"
- }
+ },
+ ...
 ]
 ```
 
 Instead of starting with a fully functional javascript script... we'll get a script running and switch to typescript to start building out the structure and documenting for future changes
 
-## 
+## Getting Started
+
+1. Setup a project space
+
+   - This could be things like opening terminal and running `mkdir script-in-ts`, changing directory into the project space `cd script-in-ts`, and `npm init --y` to create
+
+ 
