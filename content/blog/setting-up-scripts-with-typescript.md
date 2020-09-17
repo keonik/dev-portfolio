@@ -22,7 +22,7 @@ Scripts typically require some level of tinkering and tweaking to get the necess
 
 ## What we are going to make
 
-We are going to take output from [the covid tracking api](https://api.covidtracking.com/v1/us/daily.json) and format it in a slightly different output. 
+We are going to take output from [the covid tracking api](https://api.covidtracking.com/v1/us/daily.json) and format it in a slightly different output. Here is an example of a day's US output. The link above returns an array of these objects
 
 ```json
 [
