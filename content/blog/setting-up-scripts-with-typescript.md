@@ -264,4 +264,40 @@ The interface above is an array of `USInputDay` so if we apply that type to the 
   const json: USInputDay[] = await response.json();
 ```
 
+We can get a taste of the perks to switching to typescript! 
+
 ![typescript auto-completion example](/img/typescript_sample_auto_completion.png)
+
+Auto-completion makes future requests to change input or output easy
+
+#### Typing the output
+
+In comparison to the input format we are just going to separate this into `x` and `y` values to show how to manipulate this into a new format
+
+```ts
+interface USOutputDay {
+  x: Date;
+  y: Omit<USInputDay, "date" | "dateChecked" | "lastModified" | "hash">;
+}
+```
+
+Above we made reuse of the `USInputDay` interface and we used the [Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys) utility to delete the keys we don't want to account for
+
+#### Format Output 
+
+Now all we have to do is format the input into the output structure
+
+```ts
+  const output: USOutputDay[] = json.map(
+    ({ date, dateChecked, lastModified, hash, ...theRest }) => ({
+      x: date,
+      y: theRest,
+    })
+  );
+```
+
+#### Write it to file
+
+Last step... I promise 😉
+
+Import the 
