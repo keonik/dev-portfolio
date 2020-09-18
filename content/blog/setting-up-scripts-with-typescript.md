@@ -300,4 +300,16 @@ Now all we have to do is format the input into the output structure
 
 Last step... I promise 😉
 
-Import the 
+Import the [file system]()
+
+```
+import { writeFileSync } from "fs";
+```
+
+write the output to file
+
+```ts
+  writeFileSync("formatted.json", JSON.stringify(output));
+```
+
+That's it! Now your script is ready to tweak for a new change or to use as is! Create something great!
