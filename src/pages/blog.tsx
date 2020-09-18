@@ -47,7 +47,7 @@ const BlogPosts = ({ data }) => (
       <h1>My writing</h1>
       <div className="columns is-desktop">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <PreviewCard node={node} />
+          <PreviewCard node={node} key={node.id} />
         ))}
       </div>
     </div>

@@ -30,23 +30,19 @@ export default function PreviewCard({ node }: Props): ReactElement {
     image,
   } = frontmatter
   return (
-    <div>
+    <div style={{ padding: "1em" }}>
       <Link className="column box hero" key={id} to={`/blog${fields.slug}`}>
         <div className="preview">
           {image && <Img fluid={image.childImageSharp.fluid} />}
           <div className="overview box">
             <h3 className="title is-3">{title}</h3>
             <div className="columns">
-              <div className="column is-narrow">
+              <div className="column columns">
                 <Icon path={mdiCalendar} title="Published" size={1} />
-              </div>
-              <div className="column is-narrow">
                 <p>{dayjs(date).format("MMM DD YYYY @ HH:mm A")}</p>
               </div>
-              <div className="column is-narrow">
+              <div className="column columns">
                 <Icon path={mdiCalendarSync} title="Updated" size={1} />
-              </div>
-              <div className="column is-narrow">
                 <p>{dayjs(lastUpdated).format("MMM DD YYYY @ HH:mm A")}</p>
               </div>
             </div>
