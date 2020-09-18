@@ -114,41 +114,40 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 
 #### Create a `.babelrc` file with the following
 
-   ```json
-      {       
-         "presets": [
-            [
-               "@babel/preset-env",
-               {
-                  "targets": {
-                     "node": "10"
-                  }
-                }
-           ]
-         ]
-      }
-   ```
+```json
+   {       
+      "presets": [
+         [
+            "@babel/preset-env",
+            {
+               "targets": {
+                  "node": "10"
+               }
+             }
+        ]
+      ]
+   }
+```
 
-####  Create a `index.js` file to test the script
+#### Create a `index.js` file to test the script
 
    How about a basic hello world
-   
-   ```js
-      console.log('hello world')
-   ```
+
+```js
+   console.log('hello world')
+```
 
 #### Run the script and make sure you get the expected output by running `npm run start`
 
-
 ## Migrating javascript to typescript
-
-There are a few ways to accomplish this part. Since we're just running a script in typescript we can easily do this by adding the extensions flag to the cli command or the `.babelrc` file presets. But first...
 
 #### Install dependencies
 
-`npm install typescript`
+`npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript`
 
-#### Create a `tsconfig.json` file 
+The first dependency is [typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile typescript using [babel](https://babeljs.io/)
+
+#### Create a `tsconfig.json` file
 
 We could quickly do this by running the initialization after install typescript
 
@@ -156,43 +155,113 @@ We could quickly do this by running the initialization after install typescript
 
 #### Rename `index.js` to `index.ts`
 
-Now lets move onto your options. As I mentioned there are two. Read through both of these and decide on a path that seems cleaner to you. I personally enjoy option 2 for when I have many typescript scripts. It allows me to forget to add the extensions flag and just setup in one file
-
-### Option 1: Using an extension flag
-
 #### Update your start script in `package.json`
 
-`"start": "babel-node index.ts --extensions=[\".ts\"]",`
+`"start": "babel-node index.ts --extensions '.ts'",`
 
 #### Revalidate your hello world script runs!
-
-### Option 2: Adding a package to support the typescript extension
-
-#### Install dependencies
-
-`npm install @babel/preset-typescript`
-
-#### Update `.babelrc` to include the preset
-
-```json
-{
-  "presets": [
-    [
-      "@babel/preset-typescript",
-      "@babel/preset-env",
-      {
-        "targets": {
-          "node": "10"
-        }
-      }
-    ]
-  ]
-}
-```
-
-#### Revalidate your hello world script runs!
-
-
 
 ## Getting your hands dirty with typescript 👨🏻‍💻
 
+If you're unfamiliar with defining types and interfaces I would highly encourage you to take a break here and familiarize yourself with the subtle differences between javascript and [typescript](https://www.typescriptlang.org/). I enjoy this [devhints cheatsheet](https://devhints.io/typescript) when I was getting familiar.
+
+#### Fetch the input file
+
+We're going to type out the response from <https://api.covidtracking.com/v1/us/daily.json> which is the United States COVID-19 impact.
+
+Feel free to use whatever fetching library you prefer. I'll be using [node-fetch](https://www.npmjs.com/package/node-fetch#json)
+
+```
+npm install node-fetch @types/node-fetch
+```
+
+Fetch and log the response from `https://api.covidtracking.com/v1/us/daily.json`
+
+```ts
+import fetch from "node-fetch";
+
+(async () => {
+  const response = await fetch(
+    "https://api.covidtracking.com/v1/us/daily.json"
+  );
+  const json = await response.json();
+  console.log(json);
+})();
+```
+
+#### Typing the input
+
+Your console should be logging something similar to this...
+
+```json
+[
+ {
+   "date":20200916,
+   "states":56,
+   "positive":6597783,
+   "negative":81976741,
+   "pending":10587,
+   "hospitalizedCurrently":30278,
+   "hospitalizedCumulative":390624,
+   "inIcuCurrently":6308,
+   "inIcuCumulative":18961,
+   "onVentilatorCurrently":1651,
+   "onVentilatorCumulative":2090,
+   "recovered":2525573,
+   "dateChecked":"2020-09-16T00:00:00Z",
+   "death":188802,
+   "hospitalized":390624,
+   "lastModified":"2020-09-16T00:00:00Z",
+   "total":88585111,
+   "totalTestResults":88574524,
+   "posNeg":88574524,
+   "deathIncrease":1202,
+   "hospitalizedIncrease":1517,
+   "negativeIncrease":625601,
+   "positiveIncrease":40021,
+   "totalTestResultsIncrease":665622,
+   "hash":"e66c44b8b93e51c84321a2933d4031d75084a04c"
+ },
+ ...
+]
+```
+
+Lets make an interface to replicate it!
+
+```ts
+interface USInputDay {
+  date: Date;
+  states: number;
+  positive: number;
+  negative: number;
+  pending: number;
+  hospitalizedCurrently: number;
+  hospitalizedCumulative: number;
+  inIcuCurrently: number;
+  inIcuCumulative: number;
+  onVentilatorCurrently: number;
+  onVentilatorCumulative: number;
+  recovered: number;
+  dateChecked: Date;
+  death: number;
+  hospitalized: number;
+  lastModified: Date;
+  total: number;
+  totalTestResults: number;
+  posNeg: number;
+  deathIncrease: number;
+  hospitalizedIncrease: number;
+  negativeIncrease: number;
+  positiveIncrease: number;
+  totalTestResultsIncrease: number;
+  hash: string;
+}
+```
+
+The interface above is an array of `USInputDay` so if we apply that type to the json response constant
+
+```ts
+  const json: USInputDay[] = await response.json();
+```
+
+![typescript auto-completion example](/img/typescript_sample_auto_completion.png)
