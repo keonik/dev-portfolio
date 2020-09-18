@@ -61,6 +61,12 @@ module.exports = {
               cmsConfig: `/static/admin/config.yml`,
             },
           },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: "Tomorrow Night Blue", // Or install your favorite theme from GitHub
+            },
+          },
           `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
