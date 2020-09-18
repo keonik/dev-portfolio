@@ -24,6 +24,8 @@ Scripts typically require some level of tinkering and tweaking to get the necess
 
 We are going to take output from [the covid tracking api](https://api.covidtracking.com/v1/us/daily.json) and format it in a slightly different output. Here is an example of a day's US output. The link above returns an array of these objects
 
+#### Sample Input
+
 ```json
 [
  {
@@ -52,6 +54,38 @@ We are going to take output from [the covid tracking api](https://api.covidtrack
    "positiveIncrease":40021,
    "totalTestResultsIncrease":665622,
    "hash":"e66c44b8b93e51c84321a2933d4031d75084a04c"
+ },
+ ...
+]
+```
+
+#### Sample Output
+
+```json
+[
+ {
+   "x":09-16-2020,
+   "y":{
+      "positive":6597783,
+      "negative":81976741,
+      "pending":10587,
+      "hospitalizedCurrently":30278,
+      "hospitalizedCumulative":390624,
+      "inIcuCurrently":6308,
+      "inIcuCumulative":18961,
+      "onVentilatorCurrently":1651,
+      "onVentilatorCumulative":2090,
+      "recovered":2525573,
+      "death":188802,
+      "hospitalized":390624,
+      "total":88585111,
+      "totalTestResults":88574524,
+      "posNeg":88574524,
+      "deathIncrease":1202,
+      "hospitalizedIncrease":1517,
+      "negativeIncrease":625601,
+      "positiveIncrease":40021,
+      "totalTestResultsIncrease":665622,
  },
  ...
 ]
@@ -159,4 +193,6 @@ Now lets move onto your options. As I mentioned there are two. Read through both
 #### Revalidate your hello world script runs!
 
 
+
+## Getting your hands dirty with typescript 👨🏻‍💻
 
