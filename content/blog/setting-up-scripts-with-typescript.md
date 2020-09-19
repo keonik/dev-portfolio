@@ -30,7 +30,7 @@ tags:
 
 ## Why
 
-Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output.  I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
+Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output.  I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to Typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
 
 ## What are we making?
 
@@ -103,7 +103,7 @@ We are going to take input from [the covid tracking api](https://api.covidtracki
 ]
 ```
 
-Instead of starting with a fully functional Javascript script... we'll get a script running and switch to typescript to start building out the structure and documenting for future changes
+Instead of starting with a fully functional Javascript script... we'll get a script running and switch to Typescript to start building out the structure and documenting for future changes
 
 ## Getting Started with a Javascript example
 
@@ -193,9 +193,9 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
    `npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript`
 
-   The first dependency is [typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile typescript using [babel](https://babeljs.io/)
+   The first dependency is [Typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile Typescript using [babel](https://babeljs.io/)
 
-We'll need to update our `.babelrc` to include the typescript preset like so
+We'll need to update our `.babelrc` to include the Typescript preset like so
 
 ```json
 {
@@ -241,7 +241,7 @@ Although we've added [@babel/preset-typescript](https://babeljs.io/docs/en/babel
 
    🤞 Although this doesn't seem like a big step... it is. Unless you've configured babel frequently you forget these setup instructions and could put your search abilities to work
 
-## Getting your hands dirty with typescript 👨🏻‍💻
+## Getting your hands dirty with Typescript 👨🏻‍💻
 
 If you're unfamiliar with defining types and interfaces I would highly encourage you to take a break here and familiarize yourself with the subtle differences between [Javascript](https://www.javascript.com/) and [Typescript](https://www.typescriptlang.org/). I enjoy this [devhints cheatsheet](https://devhints.io/typescript) when I was getting familiar.
 
@@ -392,7 +392,7 @@ interface USInputDay {
 })();
 ```
 
-We can now get a taste of the perks to switching to typescript! 
+We can now get a taste of the perks to switching to Typescript! 
 
 ![typescript auto-completion example](/img/typescript_sample_auto_completion.png)
 
