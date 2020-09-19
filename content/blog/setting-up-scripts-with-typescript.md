@@ -147,6 +147,25 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 
 The first dependency is [typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile typescript using [babel](https://babeljs.io/)
 
+We'll need to update our `.babelrc` to include the typescript preset like so
+
+```json
+{
+  "presets": [
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ]
+  ]
+}
+
+```
+
 #### Create a `tsconfig.json` file
 
 We could quickly do this by running the initialization after install typescript
