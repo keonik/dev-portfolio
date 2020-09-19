@@ -30,7 +30,7 @@ tags:
 
 ## Why
 
-Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, it can be hard to recall what the planned input and output structure is.  I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
+Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output.  I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
 
 ## What are we making?
 
@@ -109,7 +109,7 @@ Instead of starting with a fully functional Javascript script... we'll get a scr
 
 #### Setup a project space
 
-   ``bash
+   ```bash
    mkdir script-in-ts && cd script-in-ts
    ```
 
