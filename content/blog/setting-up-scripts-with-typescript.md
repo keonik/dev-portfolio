@@ -121,7 +121,9 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
 #### We're going to get the script running in Javascript first so lets install the necessary dependencies
 
-   `npm install @babel/core @babel/node @babel/preset-env`
+   ```bash
+   npm install @babel/core @babel/node @babel/preset-env`
+   ```
 
    [babeljs](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
 
