@@ -125,7 +125,7 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
    [babeljs](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
 
-#### Setting Up babel to run Javascript
+#### Setting up babel to run Javascript
 
    Add a `.babelrc` file
 
