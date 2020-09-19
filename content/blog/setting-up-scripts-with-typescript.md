@@ -300,7 +300,7 @@ Now all we have to do is format the input into the output structure
 
 Last step... I promise 😉
 
-Import the [file system]()
+Import the [file system](https://nodejs.org/api/fs.html#fs_file_system)
 
 ```
 import { writeFileSync } from "fs";
