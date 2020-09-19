@@ -125,7 +125,7 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
    npm install @babel/core @babel/node @babel/preset-env`
    ```
 
-   [babeljs](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
+   [babel](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
 
 #### Setting up babel to run Javascript
 
@@ -183,7 +183,7 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 #### Let's make sure our script runs and everything is setup to move onto Typescript
 
    ```bash
-   npm run start // highlighted-line
+   npm run start // highlight-line
      hello world // expected output
    ```
 
@@ -235,7 +235,7 @@ Although we've added [@babel/preset-typescript](https://babeljs.io/docs/en/babel
 #### Validate babel compiles and runs `index.ts`
 
    ```bash
-   npm run start // highlighted-line
+   npm run start // highlight-line
      hello world // expected output
    ```
 
@@ -389,7 +389,7 @@ interface USInputDay {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
   ); 
-  const json: USInputDay[] = await response.json(); // highlighted-line
+  const json: USInputDay[] = await response.json(); // highlight-line
   console.log(json);
 })();
 ```
