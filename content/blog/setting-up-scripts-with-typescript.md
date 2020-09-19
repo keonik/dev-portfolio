@@ -109,20 +109,20 @@ Instead of starting with a fully functional Javascript script... we'll get a scr
 
 #### Setup a project space
 
-   ```bash
+   ```shell
    mkdir script-in-ts && cd script-in-ts
    ```
 
 Then initialize a `package.json` that will allow you to specify scripts and dependencies needed
 
-  ```bash
+  ```shell
   npm init --y
   ```
 
 #### We're going to get the script running in Javascript first so lets install the necessary dependencies
 
-   ```bash
-   npm install @babel/core @babel/node @babel/preset-env`
+   ```shell
+   npm install @babel/core @babel/node @babel/preset-env
    ```
 
    [babel](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
@@ -156,7 +156,7 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
    Make an `index.js` file
 
-   ```bash
+   ```shell
    touch index.js && code index.js
    ```
 
@@ -182,7 +182,7 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
 #### Let's make sure our script runs and everything is setup to move onto Typescript
 
-   ```bash
+   ```shell
    npm run start // highlight-line
      hello world // expected output
    ```
@@ -193,7 +193,7 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
 #### Install dependencies
 
-   ```bash
+   ```shell
 npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript
    ```
 
@@ -220,8 +220,8 @@ We'll need to update our `.babelrc` to include the Typescript preset like so
 
 #### Create a `tsconfig.json` file
 
-   ```bash
-npx tsc --init`
+   ```shell
+npx tsc --init
    ```
 
 #### Rename `index.js` to `index.ts`
@@ -247,9 +247,9 @@ Although we've added [@babel/preset-typescript](https://babeljs.io/docs/en/babel
 
 #### Validate babel compiles and runs `index.ts`
 
-   ```bash
+   ```shell
    npm run start // highlight-line
-     hello world // expected output
+   hello world // expected output
    ```
 
    ![Not impressed](https://media1.giphy.com/media/c5FhF1waAJ5wk/giphy.gif?cid=6104955e88a9aa59159727efb21e3902a05049b10d41b861&rid=giphy.gif)
@@ -266,7 +266,7 @@ We're going to type out the response from the [United States COVID-19 impact](ht
 
 Feel free to use whatever fetching library you prefer. I'll be using [node-fetch](https://www.npmjs.com/package/node-fetch#json)
 
-```bash
+```shell
 npm install node-fetch @types/node-fetch
 ```
 
