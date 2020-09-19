@@ -111,7 +111,7 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 {
 ...
    "scripts": {
-       "start": "babel-node index.js", // highlighted
+       "start": "babel-node index.js", // highlight-line
        "test": "echo \"Error: no test specified\" && exit 1"
    },
 ...
@@ -162,7 +162,7 @@ We'll need to update our `.babelrc` to include the typescript preset like so
 ```json
 {
   "presets": [
-    "@babel/preset-typescript", // highlighted
+    "@babel/preset-typescript", // highlight-line
     [
       "@babel/preset-env",
       {
