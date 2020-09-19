@@ -101,11 +101,15 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 
 #### Open `package.json` and add a start script like so
 
-```
-"scripts": {
-    "start": "babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+```json
+{
+...
+   "scripts": {
+       "start": "babel-node index.js", // highlighted
+       "test": "echo \"Error: no test specified\" && exit 1"
+   },
+...
+}
 ```
 
 #### We're going to get the script running in javascript first so lets install the necessary dependencies
@@ -152,7 +156,7 @@ We'll need to update our `.babelrc` to include the typescript preset like so
 ```json
 {
   "presets": [
-    "@babel/preset-typescript",
+    "@babel/preset-typescript", // highlighted
     [
       "@babel/preset-env",
       {
