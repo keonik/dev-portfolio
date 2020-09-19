@@ -193,7 +193,9 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
 #### Install dependencies
 
-   `npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript`
+   ```bash
+npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript
+   ```
 
    The first dependency is [Typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile Typescript using [babel](https://babeljs.io/)
 
@@ -218,17 +220,28 @@ We'll need to update our `.babelrc` to include the Typescript preset like so
 
 #### Create a `tsconfig.json` file
 
-   `npx tsc --init`
+   ```bash
+npx tsc --init`
+   ```
 
 #### Rename `index.js` to `index.ts`
 
    ```shell
-   mv index.js index.ts
+mv index.js index.ts
    ```
 
 #### Update your start script in `package.json`
 
-`"start": "babel-node index.ts --extensions '.ts'",`
+   ```json
+{
+...
+ "scripts": {
+    "start": "babel-node index.ts --extensions '.ts'", // highlight-line
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+...
+}
+   ```
 
 Although we've added [@babel/preset-typescript](https://babeljs.io/docs/en/babel-preset-typescript) babel still needs a specification to allow `.ts` files
 
