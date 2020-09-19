@@ -17,7 +17,7 @@ tags:
 # Table of Contents
 
 ```toc
-exclude: Table of Contents
+
 ```
 
 ## Why
