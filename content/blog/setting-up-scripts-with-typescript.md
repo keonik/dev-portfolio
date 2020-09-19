@@ -7,7 +7,9 @@ description: Everyone needs to script a process to become more efficient. If we
   frequently update a script it's nice to have documentation and completion.
   Typescript is a powerful tool to make lookup and updating quick and easy. Lets
   implement it!
-tldr: Make javascript script,...
+tldr: Create Javascript script and get running in babel, add Typescript and
+  babel Typescript dependencies, generate input and output interfaces, and
+  rewrite to new output structure
 image: /img/computer_code.jpg
 tags:
   - javascript
@@ -24,7 +26,7 @@ tags:
 
 ## Why
 
-Scripts typically require some level of tinkering and tweaking to get the necessary data. If written in javascript, it can be hard to recall what the planned input and output structure is. By now, most of the javascript community is aware of the perks of switching to typescript. If you'd like a refresher visit [serokell's post](https://serokell.io/blog/why-typescript)
+Scripts typically require some level of tinkering and tweaking to get the necessary data. If written in Javascript, it can be hard to recall what the planned input and output structure is. By now, most of the Javascript community is aware of the perks of switching to typescript. If you'd like a refresher visit [serokell's post](https://serokell.io/blog/why-typescript)
 
 ## What we are going to make
 
@@ -97,9 +99,9 @@ We are going to take output from [the covid tracking api](https://api.covidtrack
 ]
 ```
 
-Instead of starting with a fully functional javascript script... we'll get a script running and switch to typescript to start building out the structure and documenting for future changes
+Instead of starting with a fully functional Javascript script... we'll get a script running and switch to typescript to start building out the structure and documenting for future changes
 
-## Getting Started with a javascript example
+## Getting Started with a Javascript example
 
 #### Setup a project space
 
@@ -118,7 +120,7 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 }
 ```
 
-#### We're going to get the script running in javascript first so lets install the necessary dependencies
+#### We're going to get the script running in Javascript first so lets install the necessary dependencies
 
    `npm install @babel/core @babel/node @babel/preset-env`
 
@@ -149,7 +151,7 @@ Instead of starting with a fully functional javascript script... we'll get a scr
 
 #### Run the script and make sure you get the expected output by running `npm run start`
 
-## Migrating javascript to typescript
+## Migrating Javascript to Typescript
 
 #### Install dependencies
 
@@ -192,7 +194,7 @@ We could quickly do this by running the initialization after install typescript
 
 ## Getting your hands dirty with typescript 👨🏻‍💻
 
-If you're unfamiliar with defining types and interfaces I would highly encourage you to take a break here and familiarize yourself with the subtle differences between javascript and [typescript](https://www.typescriptlang.org/). I enjoy this [devhints cheatsheet](https://devhints.io/typescript) when I was getting familiar.
+If you're unfamiliar with defining types and interfaces I would highly encourage you to take a break here and familiarize yourself with the subtle differences between Javascript and [Typescript](https://www.typescriptlang.org/). I enjoy this [devhints cheatsheet](https://devhints.io/typescript) when I was getting familiar.
 
 #### Fetch the input file
 
