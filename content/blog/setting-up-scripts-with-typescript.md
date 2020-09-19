@@ -16,6 +16,12 @@ tags:
   - node
   - babel
 ---
+# Table of Contents
+
+```toc
+# This code block gets replaced with the TOC
+```
+
 ## Why
 
 Scripts typically require some level of tinkering and tweaking to get the necessary data. If written in javascript, it can be hard to recall what the planned input and output structure is. By now, most of the javascript community is aware of the perks of switching to typescript. If you'd like a refresher visit [serokell's post](https://serokell.io/blog/why-typescript)
