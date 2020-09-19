@@ -26,7 +26,7 @@ tags:
 # Table of Contents
 
 ```toc
-# This code block gets replaced with the TOC
+exclude: Table of Contents
 ```
 
 ## Why
