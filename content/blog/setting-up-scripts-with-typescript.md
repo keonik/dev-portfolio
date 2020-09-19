@@ -18,10 +18,11 @@ tags:
   - node
   - babel
   - fs
-  - spead-operator
+  - spread-operator
   - node-fetch
   - json
 ---
+
 # Table of Contents
 
 ```toc
@@ -30,7 +31,7 @@ tags:
 
 ## Why
 
-Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output.  I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to Typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
+Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output. I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to Typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
 
 ## What are we making?
 
@@ -109,63 +110,62 @@ Instead of starting with a fully functional Javascript script... we'll get a scr
 
 #### Setup a project space
 
-   ```shell
-   mkdir script-in-ts && cd script-in-ts
-   ```
+```shell
+mkdir script-in-ts && cd script-in-ts
+```
 
 Then initialize a `package.json` that will allow you to specify scripts and dependencies needed
 
-  ```shell
-  npm init --y
-  ```
+```shell
+npm init --y
+```
 
 #### We're going to get the script running in Javascript first so lets install the necessary dependencies
 
-   ```shell
-   npm install @babel/core @babel/node @babel/preset-env
-   ```
+```shell
+npm install @babel/core @babel/node @babel/preset-env
+```
 
-   [babel](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
+[babel](https://babeljs.io/) allows us the ability compile modern javascript. Both `@babel/core` and `@babel/node` make that possible while [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows us to specify things such as the node version or browser support
 
 #### Setting up babel to run Javascript
 
-   Add a `.babelrc` file
+Add a `.babelrc` file
 
-   ```shell
-   touch .babelrc && code .babelrc
-   ```
+```shell
+touch .babelrc && code .babelrc
+```
 
-   Paste in the following setup to specify use of node version 10. This will give us access to things like the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) which you will see here soon
+Paste in the following setup to specify use of node version 10. This will give us access to things like the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) which you will see here soon
 
-   ```json
-   {       
-      "presets": [
-         [
-            "@babel/preset-env",
-            {
-               "targets": {
-                  "node": "10"
-               }
-             }
-        ]
-      ]
-   }
-   ```
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ]
+  ]
+}
+```
 
 #### We're ready to create!
 
-   Make an `index.js` file
+Make an `index.js` file
 
-   ```shell
-   touch index.js && code index.js
-   ```
+```shell
+touch index.js && code index.js
+```
 
-   Get started with a [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) example
+Get started with a [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) example
 
-   ```js
-   console.log('hello world')
-   ```
-
+```js
+console.log("hello world");
+```
 
 #### Open `package.json` and add a start script like so
 
@@ -182,22 +182,22 @@ Then initialize a `package.json` that will allow you to specify scripts and depe
 
 #### Let's make sure our script runs and everything is setup to move onto Typescript
 
-   ```shell
-   npm run start // highlight-line
-     hello world // expected output
-   ```
+```shell
+npm run start // highlight-line
+  hello world // expected output
+```
 
-   ![Nailed it 🎉 Onto part 2](https://media2.giphy.com/media/8VrtCswiLDNnO/giphy.gif?cid=6104955e307906cc7b2d8c8e01b352e2495dcfbc024edf87&rid=giphy.gif)
+![Nailed it 🎉 Onto part 2](https://media2.giphy.com/media/8VrtCswiLDNnO/giphy.gif?cid=6104955e307906cc7b2d8c8e01b352e2495dcfbc024edf87&rid=giphy.gif)
 
 ## Migrating Javascript to Typescript
 
 #### Install dependencies
 
-   ```shell
+```shell
 npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript
-   ```
+```
 
-   The first dependency is [Typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile Typescript using [babel](https://babeljs.io/)
+The first dependency is [Typescript](https://www.typescriptlang.org/) itself and the second is the preset to transpile Typescript using [babel](https://babeljs.io/)
 
 We'll need to update our `.babelrc` to include the Typescript preset like so
 
@@ -215,46 +215,45 @@ We'll need to update our `.babelrc` to include the Typescript preset like so
     ]
   ]
 }
-
 ```
 
 #### Create a `tsconfig.json` file
 
-   ```shell
+```shell
 npx tsc --init
-   ```
+```
 
 #### Rename `index.js` to `index.ts`
 
-   ```shell
+```shell
 mv index.js index.ts
-   ```
+```
 
 #### Update your start script in `package.json`
 
-   ```json
+```json
 {
 ...
- "scripts": {
-    "start": "babel-node index.ts --extensions '.ts'", // highlight-line
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+ "start": "babel-node index.ts --extensions '.ts'", // highlight-line
+ "test": "echo \"Error: no test specified\" && exit 1"
+},
 ...
 }
-   ```
+```
 
 Although we've added [@babel/preset-typescript](https://babeljs.io/docs/en/babel-preset-typescript) babel still needs a specification to allow `.ts` files
 
 #### Validate babel compiles and runs `index.ts`
 
-   ```shell
-   npm run start // highlight-line
-   hello world // expected output
-   ```
+```shell
+npm run start // highlight-line
+hello world // expected output
+```
 
-   ![Not impressed](https://media1.giphy.com/media/c5FhF1waAJ5wk/giphy.gif?cid=6104955e88a9aa59159727efb21e3902a05049b10d41b861&rid=giphy.gif)
+![Not impressed](https://media1.giphy.com/media/c5FhF1waAJ5wk/giphy.gif?cid=6104955e88a9aa59159727efb21e3902a05049b10d41b861&rid=giphy.gif)
 
-   🤞 Although this doesn't seem like a big step... it is. Unless you've configured babel frequently you forget these setup instructions and could put your search abilities to work
+🤞 Although this doesn't seem like a big step... it is. Unless you've configured babel frequently you forget these setup instructions and could put your search abilities to work
 
 ## Getting your hands dirty with Typescript 👨🏻‍💻
 
@@ -278,8 +277,8 @@ import fetch from "node-fetch";
 (async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  ); 
-  const json = await response.json(); // 
+  );
+  const json = await response.json(); //
   console.log(json);
 })();
 ```
@@ -359,8 +358,8 @@ interface USInputDay {
 (async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  ); 
-  const json = await response.json(); // 
+  );
+  const json = await response.json(); //
   console.log(json);
 })();
 ```
@@ -401,13 +400,13 @@ interface USInputDay {
 (async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  ); 
+  );
   const json: USInputDay[] = await response.json(); // highlight-line
   console.log(json);
 })();
 ```
 
-We can now get a taste of the perks to switching to Typescript! 
+We can now get a taste of the perks to switching to Typescript!
 
 ![typescript auto-completion example](/img/typescript_sample_auto_completion.png)
 
@@ -458,20 +457,19 @@ interface USOutputDay {
 (async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  ); 
+  );
   const json: USInputDay[] = await response.json();
 })();
 ```
 
 Above we made reuse of the `USInputDay` interface and we used the [Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys) utility to delete the keys we don't want to account for
 
-#### Format Output 
+#### Format Output
 
 Now all we have to do is format the input into the output structure
 
 ```ts
 import fetch from "node-fetch";
-import { writeFileSync } from "fs";
 
 interface USInputDay {
   date: Date;
@@ -523,7 +521,7 @@ interface USOutputDay {
 })();
 ```
 
-   I got a little fancy here and used the [spread operator](https://www.javascripttutorial.net/es6/javascript-spread/). Since I knew the output format only excluded a few keys from the input I pulled the keys I wanted and the `...theRest` is all the remaining keys in the object I need to satisfy my output. 
+I got a little fancy here and used the [spread operator](https://www.javascripttutorial.net/es6/javascript-spread/). Since I knew the output format only excluded a few keys from the input I pulled the keys I wanted and the `...theRest` is all the remaining keys in the object I need to satisfy my output.
 
 ![Slick huh!?](https://media3.giphy.com/media/eKDp7xvUdbCrC/giphy.gif?cid=6104955eb8d41fd07c51b519d8a0dce614135765d932dc9d&rid=giphy.gif)
 
@@ -585,7 +583,6 @@ interface USOutputDay {
 
   writeFileSync("formatted.json", JSON.stringify(output)); // highlight-line
 })();
-
 ```
 
 That's it! Now your script is ready to tweak for a new change or to use as is!
@@ -596,4 +593,4 @@ If you got lost at any point, no fear, [here](https://github.com/keonik/scriptin
 
 ## Summary
 
-We learned how to setup a project from scratch to use babel and run basic Javascript files. We then converted Javascript to Typescript and setup babel to handle Typescript files. Next we learned how to fetch files using `node-fetch`. We gained some experiences building types/interfaces to control input and output for benefits such as auto-completion. Lastly, we learned to write content to a file using `fs`. 
+We learned how to setup a project from scratch to use babel and run basic Javascript files. We then converted Javascript to Typescript and setup babel to handle Typescript files. Next we learned how to fetch files using `node-fetch`. We gained some experiences building types/interfaces to control input and output for benefits such as auto-completion. Lastly, we learned to write content to a file using `fs`.

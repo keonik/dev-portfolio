@@ -64,7 +64,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-vscode`,
             options: {
-              theme: "Tomorrow Night Blue", // Or install your favorite theme from GitHub
+              theme: "Monokai",
             },
           },
           `gatsby-remark-relative-images`,
