@@ -1,51 +1,34 @@
-import React, { ReactElement } from "react"
-import { Link } from "gatsby"
-import { Icon } from "@mdi/react"
-import { mdiNpm, mdiGithub, mdiLinkedin } from "@mdi/js"
+import React, { ReactElement } from "react";
+import { mdiNpm, mdiGithub, mdiLinkedin } from "@mdi/js";
+import SocialLink from "./SocialLink";
 
 interface Props {}
 
-const ICON_SIZE = 1
-const ICON_COLOR = "white"
-
 export default function Footer({}: Props): ReactElement {
   return (
-    <div className="section has-background-dark columns">
-      <div className="column buttons">
-        <Link
+    <footer className="xl:h-32 lg:h-32 md:h-32 sm:h-40 flex flex-col items-center sm:flex-row bg-gray-800 min-w-full flex justify-around px-4 py-2">
+      <div className="flex flex-row gap-4">
+        <SocialLink
           to="https://github.com/keonik"
-          target="_blank"
-          className="button is-medium"
-          aria-label="GitHub"
-        >
-          <Icon size={ICON_SIZE} path={mdiGithub} color={ICON_COLOR} />
-          GitHub
-        </Link>
-        <Link
+          label="GitHub"
+          iconPath={mdiGithub}
+        />
+        <SocialLink
           to="https://www.linkedin.com/in/johnkfay"
-          target="_blank"
-          className="button is-medium"
-          aria-label="LinkedIn"
-        >
-          <Icon size={ICON_SIZE} path={mdiLinkedin} color={ICON_COLOR} />
-          LinkedIn
-        </Link>
-        <Link
+          label="LinkedIn"
+          iconPath={mdiLinkedin}
+        />
+        <SocialLink
           to="https://www.npmjs.com/~keonik"
-          target="_blank"
-          className="button is-medium"
-          aria-label="NPM"
-        >
-          <Icon size={ICON_SIZE} path={mdiNpm} color={ICON_COLOR} />
-          npm
-        </Link>
+          label="NPM"
+          iconPath={mdiNpm}
+        />
       </div>
-      <div className="column"></div>
-      <div className="column">
+      <div className="px-4">
         © {new Date().getFullYear()}, Built by
         {` `}
         John Fay. All rights reserved
       </div>
-    </div>
-  )
+    </footer>
+  );
 }

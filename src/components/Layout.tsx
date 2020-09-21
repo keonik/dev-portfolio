@@ -1,10 +1,10 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Nav from "./Nav"
-import Footer from "./Footer"
+import Nav from "./Nav";
+import Footer from "./Footer";
 
-import "../assets/styles.css"
+import "../assets/styles.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -15,19 +15,15 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
-    <div className="hero is-primary is-fullheight">
-      <header className="hero-head">
-        <Nav siteTitle={data.site.siteMetadata.title} />
-      </header>
-      <main className="hero-body container">{children}</main>
-      <footer className="hero-footer">
-        <Footer />
-      </footer>
+    <div className="flex flex-col min-h-screen bg-indigo-900">
+      <Nav siteTitle={data.site.siteMetadata.title} />
+      <main className="container flex flex-row py-8">{children}</main>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
