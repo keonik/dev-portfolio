@@ -25,7 +25,7 @@ Why do anything? As of writing this post I am using [bulma](https://bulma.io/). 
 
 ![Why do anything?](https://media3.giphy.com/media/nhYGNAUuxDua4/giphy.gif?cid=6104955e8bb0b4fc72e7a2ff8f904b535862bcd69d6e34cb&rid=giphy.gif)
 
-Coworkers have mentioned this [Tailwind CSS](https://tailwindcss.com) after numerous complaints of the amount of time I spend styling something to do generic things. After looking at it for a bit I gained interest into it enough so to entertain a complete rewrite of my developer site you're referencing now. I've been treating this site as a platform to try out new things. By the time you view this post you may see the new site or the old. Regardless I am going to keep the old site on a branch so you can reference a before and after.
+Coworkers have mentioned this [Tailwind CSS](https://tailwindcss.com) after numerous complaints of the amount of time I spend styling something to do generic things. After looking at it for a bit I gained interest into it enough so to entertain a complete rewrite of my developer site you're referencing now. I've been treating this site as a platform to try out new things. By the time you view this post you may see the new site or the old. Regardless I am going to keep the old site on the `pre-tailwind` branch so you can reference a before and after.
 
 ## What is [Tailwind CSS](https://tailwindcss.com/#what-is-tailwind)
 
@@ -84,7 +84,13 @@ You can easily add/overwrite any of their existing classes in one spot
 
 ## How
 
-For this example I will be making the changes directly to my [personal developer site](https://github.com/keonik/dev-portfolio). I may make references to certain directories or file structure for a smoother walk through. If you'd like to follow along please checkout/fork this repo and start on the `pre-tailwind` branch.
+For this example I will be making the changes directly to my [personal developer site](https://github.com/keonik/dev-portfolio). If you'd like to follow along start on the `pre-tailwind` branch. Feel free to tag along in my repo or translate to your own.
+
+```shell
+git clone https://github.com/keonik/dev-portfolio && cd dev-portfolio && git checkout pre-tailwind
+```
+
+I may make references to certain directories or file structure for a smoother walk through. If you'd like to follow along please checkout/fork this repo and start on the `pre-tailwind` branch.
 
 ### 1. Add dependencies to your existing project
 
