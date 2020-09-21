@@ -31,19 +31,19 @@ Coworkers have mentioned this [Tailwind CSS](https://tailwindcss.com) after nume
 
 Can't say it any better than their docs do. Summary incoming!
 
-#### Great documentation
+### Great documentation
 
 Nothing is ever enjoyable to develop with if the documentation is hard to understand. No matter where I'm at I can find the low level class definitions quickly using their documentation. Starting straight from the [homepage](https://tailwindcss.com) hit the `/` and type `colors` and get links to documentation relavent to your search 🎉. As a backup, if I want to lookup the colors provided I can either go to the ole [Senior software engineering experience](https://google.com) and type in `tailwindcss colors` and I get great [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)
 
-#### Avoid the "Use this component do x and y" and just give you access to the low-level classes
+### Avoid the "Use this component do x and y" and just give you access to the low-level classes
 
 I can't tell you how many times I tried using a hero component or a flex box setup to support mobile and desktop that flat out led me down a path of hatred for css. I like many other [React](https://reactjs.org/) developers love making components and using props to scale them for the situation as they arise. Tailwind gives me that access toCSSutility classes I would write myself in the past
 
-#### "Responsive to the core"
+### "Responsive to the core"
 
 Back to the mobile and desktop config failures in my past experiences... I'm still testing this out so I'm not totally sold here. So far it's very promising!
 
-#### Designed to be customized
+### Designed to be customized
 
 Overwriting default configuration can be done in multiple places but I enjoy this setup
 
@@ -149,13 +149,13 @@ Import Tailwind CSS packages
 @tailwind utilities;
 ```
 
-### 6) Import your CSS file into gatsby's browser step
+### 5. Import your CSS file into gatsby's browser step
 
 ```
 import "./src/assets/tailwind.css"
 ```
 
-### 7. Test to ensure Tailwind CSS is ready for use!
+### 6. Test to ensure Tailwind CSS is ready for use!
 
 Because we changed things in the `gatsby-config.js` and `gatsby-browser.js` we typically need to restart our gatsby server. So cancel your currently running server and restart it
 
@@ -214,7 +214,7 @@ Not quite! Tailwind includes all of its CSS at once in the current configuration
 
 ![Trust me](https://media0.giphy.com/media/gk3R16JhLP8RUka2nD/giphy.gif?cid=6104955e0b97e9e4ba45f9bfd5cc1e75ffd90d8a30631817&rid=giphy.gif)
 
-### 8. Remove unused Tailwind CSS code
+### 7. Remove unused Tailwind CSS code
 
 Install purge-css which trims out unused CSS for you!
 
