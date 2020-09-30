@@ -45,7 +45,7 @@ const BlogPosts = ({ data }) => (
     <SEO title="My Writing" />
     <div className="overflow-hidden flex flex-col">
       <h1 className="flex-initial text-2xl text-gray-200">My writing</h1>
-      <div className="flex gap-4 flex-1">
+      <div className="grid grid-flow-row grid-rows-auto grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PreviewCard node={node} key={node.id} />
         ))}

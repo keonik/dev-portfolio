@@ -24,13 +24,13 @@ const Header = ({ data }) => {
         className="flex items-center justify-between flex-wrap"
       >
         <div
-          className="block ml-2 flex items-center flex-shrink-0 text-white mr-6"
+          className="block pl-2 flex items-center flex-shrink-0 text-white mr-6"
           style={{ marginBottom: 0 }}
         >
           <Link
             to="/"
             aria-label="Home"
-            className="h-full hover:bg-indigo-800 p-2 rounded"
+            className="h-full hover:bg-indigo-800 p-2"
             activeClassName="bg-indigo-800"
           >
             <img src={favicon} className="w-10" alt="Home" />
@@ -39,9 +39,16 @@ const Header = ({ data }) => {
         <div className="block mr-2 lg:hidden" style={{ marginBottom: 0 }}>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`flex items-center px-3 py-2 rounded-full text-white hover:text-indigo-200 transition-opacity focus:outline-none  hover:bg-indigo-800`}
+            className={`flex items-center px-3 py-2 rounded-full text-white hover:text-indigo-200 transition-all duration-500 focus:outline-none  hover:bg-indigo-800`}
           >
-            <Icon path={menuOpen ? mdiClose : mdiMenu} size={1} style={{}} />
+            <Icon
+              path={menuOpen ? mdiClose : mdiMenu}
+              size={1}
+              rotate={menuOpen ? 180 : 0}
+              description="Hamburger Menu Button"
+              title="Show Links"
+              className="transition-all duration-500 ease-in-out"
+            />
           </button>
         </div>
         <div
