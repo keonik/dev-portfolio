@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div className="flex flex-col min-h-screen bg-indigo-900">
+    <div className="flex flex-col min-h-screen bg-indigo-900 font-sans">
       <Nav siteTitle={data.site.siteMetadata.title} />
-      <main className="container flex flex-row py-8">{children}</main>
+      <main className="flex flex-auto sm:flex-1 p-8">{children}</main>
       <Footer />
     </div>
   );

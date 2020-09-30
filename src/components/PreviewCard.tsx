@@ -1,16 +1,16 @@
-import React, { ReactElement } from "react"
-import Img from "gatsby-image"
-import { Link } from "gatsby"
-import dayjs from "dayjs"
+import React, { ReactElement } from "react";
+import Img from "gatsby-image";
+import { Link } from "gatsby";
+import dayjs from "dayjs";
 
-import Tags from "./Tags"
+import Tags from "./Tags";
 
-import "./PreviewCard.css"
-import { Icon } from "@mdi/react"
-import { mdiCalendar, mdiCalendarSync } from "@mdi/js"
+import "./PreviewCard.css";
+import { Icon } from "@mdi/react";
+import { mdiCalendar, mdiCalendarSync } from "@mdi/js";
 
 interface Props {
-  node: any
+  node: any;
 }
 
 export default function PreviewCard({ node }: Props): ReactElement {
@@ -19,7 +19,7 @@ export default function PreviewCard({ node }: Props): ReactElement {
     fields,
     frontmatter,
     wordCount: { words },
-  } = node
+  } = node;
   const {
     title,
     date,
@@ -28,31 +28,36 @@ export default function PreviewCard({ node }: Props): ReactElement {
     tags,
     lastUpdated,
     image,
-  } = frontmatter
+  } = frontmatter;
   return (
-    <div style={{ padding: "1em" }}>
-      <Link className="column box hero" key={id} to={`/blog${fields.slug}`}>
-        <div className="preview">
-          {image && <Img fluid={image.childImageSharp.fluid} />}
-          <div className="overview box">
-            <h3 className="title is-3">{title}</h3>
-            <div className="columns">
-              <div className="column columns">
+    <div className="overflow-hidden rounded-lg w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-4 bg-gray-800">
+      <Link
+        className="font-light text-lg  hover:text-teal-300 text-teal-100"
+        key={id}
+        to={`/blog${fields.slug}`}
+      >
+        <div className="flex flex-col justify-items-start">
+          <Img
+            fluid={image.childImageSharp.fluid}
+            className="h-32 object-top"
+          />
+          <div className="p-4 flex-1">
+            <h3 className="text-2xl">{title}</h3>
+            <div className="">
+              <div className="flex">
                 <Icon path={mdiCalendar} title="Published" size={1} />
                 <p>{dayjs(date).format("MMM DD YYYY @ HH:mm A")}</p>
               </div>
-              <div className="column columns">
-                <Icon path={mdiCalendarSync} title="Updated" size={1} />
-                <p>{dayjs(lastUpdated).format("MMM DD YYYY @ HH:mm A")}</p>
-              </div>
             </div>
-            <p>{description}</p>
-            <p>TLDR: {tldr}</p>
-            <p>Time to read: {Math.round(+words / 100)} minute(s)</p>
+            <div className="">
+              <p className="">{description}</p>
+              <p className="">TLDR: {tldr}</p>
+              <p>Time to read: {Math.round(+words / 70)} minute(s)</p>
+            </div>
           </div>
           <Tags tags={tags} />
         </div>
       </Link>
     </div>
-  )
+  );
 }

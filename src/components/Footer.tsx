@@ -6,7 +6,7 @@ interface Props {}
 
 export default function Footer({}: Props): ReactElement {
   return (
-    <footer className="xl:h-32 lg:h-32 md:h-32 sm:h-40 flex flex-col items-center sm:flex-row bg-gray-800 min-w-full flex justify-around px-4 py-2">
+    <footer className="xl:h-32 lg:h-32 md:h-32 sm:h-40 flex-col items-center sm:flex-row bg-gray-800 min-w-full flex justify-around px-4 py-2">
       <div className="flex flex-row gap-4">
         <SocialLink
           to="https://github.com/keonik"

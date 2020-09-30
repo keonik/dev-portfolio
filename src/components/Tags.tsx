@@ -1,13 +1,13 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement } from "react";
 
 export interface Tag {
-  label: string
+  label: string;
 }
 
 interface Props {
-  tags: Tag[]
-  maxTags?: number
-  background?: string
+  tags: Tag[];
+  maxTags?: number;
+  background?: string;
 }
 
 export default function Tags({
@@ -15,21 +15,19 @@ export default function Tags({
   maxTags,
   background = "is-secondary",
 }: Props): ReactElement {
-  const items: Tag[] = maxTags ? tags?.slice(0, maxTags) : tags
+  const items: Tag[] = maxTags ? tags?.slice(0, maxTags) : tags;
 
   return (
     <>
       {tags && tags.length ? (
-        <div>
-          <ul className="tags">
-            {items?.map((label, index) => (
-              <span className={`tag ${background}`} key={index}>
-                {label}
-              </span>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex items-center flex-initial">
+          {items?.map((label, index) => (
+            <span className={`tag ${background}`} key={index}>
+              {label}
+            </span>
+          ))}
+        </ul>
       ) : null}
     </>
-  )
+  );
 }

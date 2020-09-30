@@ -9,8 +9,9 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
-        fixed(width: 250) {
-          ...GatsbyImageSharpFixed
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -18,27 +19,30 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  const image = data?.file?.childImageSharp?.fixed;
+  const image = data?.file?.childImageSharp?.fluid;
 
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="columns">
-        <div className="column">
-          <div className="content">
-            <h1 className="title is-1">John Fay</h1>
-            <h2 className="title">Software Engineer</h2>
-            <p>
-              Hello. I'm a Software Engineer working remotely from Ohio, US.
+      <div className="flex flex-row items-center flex-wrap justify-center">
+        <div className="flex flex-initial flex-col">
+          <div className="flex flex-auto flex-col">
+            <h1 className="text-4xl text-gray-400 font-thin">John Fay</h1>
+            <h2 className="text-base text-indigo-200">Software Engineer</h2>
+            <p className="text-sm text-gray-300">
+              Hey there! I'm working remotely from Ohio, US.
             </p>
-            <p>
+            <p className="text-sm text-gray-300">
               I make web applications, usually with React, Node, and Postgres
             </p>
           </div>
         </div>
-        <div className="column">
-          {image && <Img style={{ borderRadius: "50%" }} fixed={image} />}
-        </div>
+        {image && (
+          <Img
+            fluid={image}
+            className="m-4 sm:my-4 w-64 rounded-full shadow-2xl border-indigo-400 border-4"
+          />
+        )}
       </div>
     </Layout>
   );
