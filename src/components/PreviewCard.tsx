@@ -2,12 +2,10 @@ import React, { ReactElement } from "react";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 import dayjs from "dayjs";
+import { Icon } from "@mdi/react";
+import { mdiCalendar } from "@mdi/js";
 
 import Tags from "./Tags";
-
-import "./PreviewCard.css";
-import { Icon } from "@mdi/react";
-import { mdiCalendar, mdiCalendarSync } from "@mdi/js";
 
 interface Props {
   node: any;
@@ -30,35 +28,39 @@ export default function PreviewCard({ node }: Props): ReactElement {
     image,
   } = frontmatter;
   return (
-    <div className="rounded-lg w-full bg-gray-800">
-      <Link
-        className="font-light text-lg  hover:text-teal-300 text-teal-100"
-        key={id}
-        to={`/blog${fields.slug}`}
-      >
-        <div className="flex flex-col justify-items-start">
-          <Img
-            fluid={image.childImageSharp.fluid}
-            className="h-64 min-w-full object-top rounded-lg"
-          />
-          <div className="p-4 flex-1 justify-center">
-            <h3 className="text-3xl font-thin">{title}</h3>
-            <Tags tags={tags} />
-
-            <div className="">
-              <div className="flex">
-                <Icon path={mdiCalendar} title="Published" size={1} />
-                <p>{dayjs(date).format("MMM DD YYYY @ HH:mm A")}</p>
-              </div>
+    <Link
+      className="rounded-lg w-full  shadow hover:shadow-xl font-light text-lg hover:bg-gray-800 bg-gray-900 hover:text-white text-indigo-100 transition duration-500 ease-in-out transform hover:scale-105"
+      key={id}
+      to={`/blog${fields.slug}`}
+    >
+      <div className="flex flex-col">
+        <Img
+          fluid={image.childImageSharp.fluid}
+          className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
+        />
+        <div className="pt-4 pb-2 justify-center">
+          <h3 className="text-xl font-semibold tracking-wide text-center">
+            {title}
+          </h3>
+        </div>
+        <Tags tags={tags} />
+        <div className="flex flex-1 flex-col justify-between">
+          <p className="px-4 text-sm text-justify">{description}</p>
+        </div>
+        <div className="">
+          <div className="flex justify-between text-sm text-left p-4">
+            <div className="flex items-center">
+              <Icon path={mdiCalendar} title="Published" size={1} />
+              <p className="text-xs">
+                {dayjs(date).format("MMM DD YYYY @ HH:mm A")}
+              </p>
             </div>
-            <div className="">
-              <p className="">{description}</p>
-              <p className="">TLDR: {tldr}</p>
-              <p>Time to read: {Math.round(+words / 70)} minute(s)</p>
-            </div>
+            <p className="text-sm text-right">
+              Time to read: {Math.round(+words / 70)} minute(s)
+            </p>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
