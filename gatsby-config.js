@@ -29,7 +29,7 @@ module.exports = {
         printRejected: false,
         develop: false,
         tailwind: true,
-        ignore: ["src/assets/styles.css"]
+        ignore: ["src/assets/styles.css", "react-vertical-timeline-component/style.min.css"]
       },
     },
     {
