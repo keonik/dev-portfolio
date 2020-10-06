@@ -103,7 +103,9 @@ const BlogPost = ({ data }): ReactElement => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         )}
-        <Subscribe />
+        <div className="flex justify-center">
+          <Subscribe />
+        </div>
       </div>
     </Layout>
   );

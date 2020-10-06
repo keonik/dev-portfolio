@@ -22,7 +22,7 @@ export default function Subscribe({}: Props): ReactElement {
   };
 
   return (
-    <div className="bg-gray-800 text-gray-200 m-4 p-4 rounded-lg max-w-screen-md flex flex-col items-center">
+    <div className="bg-gray-800 text-gray-200 m-4 p-4 rounded-lg max-w-screen-md flex flex-col items-center justify-center">
       <h2 className="text-2xl text-center font-light tracking-wider">
         🎉 Thank you for reading! 🎉
       </h2>
