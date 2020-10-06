@@ -14,3 +14,7 @@ JAMStack
 - Typescript
 - Gatsby Image
 - Tailwindcss
+
+## Issue Board
+
+[Trello Board](https://trello.com/b/XuHlCPuE/dev-portfolio-board)
