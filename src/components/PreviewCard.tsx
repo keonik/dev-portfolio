@@ -1,16 +1,14 @@
-import React, { ReactElement } from "react"
-import Img from "gatsby-image"
-import { Link } from "gatsby"
-import dayjs from "dayjs"
+import React, { ReactElement } from "react";
+import Img from "gatsby-image";
+import { Link } from "gatsby";
+import dayjs from "dayjs";
+import { Icon } from "@mdi/react";
+import { mdiCalendar } from "@mdi/js";
 
-import Tags from "./Tags"
-
-import "./PreviewCard.css"
-import { Icon } from "@mdi/react"
-import { mdiCalendar, mdiCalendarSync } from "@mdi/js"
+import Tags from "./Tags";
 
 interface Props {
-  node: any
+  node: any;
 }
 
 export default function PreviewCard({ node }: Props): ReactElement {
@@ -19,7 +17,7 @@ export default function PreviewCard({ node }: Props): ReactElement {
     fields,
     frontmatter,
     wordCount: { words },
-  } = node
+  } = node;
   const {
     title,
     date,
@@ -28,31 +26,41 @@ export default function PreviewCard({ node }: Props): ReactElement {
     tags,
     lastUpdated,
     image,
-  } = frontmatter
+  } = frontmatter;
   return (
-    <div style={{ padding: "1em" }}>
-      <Link className="column box hero" key={id} to={`/blog${fields.slug}`}>
-        <div className="preview">
-          {image && <Img fluid={image.childImageSharp.fluid} />}
-          <div className="overview box">
-            <h3 className="title is-3">{title}</h3>
-            <div className="columns">
-              <div className="column columns">
-                <Icon path={mdiCalendar} title="Published" size={1} />
-                <p>{dayjs(date).format("MMM DD YYYY @ HH:mm A")}</p>
-              </div>
-              <div className="column columns">
-                <Icon path={mdiCalendarSync} title="Updated" size={1} />
-                <p>{dayjs(lastUpdated).format("MMM DD YYYY @ HH:mm A")}</p>
-              </div>
-            </div>
-            <p>{description}</p>
-            <p>TLDR: {tldr}</p>
-            <p>Time to read: {Math.round(+words / 100)} minute(s)</p>
-          </div>
-          <Tags tags={tags} />
+    <Link
+      className="rounded-lg w-full  shadow hover:shadow-xl font-light text-lg hover:bg-gray-800 bg-gray-900 hover:text-white text-indigo-100 transition duration-500 ease-in-out transform hover:scale-105"
+      key={id}
+      to={`/blog${fields.slug}`}
+    >
+      <div className="flex flex-col">
+        <Img
+          fluid={image.childImageSharp.fluid}
+          className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
+        />
+        <div className="pt-4 pb-2 justify-center">
+          <h3 className="text-xl font-semibold tracking-wide text-center">
+            {title}
+          </h3>
         </div>
-      </Link>
-    </div>
-  )
+        <Tags tags={tags} />
+        <div className="flex flex-1 flex-col justify-between">
+          <p className="px-4 text-sm text-justify">{description}</p>
+        </div>
+        <div className="">
+          <div className="flex justify-between text-sm text-left p-4">
+            <div className="flex items-center">
+              <Icon path={mdiCalendar} title="Published" size={1} />
+              <p className="text-xs">
+                {dayjs(date).format("MMM DD YYYY @ HH:mm A")}
+              </p>
+            </div>
+            <p className="text-sm text-right">
+              Time to read: {Math.round(+words / 70)} minute(s)
+            </p>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
 }

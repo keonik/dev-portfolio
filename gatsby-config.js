@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -17,6 +17,21 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-image`,
     `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require("tailwindcss")],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false,
+        develop: false,
+        tailwind: true,
+        ignore: ["src/assets/styles.css"]
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -47,7 +62,7 @@ module.exports = {
         background_color: `#212121`,
         theme_color: `#212121`,
         display: `minimal-ui`,
-        icon: `content/img/profile.jpg`, // This path is relative to the root of the site.
+        icon: `content/img/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -85,7 +100,6 @@ module.exports = {
               tight: false,
               fromHeading: 1,
               toHeading: 6,
-              className: "table-of-contents",
             },
           },
           `gatsby-remark-autolink-headers`,
@@ -111,4 +125,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
   ],
-}
+};

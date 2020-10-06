@@ -1,14 +1,14 @@
-import React, { ReactElement } from "react"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import dayjs from "dayjs"
-import Icon from "@mdi/react"
-import { mdiCalendar, mdiCalendarSync } from "@mdi/js"
+import React, { ReactElement } from "react";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import dayjs from "dayjs";
+import Icon from "@mdi/react";
+import { mdiCalendar, mdiCalendarSync } from "@mdi/js";
 
-import Layout from "../Layout"
-import Tags from "../Tags"
-import SEO from "../seo"
-import Subscribe from "../Subscribe"
+import Layout from "../Layout";
+import Tags from "../Tags";
+import SEO from "../seo";
+import Subscribe from "../Subscribe";
 
 export const BlogPostQuery = graphql`
   query BlogPostQuery($slug: String) {
@@ -21,8 +21,9 @@ export const BlogPostQuery = graphql`
         description
         image {
           childImageSharp {
-            fixed(width: 125, height: 125) {
-              ...GatsbyImageSharpFixed
+            fluid(maxHeight: 500, quality: 100) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -33,7 +34,7 @@ export const BlogPostQuery = graphql`
       html
     }
   }
-`
+`;
 
 const BlogPost = ({ data }): ReactElement => {
   const {
@@ -43,84 +44,70 @@ const BlogPost = ({ data }): ReactElement => {
     image,
     lastUpdated,
     tags,
-  } = data.markdownRemark.frontmatter
-  const { html } = data.markdownRemark
+  } = data.markdownRemark.frontmatter;
+  const { html } = data.markdownRemark;
 
   return (
     <Layout>
-      <SEO title={`${title}`} />
-      <section className="section body">
-        <div className="container post">
-          <section className="hero has-text-centered is-small has-background-black-ter">
-            <div className="hero-body">
-              <div className="column">
-                {image && <Img fixed={image.childImageSharp.fixed} />}
-              </div>
-              <div className="columns is-vcentered">
-                <div className="column">
-                  <h1 className="title">{title}</h1>
-                  {description && <h2 className="subtitle">{description}</h2>}
-                  <div className="column">
-                    <div className="columns is-centered">
-                      <div className="column is-narrow">
-                        {date && (
-                          <div className="columns">
-                            <div className="column is-narrow">
-                              <Icon
-                                path={mdiCalendar}
-                                title="Published"
-                                size={1}
-                              />
-                            </div>
-                            <div className="column is-narrow">
-                              <p>
-                                {dayjs(date).format("MMMM D, YYYY @ h:mm A")}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                      <div className="column is-narrow">
-                        {lastUpdated && (
-                          <div className="columns">
-                            <div className="column is-narrow">
-                              <Icon
-                                path={mdiCalendarSync}
-                                title="Published"
-                                size={1}
-                              />
-                            </div>
-                            <div className="column is-narrow">
-                              <p>
-                                {dayjs(lastUpdated).format(
-                                  "MMMM D, YYYY @ h:mm A"
-                                )}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section className="content">
-            <Tags tags={tags} />
-          </section>
-          <section className="section">
-            {html && (
-              <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+      <SEO title={title} />
+      <div className="justify-center overflow-hidden">
+        <section className="bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg">
+          {image && (
+            <Img
+              fluid={image.childImageSharp.fluid}
+              className="min-h-full min-w-full  rounded-t-lg"
+            />
+          )}
+          <div className="p-4 flex flex-col items-center">
+            <h1 className="text-3xl font-light tracking-wide text-indigo-100">
+              {title}
+            </h1>
+            {description && (
+              <p className="text-base text-justify max-w-screen-sm text-indigo-200 py-2">
+                {description}
+              </p>
             )}
-          </section>
+
+            <div className="flex flex-row justify-around w-full py-2">
+              {date && (
+                <div
+                  className="flex flex-row"
+                  aria-label="Published"
+                  title="Published"
+                >
+                  <Icon path={mdiCalendar} title="Published" size={1} />
+                  <p className="ml-2">
+                    {dayjs(date).format("MMMM D, YYYY @ h:mm A")}
+                  </p>
+                </div>
+              )}
+              {lastUpdated && (
+                <div
+                  className="flex flex-row"
+                  aria-label="Last Updated"
+                  title="Last Updated"
+                >
+                  <Icon path={mdiCalendarSync} title="Last Updated" size={1} />
+                  <p className="ml-2">
+                    {dayjs(lastUpdated).format("MMMM D, YYYY @ h:mm A")}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+          <Tags tags={tags} />
+        </section>
+        {html && (
+          <section
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        )}
+        <div className="flex justify-center">
+          <Subscribe />
         </div>
-        <Subscribe />
-      </section>
+      </div>
     </Layout>
-  )
-}
-export default BlogPost
+  );
+};
+export default BlogPost;

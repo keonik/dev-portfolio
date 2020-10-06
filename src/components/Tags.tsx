@@ -1,35 +1,28 @@
-import React, { ReactElement } from "react"
-
-export interface Tag {
-  label: string
-}
+import React, { ReactElement } from "react";
 
 interface Props {
-  tags: Tag[]
-  maxTags?: number
-  background?: string
+  tags: string[];
+  maxTags?: number;
+  background?: string;
 }
 
-export default function Tags({
-  tags,
-  maxTags,
-  background = "is-secondary",
-}: Props): ReactElement {
-  const items: Tag[] = maxTags ? tags?.slice(0, maxTags) : tags
+export default function Tags({ tags, maxTags }: Props): ReactElement {
+  const items = maxTags ? tags?.slice(0, maxTags) : tags;
 
   return (
     <>
       {tags && tags.length ? (
-        <div>
-          <ul className="tags">
-            {items?.map((label, index) => (
-              <span className={`tag ${background}`} key={index}>
-                {label}
-              </span>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex items-center justify-center flex-initial flex-wrap">
+          {items?.map((label, index) => (
+            <span
+              className={`bg-indigo-600 text-white text-sm py-1 px-2 m-1 rounded shadow-sm lowercase`}
+              key={index}
+            >
+              {label}
+            </span>
+          ))}
+        </ul>
       ) : null}
     </>
-  )
+  );
 }

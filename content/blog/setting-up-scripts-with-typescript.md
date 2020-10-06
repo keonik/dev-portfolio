@@ -3,11 +3,13 @@ path: setting-up-scripts-with-typescript
 date: 2020-09-16T20:12:18.415Z
 lastUpdated: 2020-09-16T20:12:18.457Z
 title: Setting up scripts with Typescript
-description: Everyone needs to script a process to become more efficient. If we
+description:
+  Everyone needs to script a process to become more efficient. If we
   frequently update a script it's nice to have documentation and completion.
   Typescript is a powerful tool to make lookup and updating quick and easy. Lets
   implement it!
-tldr: Create Javascript script and get running in babel, add Typescript and
+tldr:
+  Create Javascript script and get running in babel, add Typescript and
   babel Typescript dependencies, generate input and output interfaces, and
   rewrite to new output structure
 image: /img/computer_code.jpg
@@ -31,7 +33,7 @@ tags:
 
 ## Why
 
-Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output. I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to Typescript. If you'd like a refresher visit [Serokell's post](https://serokell.io/blog/why-typescript)
+Scripts typically require some level of tinkering and tweaking to get the desired output. If written in Javascript, developers have to remember the shape of input and output. I personally have to log output to recall what I'm getting as a response. By now, most of the Javascript community is aware of the perks of switching to Typescript. If you'd like a refresher, visit [Serokell's post](https://serokell.io/blog/why-typescript)
 
 ## What are we making?
 
@@ -164,7 +166,7 @@ touch index.js && code index.js
 Get started with a [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) example
 
 ```js
-console.log("hello world");
+console.log("hello world")
 ```
 
 #### Open `package.json` and add a start script like so
@@ -272,15 +274,15 @@ npm install node-fetch @types/node-fetch
 Fetch and log the response
 
 ```ts
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
-(async () => {
+;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  );
-  const json = await response.json(); //
-  console.log(json);
-})();
+  )
+  const json = await response.json() //
+  console.log(json)
+})()
 ```
 
 #### Typing the input
@@ -323,87 +325,87 @@ Your console should be logging something similar to this...
 Lets make an interface to replicate it!
 
 ```ts
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
 // highlight-start
 interface USInputDay {
-  date: Date;
-  states: number;
-  positive: number;
-  negative: number;
-  pending: number;
-  hospitalizedCurrently: number;
-  hospitalizedCumulative: number;
-  inIcuCurrently: number;
-  inIcuCumulative: number;
-  onVentilatorCurrently: number;
-  onVentilatorCumulative: number;
-  recovered: number;
-  dateChecked: Date;
-  death: number;
-  hospitalized: number;
-  lastModified: Date;
-  total: number;
-  totalTestResults: number;
-  posNeg: number;
-  deathIncrease: number;
-  hospitalizedIncrease: number;
-  negativeIncrease: number;
-  positiveIncrease: number;
-  totalTestResultsIncrease: number;
-  hash: string;
+  date: Date
+  states: number
+  positive: number
+  negative: number
+  pending: number
+  hospitalizedCurrently: number
+  hospitalizedCumulative: number
+  inIcuCurrently: number
+  inIcuCumulative: number
+  onVentilatorCurrently: number
+  onVentilatorCumulative: number
+  recovered: number
+  dateChecked: Date
+  death: number
+  hospitalized: number
+  lastModified: Date
+  total: number
+  totalTestResults: number
+  posNeg: number
+  deathIncrease: number
+  hospitalizedIncrease: number
+  negativeIncrease: number
+  positiveIncrease: number
+  totalTestResultsIncrease: number
+  hash: string
 }
 // highlight-end
 
-(async () => {
+;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  );
-  const json = await response.json(); //
-  console.log(json);
-})();
+  )
+  const json = await response.json() //
+  console.log(json)
+})()
 ```
 
 The interface above is an array of `USInputDay` so if we apply that type to the json response constant
 
 ```ts
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
 interface USInputDay {
-  date: Date;
-  states: number;
-  positive: number;
-  negative: number;
-  pending: number;
-  hospitalizedCurrently: number;
-  hospitalizedCumulative: number;
-  inIcuCurrently: number;
-  inIcuCumulative: number;
-  onVentilatorCurrently: number;
-  onVentilatorCumulative: number;
-  recovered: number;
-  dateChecked: Date;
-  death: number;
-  hospitalized: number;
-  lastModified: Date;
-  total: number;
-  totalTestResults: number;
-  posNeg: number;
-  deathIncrease: number;
-  hospitalizedIncrease: number;
-  negativeIncrease: number;
-  positiveIncrease: number;
-  totalTestResultsIncrease: number;
-  hash: string;
+  date: Date
+  states: number
+  positive: number
+  negative: number
+  pending: number
+  hospitalizedCurrently: number
+  hospitalizedCumulative: number
+  inIcuCurrently: number
+  inIcuCumulative: number
+  onVentilatorCurrently: number
+  onVentilatorCumulative: number
+  recovered: number
+  dateChecked: Date
+  death: number
+  hospitalized: number
+  lastModified: Date
+  total: number
+  totalTestResults: number
+  posNeg: number
+  deathIncrease: number
+  hospitalizedIncrease: number
+  negativeIncrease: number
+  positiveIncrease: number
+  totalTestResultsIncrease: number
+  hash: string
 }
 
-(async () => {
+;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  );
-  const json: USInputDay[] = await response.json(); // highlight-line
-  console.log(json);
-})();
+  )
+  const json: USInputDay[] = await response.json() // highlight-line
+  console.log(json)
+})()
 ```
 
 We can now get a taste of the perks to switching to Typescript!
@@ -417,49 +419,52 @@ Auto-completion makes future requests to change input or output easy. We no long
 In comparison to the input format we are just going to separate this into `x` and `y` values to show how to manipulate this into a new format
 
 ```ts
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
 interface USInputDay {
-  date: Date;
-  states: number;
-  positive: number;
-  negative: number;
-  pending: number;
-  hospitalizedCurrently: number;
-  hospitalizedCumulative: number;
-  inIcuCurrently: number;
-  inIcuCumulative: number;
-  onVentilatorCurrently: number;
-  onVentilatorCumulative: number;
-  recovered: number;
-  dateChecked: Date;
-  death: number;
-  hospitalized: number;
-  lastModified: Date;
-  total: number;
-  totalTestResults: number;
-  posNeg: number;
-  deathIncrease: number;
-  hospitalizedIncrease: number;
-  negativeIncrease: number;
-  positiveIncrease: number;
-  totalTestResultsIncrease: number;
-  hash: string;
+  date: Date
+  states: number
+  positive: number
+  negative: number
+  pending: number
+  hospitalizedCurrently: number
+  hospitalizedCumulative: number
+  inIcuCurrently: number
+  inIcuCumulative: number
+  onVentilatorCurrently: number
+  onVentilatorCumulative: number
+  recovered: number
+  dateChecked: Date
+  death: number
+  hospitalized: number
+  lastModified: Date
+  total: number
+  totalTestResults: number
+  posNeg: number
+  deathIncrease: number
+  hospitalizedIncrease: number
+  negativeIncrease: number
+  positiveIncrease: number
+  totalTestResultsIncrease: number
+  hash: string
 }
 
 // highlight-start
 interface USOutputDay {
-  x: Date;
-  y: Omit<USInputDay, "date" | "dateChecked" | "lastModified" | "hash">;
+  x: Date
+  y: Omit<
+    USInputDay,
+    "date" | "dateChecked" | "lastModified" | "hash"
+  >
 }
 // highlight-end
 
-(async () => {
+;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  );
-  const json: USInputDay[] = await response.json();
-})();
+  )
+  const json: USInputDay[] = await response.json()
+})()
 ```
 
 Above we made reuse of the `USInputDay` interface and we used the [Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys) utility to delete the keys we don't want to account for
@@ -469,56 +474,59 @@ Above we made reuse of the `USInputDay` interface and we used the [Omit](https:/
 Now all we have to do is format the input into the output structure
 
 ```ts
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
 interface USInputDay {
-  date: Date;
-  states: number;
-  positive: number;
-  negative: number;
-  pending: number;
-  hospitalizedCurrently: number;
-  hospitalizedCumulative: number;
-  inIcuCurrently: number;
-  inIcuCumulative: number;
-  onVentilatorCurrently: number;
-  onVentilatorCumulative: number;
-  recovered: number;
-  dateChecked: Date;
-  death: number;
-  hospitalized: number;
-  lastModified: Date;
-  total: number;
-  totalTestResults: number;
-  posNeg: number;
-  deathIncrease: number;
-  hospitalizedIncrease: number;
-  negativeIncrease: number;
-  positiveIncrease: number;
-  totalTestResultsIncrease: number;
-  hash: string;
+  date: Date
+  states: number
+  positive: number
+  negative: number
+  pending: number
+  hospitalizedCurrently: number
+  hospitalizedCumulative: number
+  inIcuCurrently: number
+  inIcuCumulative: number
+  onVentilatorCurrently: number
+  onVentilatorCumulative: number
+  recovered: number
+  dateChecked: Date
+  death: number
+  hospitalized: number
+  lastModified: Date
+  total: number
+  totalTestResults: number
+  posNeg: number
+  deathIncrease: number
+  hospitalizedIncrease: number
+  negativeIncrease: number
+  positiveIncrease: number
+  totalTestResultsIncrease: number
+  hash: string
 }
 
 interface USOutputDay {
-  x: Date;
-  y: Omit<USInputDay, "date" | "dateChecked" | "lastModified" | "hash">;
+  x: Date
+  y: Omit<
+    USInputDay,
+    "date" | "dateChecked" | "lastModified" | "hash"
+  >
 }
 
-(async () => {
+;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  );
-  const json: USInputDay[] = await response.json();
+  )
+  const json: USInputDay[] = await response.json()
 
   // highlight-start
   const output: USOutputDay[] = json.map(
     ({ date, dateChecked, lastModified, hash, ...theRest }) => ({
       x: date,
-      y: theRest,
+      y: theRest
     })
-  );
+  )
   // highlight-end
-})();
+})()
 ```
 
 I got a little fancy here and used the [spread operator](https://www.javascripttutorial.net/es6/javascript-spread/). Since I knew the output format only excluded a few keys from the input I pulled the keys I wanted and the `...theRest` is all the remaining keys in the object I need to satisfy my output.
@@ -532,57 +540,60 @@ Last step... I promise 😉
 Import the [file system](https://nodejs.org/api/fs.html#fs_file_system) and write it to an output file
 
 ```ts
-import fetch from "node-fetch";
-import { writeFileSync } from "fs"; // highlight-line
+import fetch from "node-fetch"
+import { writeFileSync } from "fs" // highlight-line
 
 interface USInputDay {
-  date: Date;
-  states: number;
-  positive: number;
-  negative: number;
-  pending: number;
-  hospitalizedCurrently: number;
-  hospitalizedCumulative: number;
-  inIcuCurrently: number;
-  inIcuCumulative: number;
-  onVentilatorCurrently: number;
-  onVentilatorCumulative: number;
-  recovered: number;
-  dateChecked: Date;
-  death: number;
-  hospitalized: number;
-  lastModified: Date;
-  total: number;
-  totalTestResults: number;
-  posNeg: number;
-  deathIncrease: number;
-  hospitalizedIncrease: number;
-  negativeIncrease: number;
-  positiveIncrease: number;
-  totalTestResultsIncrease: number;
-  hash: string;
+  date: Date
+  states: number
+  positive: number
+  negative: number
+  pending: number
+  hospitalizedCurrently: number
+  hospitalizedCumulative: number
+  inIcuCurrently: number
+  inIcuCumulative: number
+  onVentilatorCurrently: number
+  onVentilatorCumulative: number
+  recovered: number
+  dateChecked: Date
+  death: number
+  hospitalized: number
+  lastModified: Date
+  total: number
+  totalTestResults: number
+  posNeg: number
+  deathIncrease: number
+  hospitalizedIncrease: number
+  negativeIncrease: number
+  positiveIncrease: number
+  totalTestResultsIncrease: number
+  hash: string
 }
 
 interface USOutputDay {
-  x: Date;
-  y: Omit<USInputDay, "date" | "dateChecked" | "lastModified" | "hash">;
+  x: Date
+  y: Omit<
+    USInputDay,
+    "date" | "dateChecked" | "lastModified" | "hash"
+  >
 }
 
-(async () => {
+;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
-  );
-  const json: USInputDay[] = await response.json();
+  )
+  const json: USInputDay[] = await response.json()
 
   const output: USOutputDay[] = json.map(
     ({ date, dateChecked, lastModified, hash, ...theRest }) => ({
       x: date,
-      y: theRest,
+      y: theRest
     })
-  );
+  )
 
-  writeFileSync("formatted.json", JSON.stringify(output)); // highlight-line
-})();
+  writeFileSync("formatted.json", JSON.stringify(output)) // highlight-line
+})()
 ```
 
 That's it! Now your script is ready to tweak for a new change or to use as is!
