@@ -29,6 +29,7 @@ module.exports = {
         printRejected: false,
         develop: false,
         tailwind: true,
+        ignore: ["src/assets/styles.css"]
       },
     },
     {
@@ -99,7 +100,6 @@ module.exports = {
               tight: false,
               fromHeading: 1,
               toHeading: 6,
-              className: "table-of-contents",
             },
           },
           `gatsby-remark-autolink-headers`,

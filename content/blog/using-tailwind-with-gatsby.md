@@ -1,7 +1,7 @@
 ---
 path: using-tailwind-with-gatsby
-date: 2020-09-20T02:12:58.029Z
-lastUpdated: 2020-09-21T02:18:56.039Z
+date: 2020-10-04T02:12:58.029Z
+lastUpdated: 2020-10-03T02:18:56.039Z
 title: Using Tailwind CSS with Gatsby
 description: Tailwind takes writing CSS down to a fraction by providing many easy to use classes so you can focus on functionality over flash. In this walk through I'm going to be covering how to add Tailwind CSS to a Gatsby project
 tldr: Install tailwind css, gatsby plugins including purgecss, restart your gatsby server, and test with some of the basics such as changing background color (bg-teal-600)
