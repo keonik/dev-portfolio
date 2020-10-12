@@ -17,15 +17,15 @@ const Header = ({ data }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const fluid = data?.file?.childImageSharp?.fluid;
   return (
-    <header className="bg-indigo-700">
+    <header className="w-full z-10 fixed bg-indigo-700">
       <nav
         role="navigation"
         aria-label="main navigation"
         className="flex items-center justify-between flex-wrap"
       >
         <div
-          className="block pl-2 flex items-center flex-shrink-0 text-white mr-6"
-          style={{ marginBottom: 0 }}
+          className="block pl-2 flex items-center flex-shrink-0 text-white mr-6 mb-0"
+          // style={{ marginBottom: 0 }}
         >
           <Link
             to="/"

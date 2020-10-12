@@ -1,6 +1,10 @@
 /* purgecss start ignore */
 /* Markdown Styles */
 /* Global */
+
+body{
+  background: #2d3748;
+}
 .markdown {
     @apply leading-relaxed text-xs text-indigo-100; 
   }

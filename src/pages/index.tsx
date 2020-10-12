@@ -28,7 +28,9 @@ const IndexPage = ({ data }) => {
         <div className="flex flex-initial flex-col">
           <div className="flex flex-auto flex-col">
             <h1 className="text-4xl text-gray-400 font-thin">John Fay</h1>
-            <h2 className="text-base text-indigo-200">Software Engineer</h2>
+            <h2 className="text-base text-indigo-200 tracking-widest">
+              Software Engineer
+            </h2>
             <p className="text-sm text-gray-300">
               Hey there! I'm working remotely from Ohio, US.
             </p>

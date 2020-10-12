@@ -19,6 +19,8 @@ import SEO from "../components/seo";
 import Tags from "../components/Tags";
 
 import "react-vertical-timeline-component/style.min.css";
+import { Link } from "gatsby";
+import Slideshow from "../components/Slideshow";
 
 interface Job {
   title: string;
@@ -97,7 +99,7 @@ const JOBS: Job[] = [
     startDate: new Date(2009, 9),
     endDate: new Date(2014, 9),
     description:
-      "Directly out of grade school I spent five years serving in the US Navy. I had opportunities to see new parts of the world and meet amazing people. I wouldn't change a thing about it",
+      "Directly out of high school I spent five years serving in the US Navy. I had opportunities to see new parts of the world and meet amazing people. I wouldn't change a thing about it",
     location: "Pearl Harbor, HI.",
     tags: ["Personnel Management", "Attention to detail", "Scheduling"],
     icon: mdiAccountSupervisorCircle,
@@ -109,10 +111,11 @@ const about = () => {
   return (
     <Layout>
       <SEO title="About Me" />
-      <div className="text-white flex flex-col items-center">
+      <div className="text-white flex flex-col items-center gap-8">
         <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
           About me
         </h2>
+        <Slideshow />
         <p className="text-base text-justify text-gray-400 max-w-screen-sm my-4">
           I'm a husband to a wonderful wife, dog parent to two pups, and in
           pursuit of financial independence Right now I'm most interested in
@@ -120,6 +123,16 @@ const about = () => {
           interested in chatting about my interests, pursuing financial
           independence, or software development
         </p>
+
+        <Link
+          to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
+          target="_blank"
+          className="inline-flex items-center bg-gray-900 hover:bg-green-600 text-white hover:text-white font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          aria-label="Download Resume in pdf format"
+        >
+          View PDF Resume
+        </Link>
+
         <h2 className="font-light tracking-widest text-center text-2xl text-gray-300 m-6">
           My career moves
         </h2>
