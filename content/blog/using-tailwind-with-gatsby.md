@@ -86,7 +86,7 @@ You can easily add/overwrite any of their existing classes in one spot
 
 For this example I will be making the changes directly to my [personal developer site](https://github.com/keonik/dev-portfolio). If you'd like to follow along start on the `pre-tailwind` branch. Feel free to tag along in my repo or translate to your own.
 
-```shell
+```bash
 git clone https://github.com/keonik/dev-portfolio && cd dev-portfolio && git checkout pre-tailwind
 ```
 
@@ -96,7 +96,7 @@ I may make references to certain directories or file structure for a smoother wa
 
 I'm using [yarn](https://yarnpkg.com/) but feel free to swap out any yarn calls with [npm](https://www.npmjs.com/)
 
-```shell
+```bash
 yarn add  tailwindcss gatsby-plugin-postcss
 ```
 
@@ -125,7 +125,7 @@ module.exports = {
 
 ### 3. Initialized a config file for Tailwind CSS
 
-```shell
+```bash
 npx tailwindcss init
 ```
 
@@ -135,7 +135,7 @@ You should now see a new file `tailwind.config.js`. Although you might not need 
 
 Create and open a new file
 
-```shell
+```bash
 touch src/assets/tailwind.css && code src/assets/tailwind.css
 ```
 
@@ -159,13 +159,13 @@ import "./src/assets/tailwind.css"
 
 Because we changed things in the `gatsby-config.js` and `gatsby-browser.js` we typically need to restart our gatsby server. So cancel your currently running server and restart it
 
-```shell
+```bash
 killall node -9 && yarn start
 ```
 
 Let's test out a change on the home page which is located at `src/pages/index.tsx`
 
-```shell
+```bash
     code src/pages/index.tsx
 ```
 
@@ -218,7 +218,7 @@ Not quite! Tailwind includes all of its CSS at once in the current configuration
 
 Install purge-css which trims out unused CSS for you!
 
-```shell
+```bash
 yarn add gatsby-plugin-purgecss
 ```
 
@@ -253,7 +253,7 @@ module.exports = {
 
 Restart your gatsby server
 
-```shell
+```bash
 killall node -9 && yarn start
 ```
 

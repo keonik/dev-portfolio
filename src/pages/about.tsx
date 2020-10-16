@@ -112,18 +112,6 @@ const about = () => {
     <Layout>
       <SEO title="About Me" />
       <div className="text-white flex flex-col items-center gap-8">
-        <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
-          About me
-        </h2>
-        <Slideshow />
-        <p className="text-base text-justify text-gray-400 max-w-screen-sm my-4">
-          I'm a husband to a wonderful wife, dog parent to two pups, and in
-          pursuit of financial independence Right now I'm most interested in
-          disc golf, biking, hiking, and whitewater Reach out if you're
-          interested in chatting about my interests, pursuing financial
-          independence, or software development
-        </p>
-
         <Link
           to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
           target="_blank"
@@ -172,6 +160,17 @@ const about = () => {
             )
           )}
         </VerticalTimeline>
+        <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
+          About me
+        </h2>
+        <p className="text-base text-justify text-gray-400 max-w-screen-sm my-4">
+          I'm a husband to a wonderful wife, dog parent to two pups, and in
+          pursuit of financial independence Right now I'm most interested in
+          disc golf, biking, hiking, and whitewater Reach out if you're
+          interested in chatting about my interests, pursuing financial
+          independence, or software development
+        </p>
+        <Slideshow />
       </div>
     </Layout>
   );

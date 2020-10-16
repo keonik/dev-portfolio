@@ -112,19 +112,19 @@ Instead of starting with a fully functional Javascript script... we'll get a scr
 
 #### Setup a project space
 
-```shell
+```bash
 mkdir script-in-ts && cd script-in-ts
 ```
 
 Then initialize a `package.json` that will allow you to specify scripts and dependencies needed
 
-```shell
+```bash
 npm init --y
 ```
 
 #### We're going to get the script running in Javascript first so lets install the necessary dependencies
 
-```shell
+```bash
 npm install @babel/core @babel/node @babel/preset-env
 ```
 
@@ -134,7 +134,7 @@ npm install @babel/core @babel/node @babel/preset-env
 
 Add a `.babelrc` file
 
-```shell
+```bash
 touch .babelrc && code .babelrc
 ```
 
@@ -159,7 +159,7 @@ Paste in the following setup to specify use of node version 10. This will give u
 
 Make an `index.js` file
 
-```shell
+```bash
 touch index.js && code index.js
 ```
 
@@ -184,7 +184,7 @@ console.log("hello world")
 
 #### Let's make sure our script runs and everything is setup to move onto Typescript
 
-```shell
+```bash
 npm run start // highlight-line
   hello world // expected output
 ```
@@ -195,7 +195,7 @@ npm run start // highlight-line
 
 #### Install dependencies
 
-```shell
+```bash
 npm install typescript @babel/preset-typescript @babel/plugin-transform-typescript
 ```
 
@@ -221,13 +221,13 @@ We'll need to update our `.babelrc` to include the Typescript preset like so
 
 #### Create a `tsconfig.json` file
 
-```shell
+```bash
 npx tsc --init
 ```
 
 #### Rename `index.js` to `index.ts`
 
-```shell
+```bash
 mv index.js index.ts
 ```
 
@@ -248,7 +248,7 @@ Although we've added [@babel/preset-typescript](https://babeljs.io/docs/en/babel
 
 #### Validate babel compiles and runs `index.ts`
 
-```shell
+```bash
 npm run start // highlight-line
 hello world // expected output
 ```
@@ -267,7 +267,7 @@ We're going to type out the response from the [United States COVID-19 impact](ht
 
 Feel free to use whatever fetching library you prefer. I'll be using [node-fetch](https://www.npmjs.com/package/node-fetch#json)
 
-```shell
+```bash
 npm install node-fetch @types/node-fetch
 ```
 
@@ -275,7 +275,6 @@ Fetch and log the response
 
 ```ts
 import fetch from "node-fetch"
-
 ;(async () => {
   const response = await fetch(
     "https://api.covidtracking.com/v1/us/daily.json"
