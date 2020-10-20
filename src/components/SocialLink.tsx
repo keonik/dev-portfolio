@@ -24,7 +24,7 @@ export default function SocialLink({
     <Link
       to={to}
       target="_blank"
-      className="inline-flex items-center bg-gray-900 hover:bg-indigo-700 text-white hover:text-white font-bold py-2 px-4 mr-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+      className="inline-flex items-center bg-gray-900 hover:bg-indigo-700 text-white hover:text-white font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
       aria-label={label}
     >
       <Icon size={size} path={iconPath} color={color} />

@@ -9,7 +9,7 @@ export default function Footer({}: Props): ReactElement {
     <footer className="xl:h-32 lg:h-32 md:h-32 sm:h-40 sm:py-4 flex-col items-center sm:flex-row bg-gray-800 min-w-full flex justify-around px-4 py-2">
       <div
         className="py-4 pr-2
-       flex flex-row flex-wrap justify-center"
+       flex flex-row flex-wrap justify-center gap-4"
       >
         <SocialLink
           to="https://github.com/keonik"
