@@ -1,14 +1,14 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo";
 import PreviewCard from "../components/PreviewCard";
-import Subscribe from "../components/Subscribe";
+import Badge from "../components/Badge";
 
 export const blogPosts = graphql`
   query BlogPosts {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
           id
@@ -41,27 +41,60 @@ export const blogPosts = graphql`
   }
 `;
 
-const BlogPosts = ({ data }) => (
-  <Layout>
-    <SEO title="My Writing" />
-    <div className="flex flex-col">
-      <h1 className="flex-initial text-2xl text-gray-200 text-center font-semibold">
-        My writing
-      </h1>
-      <div className="flex p-8 justify-center">
-        <p className="text-sm text-center w-full md:w-10/12 lg:w-7/12 xl:w-1/2 text-gray-400 font-light">
-          Here is some of my developer writing I've gathered. These are normally
-          a short walk through of a question I am asked commonly at work. They
-          also could be something I found and wanted to share
-        </p>
+const BlogPosts = ({ data }) => {
+  const [posts, setPosts] = useState(data.allMarkdownRemark.edges);
+
+  const filterPosts = (event: ChangeEvent<HTMLInputElement>) => {
+    const values = event.target.value.split(" ");
+
+    setPosts(
+      data.allMarkdownRemark.edges.filter(
+        ({ node }) =>
+          node.frontmatter.tags.findIndex(
+            tag =>
+              !!values.find(value =>
+                tag.toLowerCase().indexOf(value.toLowerCase())
+              )
+          ) ||
+          node.frontmatter.title
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())
+      )
+    );
+  };
+
+  return (
+    <Layout>
+      <SEO title="My Writing" />
+      <div className="flex flex-col">
+        <h1 className="flex-initial text-2xl text-gray-200 text-center font-semibold">
+          My writing
+        </h1>
+        <div className="flex p-4 justify-center">
+          <p className="text-sm text-center w-full md:w-10/12 lg:w-7/12 xl:w-1/2 text-gray-400 font-light">
+            Here is some of my developer writing I've gathered. These are
+            normally a short walk through of a question I am asked commonly at
+            work. They also could be something I found and wanted to share
+          </p>
+        </div>
+        <div className="flex justify-center mb-4">
+          <input
+            alt="Search"
+            placeholder="Type to filter posts by tags and title..."
+            onChange={filterPosts}
+            className="self-center bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full md:w-1/2 py-2 px-4 m-4 text-gray-800 placeholder-indigo-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-400"
+            type="text"
+          />
+          <Badge count={posts.length} />
+        </div>
+        <div className="grid grid-flow-row grid-rows-auto grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
+          {posts.map(({ node }) => (
+            <PreviewCard node={node} key={node.id} />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-flow-row grid-rows-auto grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <PreviewCard node={node} key={node.id} />
-        ))}
-      </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default BlogPosts;

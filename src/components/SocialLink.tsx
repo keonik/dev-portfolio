@@ -21,14 +21,14 @@ export default function SocialLink({
   size = ICON_SIZE,
 }: Props): ReactElement {
   return (
-    <Link
-      to={to}
+    <a
+      href={to}
       target="_blank"
       className="inline-flex items-center bg-gray-900 hover:bg-indigo-700 text-white hover:text-white font-bold py-2 px-4 my-2 mx-2 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
       aria-label={label}
     >
       <Icon size={size} path={iconPath} color={color} />
       {label}
-    </Link>
+    </a>
   );
 }

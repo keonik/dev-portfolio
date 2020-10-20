@@ -27,8 +27,8 @@ const IndexPage = ({ data }) => {
       <div className="flex flex-row items-center flex-wrap justify-center">
         <div className="flex flex-initial flex-col">
           <div className="flex flex-auto flex-col">
-            <h1 className="text-4xl text-gray-400 font-thin">John Fay</h1>
-            <h2 className="text-base text-indigo-200 tracking-widest">
+            <h1 className="text-4xl text-gray-200 font-thin">John Fay</h1>
+            <h2 className="text-base text-indigo-100 tracking-widest">
               Software Engineer
             </h2>
             <p className="text-sm text-gray-300">

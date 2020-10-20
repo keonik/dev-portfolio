@@ -22,9 +22,9 @@ export default function PreviewCard({ node }: Props): ReactElement {
     title,
     date,
     description,
-    tldr,
+    // tldr,
     tags,
-    lastUpdated,
+    // lastUpdated,
     image,
   } = frontmatter;
   return (
@@ -33,7 +33,7 @@ export default function PreviewCard({ node }: Props): ReactElement {
       key={id}
       to={`/blog${fields.slug}`}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col h-full">
         <Img
           fluid={image.childImageSharp.fluid}
           className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
@@ -47,7 +47,7 @@ export default function PreviewCard({ node }: Props): ReactElement {
         <div className="flex flex-1 flex-col justify-between">
           <p className="px-4 text-sm text-justify">{description}</p>
         </div>
-        <div className="">
+        <div className="justify-self-end">
           <div className="flex justify-between text-sm text-left p-4">
             <div className="flex items-center">
               <Icon path={mdiCalendar} title="Published" size={1} />
