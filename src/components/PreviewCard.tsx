@@ -35,7 +35,7 @@ export default function PreviewCard({ node }: Props): ReactElement {
     >
       <div className="flex flex-col h-full">
         <Img
-          fluid={image.childImageSharp.fluid}
+          fluid={image?.childImageSharp?.fluid}
           className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
         />
         <div className="pt-4 pb-2 justify-center">

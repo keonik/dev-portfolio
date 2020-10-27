@@ -5,6 +5,7 @@
 body{
   background: #2d3748;
 }
+
 .markdown {
     @apply leading-relaxed text-xs text-indigo-100; 
   }
@@ -83,13 +84,22 @@ body{
   /* Tables */
   .markdown td,
   .markdown th {
-    @apply px-2 py-1 border border-gray-400;
+    @apply px-2 py-1 border border-gray-800;
   }
+
+  .markdown th{
+    @apply bg-indigo-100 text-black;
+  }
+
+  .markdown tr {
+@apply bg-gray-800
+  }
+
   .markdown tr:nth-child(odd) {
-    @apply bg-gray-100;
+    @apply bg-gray-700;
   }
   .markdown table {
-    @apply mb-6;
+    @apply mb-6 shadow-sm table-auto;
   }
   
   /* Wrap any inline highlights `that are really long`, but don't modify
@@ -98,5 +108,11 @@ body{
   */
   .markdown :not(pre) > code.language-text {
     white-space: pre-line;
+  }
+
+  .markdown img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* purgecss end ignore */
