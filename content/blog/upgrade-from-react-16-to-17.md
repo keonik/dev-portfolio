@@ -1,7 +1,7 @@
 ---
 path: upgrade-from-react-16-to-17
 date: 2020-10-26T01:12:58.029Z
-lastUpdated: 2020-10-27T01:12:56.039Z
+lastUpdated: 2020-10-27T04:22:56.039Z
 title: Upgrading from React 16 to React 17
 description: The time has come to upgrade and although the team says there are no new changes, development speed will increase for many
 tldr: npm install react-scripts@4.0.0 react@17.0.0 react-dom@17.0.0, rm -rf node_modules package-lock.json, npm install, npm run build, resolve any eslint errors
@@ -20,7 +20,7 @@ tags:
 
 ## New Release
 
-As with any major release there are typically breaking changes. Although the changelog for React states ["No New Features"](https://reactjs.org/blog/2020/10/20/react-v17.html#no-new-features) there are a [few](https://github.com/facebook/react/blob/master/CHANGELOG.md#1701-october-22-2020). The TLDR for this is a preparation for the next version to resolve many issues they forsee in migration to the new major version. I'm going to highlight some changes with React and [Create React App](https://create-react-app.dev/) that will clean up code and increase some efficiency
+As with any major release there are typically breaking changes. Although the change log for React states ["No New Features"](https://reactjs.org/blog/2020/10/20/react-v17.html#no-new-features) there are a [few](https://github.com/facebook/react/blob/master/CHANGELOG.md#1701-october-22-2020). The TLDR for this is a preparation for the next version to resolve many issues they forsee in migration to the new major version. I'm going to highlight some changes with React and [Create React App](https://create-react-app.dev/) that will clean up code and increase some efficiency
 
 ### JSX transform
 
@@ -32,7 +32,7 @@ Plenty of posts have already [summarized](https://reactjs.org/blog/2020/09/22/in
 
 ### Fast Refresh
 
-`react-refresh` is the predecessor for `react-hot-loader`. For a long time hot loading in react has been a great developer experience where we can keep our frontend application running and it will refresh when the changes are detected. What react-refresh does is a step further. If you are someone who builds client side rendered applications and pass around a lot of state management in tools such as react context, redux, apollo, or really any react hooks changes to the code no longer does a complete page refresh! It stores many of those changes and updates only the changes being made. My coworkers and I will love this because we have quite a bit of complex state management being passed around so we no longer lose our place when we want to make a minor JSX change! Here's a preview
+`react-refresh` is the predecessor for `react-hot-loader`. For a long time hot loading in react has been a great developer experience where we can keep our frontend application running and it will refresh when the changes are detected. What react-refresh does is a step further. If you are someone who builds client side rendered applications and pass around a lot of state management in tools such as react context, redux, apollo, or really any react hooks, changes to your code no longer do a complete page refresh! It stores many of those changes and updates only the changes being made. My coworkers and I will love this because we have quite a bit of complex state management being passed around so we no longer lose our place when we want to make a minor JSX change! Here's a preview
 
 ![Fast Refresh](https://user-images.githubusercontent.com/1770056/75599918-5c0a2c00-5a77-11ea-92d3-278fa044e8c6.gif)
 
@@ -42,27 +42,37 @@ Notice the changes to the return JSX and the imports and it still stores state. 
 
 ### Install updated packages
 
-`npm install react-scripts@4.0.0 react@17.0.0 react-dom@17.0.0`
+```bash
+npm install react-scripts@4.0.0 react@17.0.0 react-dom@17.0.0
+```
 
 ### Remove old installation and version lock file
 
-`rm -rf node_modules package-lock.json`
+```bash
+rm -rf node_modules package-lock.json
+```
 
 Although this isn't necessary if you run into any odd eslint related errors I found doing a clean install removed quite a few for me
 
 ### Reinstall
 
-`npm install`
+```bash
+npm install
+```
 
 ### Rebuild
 
-`npm run build`
+```bash
+npm run build
+```
 
 This is really only applicable to typescript projects. There is a flag that you'll see get set and after that...
 
 ### Restart your app
 
-`npm run start`
+```bash
+npm run start
+```
 
 #### Potential issues others are running in to
 
@@ -72,7 +82,9 @@ Since create-react-app [updated their eslint setup](https://github.com/facebook/
 
 For most cases you still would install the updates
 
-`npm install react@17.0.0 react-dom@17.0.0`
+```bash
+npm install react@17.0.0 react-dom@17.0.0
+```
 
 After that you would lookup your specific platform. Both webpack and babel have plugins to help with the fast refresh and JSX transform config. If you're using other setup's such as react-app-rewired or nextjs refer to their documentation to lookup how others are migrating. It's less common so I am not going to be able to stay up to date with the latest way to migrate.
 
