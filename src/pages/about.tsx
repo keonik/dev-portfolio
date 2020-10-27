@@ -165,8 +165,8 @@ const about = () => {
         </h2>
         <p className="text-base text-justify text-gray-400 max-w-screen-sm my-4">
           I'm a husband to a wonderful wife, dog parent to two pups, and in
-          pursuit of financial independence Right now I'm most interested in
-          disc golf, biking, hiking, and whitewater Reach out if you're
+          pursuit of financial independence. I currently am most interested in
+          disc golf, biking, hiking, and whitewater. Reach out if you're
           interested in chatting about my interests, pursuing financial
           independence, or software development
         </p>
