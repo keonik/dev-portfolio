@@ -78,6 +78,10 @@ npm run start
 
 Since create-react-app [updated their eslint setup](https://github.com/facebook/create-react-app/blob/master/CHANGELOG.md#eslint) you may see some errors thrown that are new. I just spent the time to understand them and resolve them as I see fit. Some of the rules such as import order we're incorrect because I was using a relative import plugin. If you run into any other problems look for an existing issue or create your own [here](https://github.com/facebook/create-react-app/issues)
 
+##### Other issues
+
+If you find an issue that hasn't been captured by the facebook/create-react-app team [here](https://github.com/facebook/create-react-app/issues) be a good open source developer and create an issue. I had one where I was referencing an image under my `public/` directory in a sass file to use as a `background-image:...` reference when myself and others realized the public directory is no longer available. Read more on this issue [here](https://github.com/facebook/create-react-app/issues/9937)
+
 ## Migrating other projects
 
 For most cases you still would install the updates
