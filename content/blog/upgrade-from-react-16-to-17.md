@@ -20,7 +20,7 @@ tags:
 
 ## New Release
 
-As with any major release there are typically breaking changes. Although the change log for React states ["No New Features"](https://reactjs.org/blog/2020/10/20/react-v17.html#no-new-features) there are a [few](https://github.com/facebook/react/blob/master/CHANGELOG.md#1701-october-22-2020). The TLDR for this is a preparation for the next version to resolve many issues they forsee in migration to the new major version. I'm going to highlight some changes with React and [Create React App](https://create-react-app.dev/) that will clean up code and increase some efficiency
+As with any major release, there are typically breaking changes. Although the changelog for React states ["No New Features"](https://reactjs.org/blog/2020/10/20/react-v17.html#no-new-features) there are a [few](https://github.com/facebook/react/blob/master/CHANGELOG.md#1701-october-22-2020). The TLDR for this is a preparation for the next version to resolve any issues they foresee in migration to the next major version. I'm going to highlight some changes with React and [Create React App](https://create-react-app.dev/) that will clean up code and increase some efficiency
 
 ### JSX transform
 
@@ -32,7 +32,7 @@ Plenty of posts have already [summarized](https://reactjs.org/blog/2020/09/22/in
 
 ### Fast Refresh
 
-`react-refresh` is the successor for `react-hot-loader`. For a long time hot loading in react has been a great developer experience where we can keep our frontend application running and it will refresh when the changes are detected. What react-refresh does is a step further. If you are someone who builds client side rendered applications and pass around a lot of state management in tools such as react context, redux, apollo, or really any react hooks, changes to your code no longer do a complete page refresh! It stores many of those changes and updates only the changes being made. My coworkers and I will love this because we have quite a bit of complex state management being passed around so we no longer lose our place when we want to make a minor JSX change! Here's a preview
+`react-refresh` is the successor for `react-hot-loader`. For some time, hot loading in react has been a great developer experience where we can keep our frontend application running and it will refresh when the changes are detected. What react-refresh does is a step further. If you are someone who builds client-side rendered applications and pass around a lot of state management in tools such as react context, redux, apollo, or really any react hooks, changes to your code no longer do a complete page refresh! It stores many of those changes and updates only the changes being made. My coworkers and I will love this because we have quite a bit of complex state management being passed around so we no longer lose our place when we want to make a minor JSX change! Here's a preview
 
 ![Fast Refresh](https://user-images.githubusercontent.com/1770056/75599918-5c0a2c00-5a77-11ea-92d3-278fa044e8c6.gif)
 
@@ -80,16 +80,16 @@ Since create-react-app [updated their eslint setup](https://github.com/facebook/
 
 ##### Other issues
 
-If you find an issue that hasn't been captured by the facebook/create-react-app team [here](https://github.com/facebook/create-react-app/issues) be a good open source developer and create an issue. I had one where I was referencing an image under my `public/` directory in a sass file to use as a `background-image:...` reference when myself and others realized the public directory is no longer available. Read more on this issue [here](https://github.com/facebook/create-react-app/issues/9937)
+If you find an issue that hasn't been captured by the Facebook Create-react-app team [here](https://github.com/facebook/create-react-app/issues) be a good open-source developer and create an issue. I had one where I was referencing an image under my `public/` directory in a sass file to use as a `background-image:...` reference when myself and others realized the public directory is no longer available. Read more on this issue [here](https://github.com/facebook/create-react-app/issues/9937)
 
 ## Migrating other projects
 
-For most cases you still would install the updates
+For most cases, you still would install the updates
 
 ```bash
 npm install react@17.0.0 react-dom@17.0.0
 ```
 
-After that you would lookup your specific platform. Both webpack and babel have plugins to help with the fast refresh and JSX transform config. If you're using other setup's such as react-app-rewired or nextjs refer to their documentation to lookup how others are migrating. It's less common so I am not going to be able to stay up to date with the latest way to migrate.
+After that, you would look up your specific platform. Both webpack and babel have plugins to help with the fast refresh and JSX transform config. If you're using other setup's such as react-app-rewired or NextJS refer to their documentation to lookup how others are migrating. It's less common so I am not going to be able to stay up-to-date with the latest way to migrate.
 
 ![That is all folks. Thanks for tuning in](https://media2.giphy.com/media/Mp4hQy51LjY6A/giphy.gif?cid=6104955e97f054e33d0ddf8e0e9f32c3b6ad76176e3ed6b0&rid=giphy.gif)
