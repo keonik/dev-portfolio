@@ -21,11 +21,11 @@ tags:
 
 ## Why
 
-Why do anything? As of writing this post I am using [bulma](https://bulma.io/). I enjoyed it initially but it got to a point where I was having to overwrite many of their container classes to do simple things like have a responsive site on mobile and desktop platforms. I had the argument of "Why didn't I just write this from scratch" many of times already.
+Why do we do anything? As of writing this post I am using [bulma](https://bulma.io/). I enjoyed it initially but it got to a point where I was having to overwrite many of their container classes to do simple things like have a responsive site on mobile and desktop platforms. I had the argument of "Why didn't I just write this from scratch" many of times already.
 
 ![Why do anything?](https://media3.giphy.com/media/nhYGNAUuxDua4/giphy.gif?cid=6104955e8bb0b4fc72e7a2ff8f904b535862bcd69d6e34cb&rid=giphy.gif)
 
-Coworkers have mentioned this [Tailwind CSS](https://tailwindcss.com) after numerous complaints of the amount of time I spend styling something to do generic things. After looking at it for a bit I gained interest into it enough so to entertain a complete rewrite of my developer site you're referencing now. I've been treating this site as a platform to try out new things. By the time you view this post you may see the new site or the old. Regardless I am going to keep the old site on the `pre-tailwind` branch so you can reference a before and after.
+Coworkers have mentioned this [Tailwind CSS](https://tailwindcss.com) after numerous complaints of the amount of time I spend styling something to do generic things. After looking at it for a bit I gained interest in TailwindCSS enough so to entertain a complete rewrite of my developer site you're referencing now. I've been treating this site as a platform to try out new things. By the time you view this post, you may see the new site or the old. Regardless I am going to keep the old site on the `pre-tailwind` branch so you can reference a before and after.
 
 ## What is [Tailwind CSS](https://tailwindcss.com/#what-is-tailwind)
 
@@ -33,11 +33,11 @@ Can't say it any better than their docs do. Summary incoming!
 
 ### Great documentation
 
-Nothing is ever enjoyable to develop with if the documentation is hard to understand. No matter where I'm at I can find the low level class definitions quickly using their documentation. Starting straight from the [homepage](https://tailwindcss.com) hit the `/` and type `colors` and get links to documentation relavent to your search 🎉. As a backup, if I want to lookup the colors provided I can either go to the ole [Senior software engineering experience](https://google.com) and type in `tailwindcss colors` and I get great [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)
+Nothing is ever enjoyable to develop with if the documentation is hard to understand. No matter where I'm at I can find the low-level class definitions quickly using their documentation. Starting straight from the [homepage](https://tailwindcss.com) hit the `/` and type `colors` and get links to documentation relevant to your search 🎉. As a backup, if I want to look up the colors provided I can either go to the ole [Senior software engineering experience](https://google.com) and type in `tailwindcss colors` and I get great [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)
 
 ### Avoid the "Use this component do x and y" and just give you access to the low-level classes
 
-I can't tell you how many times I tried using a hero component or a flex box setup to support mobile and desktop that flat out led me down a path of hatred for css. I like many other [React](https://reactjs.org/) developers love making components and using props to scale them for the situation as they arise. Tailwind gives me that access toCSSutility classes I would write myself in the past
+I can't tell you how many times I tried using a hero component or a flexbox setup to support mobile and desktop that flat out led me down a path of hatred for CSS. I like many other [React](https://reactjs.org/) developers love making components and using props to scale them for the situation as they arise. Tailwind gives me that access toCSSutility classes I would write myself in the past
 
 ### "Responsive to the core"
 
@@ -45,7 +45,7 @@ Back to the mobile and desktop config failures in my past experiences... I'm sti
 
 ### Designed to be customized
 
-Overwriting default configuration can be done in multiple places but I enjoy this setup
+Overwriting the default configuration can be done in multiple places but I enjoy this setup
 
 ```js
 // tailwind.config.js
@@ -84,20 +84,20 @@ You can easily add/overwrite any of their existing classes in one spot
 
 ## How
 
-For this example I will be making the changes directly to my [personal developer site](https://github.com/keonik/dev-portfolio). If you'd like to follow along start on the `pre-tailwind` branch. Feel free to tag along in my repo or translate to your own.
+For this example, I will be making the changes directly to my [personal developer site](https://github.com/keonik/dev-portfolio). If you'd like to follow along start on the `pre-tailwind` branch. Feel free to tag along in my repo or translate it to your own Gatsby project.
 
 ```bash
 git clone https://github.com/keonik/dev-portfolio && cd dev-portfolio && git checkout pre-tailwind
 ```
 
-I may make references to certain directories or file structure for a smoother walk through. If you'd like to follow along please checkout/fork this repo and start on the `pre-tailwind` branch.
+I may make references to certain directories or file structure for a smoother walkthrough. If you'd like to follow along please checkout/fork this repo and start on the `pre-tailwind` branch.
 
 ### 1. Add dependencies to your existing project
 
 I'm using [yarn](https://yarnpkg.com/) but feel free to swap out any yarn calls with [npm](https://www.npmjs.com/)
 
 ```bash
-yarn add  tailwindcss gatsby-plugin-postcss
+yarn add tailwindcss gatsby-plugin-postcss
 ```
 
 `gatsby-plugin-postcss` will resolve imports to use tailwind on build
@@ -169,7 +169,7 @@ Let's test out a change on the home page which is located at `src/pages/index.ts
     code src/pages/index.tsx
 ```
 
-To quickly test if it is working lets apply a background color to an element
+To quickly test if it is working let's apply a background color to an element
 
 ```tsx
 const IndexPage = ({ data }) => {
