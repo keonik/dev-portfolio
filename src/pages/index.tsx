@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
             className="m-4 sm:my-4 w-64 rounded-full shadow-2xl border-indigo-400 border-4"
           />
         )}
-        <ul className="bg-bubbles">
+        <ul className="transform-norm bg-bubbles">
           <li></li>
           <li></li>
           <li></li>
