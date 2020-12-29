@@ -1,7 +1,7 @@
 ---
 path: understanding-graphql
-date: 2020-12-01T20:12:18.415Z
-lastUpdated: 2020-12-02T20:12:18.457Z
+date: 2020-12-28T20:12:18.415Z
+lastUpdated: 2020-12-28T22:22:18.457Z
 title: Understanding GraphQL through REST
 description: Why GraphQL is a useful API specification
 tldr: GraphQL solves some of the cases developers were trying to solve using REST.
@@ -259,8 +259,6 @@ query {
   books {
     id
     title
-    ...anything
-    else
   }
 }
 ```
@@ -278,12 +276,14 @@ mutation {
           name: 'Storyteller'
       }
   ){
-      ... what you want to return
+      // what you want to return
+      id
+      name
   }
 }
 ```
 
-One key difference above, regardless of mutations or queries, we always need to resolve the responses in the `...what you want to return` section. To me this still seems awkward because you typically just want to know whether creating the books succeeded or failed. It's up to the client to decide how to handle that as opposed to a REST endpoint returning an id for example.
+One key difference above, regardless of mutations or queries, we always need to resolve the responses in the `// what you want to return` section. To me this still seems awkward because you typically just want to know whether creating the books succeeded or failed. It's up to the client to decide how to handle that as opposed to a REST endpoint returning an id for example.
 
 ![Nothing left to teach](https://media2.giphy.com/media/l4dUikt9M3YvX4hTMp/giphy.gif?cid=ecf05e476buwwqkg6iapbtbcanbbk9y7kic98x3ea4l6zz2f&rid=giphy.gif)
 
