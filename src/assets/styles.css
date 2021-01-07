@@ -7,7 +7,7 @@ body{
 }
 
 .markdown {
-    @apply leading-relaxed text-xs text-indigo-100; 
+    @apply leading-relaxed text-xs text-indigo-200; 
   }
   
   @screen sm {
@@ -25,13 +25,13 @@ body{
   /* Headers */
   .markdown h1,
   .markdown h2 {
-    @apply text-xl my-6 font-semibold text-gray-400;
+    @apply text-xl my-6 font-semibold text-purple-200;
   }
   .markdown h3,
   .markdown h4,
   .markdown h5,
   .markdown h6 {
-    @apply text-lg my-3 font-semibold text-gray-400;
+    @apply text-lg my-3 font-semibold text-purple-100;
   }
   
   @screen sm {
