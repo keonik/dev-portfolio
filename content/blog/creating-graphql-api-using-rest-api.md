@@ -89,23 +89,23 @@ npm install apollo-server apollo-datasource-rest dotenv
 
 #### apollo-server
 
-Used to spin up an express server
+Used to spin up an express server.
 
 #### apollo-datasource-rest
 
-Used to take advantage of caching and other class-based inheritance around REST sources
+Used to take advantage of caching and other class-based inheritance around REST sources.
 
 #### dotenv
 
-Used to pass in environment variables
+Used to pass in environment variables.
 
 #### nodemon
 
-Used in development mode so you don't need to restart your app every time there is a file change
+Used in development mode so you don't need to restart your app every time there is a file change.
 
 ### Create a Hello World Schema
 
-This schema file will be where we define what we can do with our GraphQL API
+This schema file will be where we define what we can do with our GraphQL API.
 
 ```bash
 touch src/schema.js
@@ -130,9 +130,8 @@ What we're saying in the `typeDefs` object is when we go to query in our graphQL
 
 ### Build Apollo Server
 
-Open `src/index.js`
-
 ```js
+// src/index.js
 require("dotenv").config()
 const { ApolloServer } = require("apollo-server")
 const typeDefs = require("./schema")
@@ -183,7 +182,7 @@ At this point, when you query `hello` you should get your expected response.
 
 ## Hooking Up a REST Source
 
-Here we're going to build a REST Data source class that will be able to be utilized in our resolver to leverage some actual results!
+Here we're going to build a REST Data source class that will be able to be utilized in our resolver to leverage some actual results.
 
 ### Create REST Data Source
 
@@ -227,7 +226,7 @@ COVID_ACT_NOW=YOUR_KEY_HERE
 
 ### Add Some Methods to Get States and Counties in CovidActNowAPI Class
 
-Taking a look at the [Covid Act Now API documentation](https://apidocs.covidactnow.org/api#tag/State-Data) we can see JSON response can be hit at our baseURL(https://api.covidactnow.org/v2/) plus `states` for all US states, `state/OH` for an individual US state such as Ohio, `counties` for all US counties, and `county/39001` for an individual county by [fips](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697) plus our API key as a parameter. There is also an optional `.timeseries` we can append to include an array of values for things like metrics and actual figures. For getting a list of states or counties I'm choosing to avoid this as it's a much larger payload, but I am enabling the time series for individual US states and counties. Using this we can create functions to interact with the REST service now!
+Taking a look at the [Covid Act Now API documentation](https://apidocs.covidactnow.org/api#tag/State-Data) we can see JSON response can be hit at our baseURL(https://api.covidactnow.org/v2/) plus `states` for all US states, `state/OH` for an individual US state such as Ohio, `counties` for all US counties, and `county/39001` for an individual county by [fips](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697) plus our API key as a parameter. There is also an optional `.timeseries` we can append to include an array of values for things like metrics and actual figures. For getting a list of states or counties I'm choosing to avoid this as it's a much larger payload, but I am enabling the time series for individual US states and counties. Using this we can create functions to interact with the REST service now.
 
 ```js
 async getAllStates() {
@@ -398,7 +397,7 @@ Query: {
 
 ### Validate
 
-Once you've wired up your newly created REST Data source to resolvers, you should be able to test in the playground!
+Once you've wired up your newly created REST Data source to resolvers, you should be able to test in the playground.
 
 ![Validate a few queries](/img/validate-queries.png)
 
@@ -478,7 +477,7 @@ Test out to make sure you can query what you expect.
 
 # Up Next: Schema First vs. Code First
 
-If you're interested in learning the pro's and con's behind these two GraphQL approaches, stay tuned for my next post where we will take the API written in this tutorial and take it a step further by switching from schema first to code first and scaling up with better developer tooling. I'm kind of winging it on where to go next. If you want to see something specific let me know!
+If you're interested in learning the pro's and con's behind these two GraphQL approaches, stay tuned for my next post where we will take the API written in this tutorial and take it a step further by switching from schema first to code first and scaling up with better developer tooling. I'm kind of winging it on where to go next. If you want to see something specific let me know.
 
 ![Immediately rethinking my decision](https://media.giphy.com/media/bI5BEfwbdVPcA/giphy.gif)
 
