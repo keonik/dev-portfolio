@@ -24,10 +24,11 @@ collections:
     folder: content/projects
     create: true
     fields:
-      - { name: date, label: Date, widget: date }
-      - { name: lastUpdated, label: Last Updated, widget: datetime }
       - { name: title, label: Title }
       - { name: link, label: Link }
+      - { name: github, label: Github }
       - { name: description, label: Description }
-      - { name: image, label: Image, widget: image }
       - { name: tags, label: Tags, widget: list }
+      - { name: image, label: Image, widget: image }
+      - { name: date, label: Date, widget: date }
+      - { name: lastUpdated, label: Last Updated, widget: datetime }
