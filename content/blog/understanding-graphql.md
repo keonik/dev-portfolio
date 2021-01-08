@@ -311,9 +311,7 @@ Facebook isn't going anywhere and they make great tools that help the open-sourc
 
 # Part 2. Creating a GraphQL API using a REST API
 
-If you are interested in learning about creating a GraphQL API utilizing a REST API as your data source I will update this article and push that update out within the week! Stay tuned for that as I will try to sprinkle in more GraphQL knowledge throughout the tutorials. Please be patient!
-
-![I like not knowing](https://media1.giphy.com/media/LqxE3PyepavPVSwPnb/giphy.gif?cid=ecf05e477hp9tnjikw8s3z66omn0vvuy6xqunj3zcf3yf8uf&rid=giphy.gif)
+Extend your knowledge and put it into practice with a tutorial to [build your own GraphQL API using an existing REST API](../creating-graphql-api-using-rest-api).
 
 # Summary
 
