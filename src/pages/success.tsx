@@ -1,9 +1,9 @@
-import { graphql } from "gatsby"
-import React from "react"
-import Helmet from "react-helmet"
-import Img from "gatsby-image"
+import { graphql } from "gatsby";
+import React from "react";
+import Helmet from "react-helmet";
+import Img from "gatsby-image";
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout";
 
 export const query = graphql`
   query {
@@ -15,9 +15,9 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 const Success = ({ data }) => {
-  const image = data?.file?.childImageSharp?.fixed
+  const image = data?.file?.childImageSharp?.fixed;
 
   return (
     <Layout>
@@ -38,7 +38,7 @@ const Success = ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Success
+export default Success;

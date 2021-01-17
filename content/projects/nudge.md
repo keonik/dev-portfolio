@@ -3,7 +3,8 @@ date: 2019-11-02T02:29:30.917Z
 lastUpdated: 2020-02-29T05:00:00.000Z
 title: Nudge
 link: https://nudgeme.netlify.com/
-description: A friend of mine Steve Gray @ https://heystevegray.dev said "I wish
+description:
+  A friend of mine Steve Gray @ https://heystevegray.dev said "I wish
   there was an app that could just randomly pick what I was going to eat today.
   I eat the same five places and just don't want to choose anymore". Well now he
   uses this. We had some fun building one of our first PWA's together here. It
@@ -15,5 +16,4 @@ tags:
   - material-ui
   - javascript
   - pwa
-  - ""
 ---

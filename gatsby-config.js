@@ -29,7 +29,10 @@ module.exports = {
         printRejected: false,
         develop: false,
         tailwind: true,
-        ignore: ["src/assets/styles.css", "react-vertical-timeline-component/style.min.css"]
+        ignore: [
+          "src/assets/styles.css",
+          "react-vertical-timeline-component/style.min.css",
+        ],
       },
     },
     {
@@ -50,13 +53,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `John Fay's Dev Site`,
+        name: `John Fay`,
         short_name: `JFay`,
         start_url: `/`,
         background_color: `#212121`,

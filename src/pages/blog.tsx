@@ -8,7 +8,10 @@ import Badge from "../components/Badge";
 
 export const blogPosts = graphql`
   query BlogPosts {
-    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { fields: { slug: { regex: "/blog/" } } }
+    ) {
       edges {
         node {
           id
@@ -67,16 +70,10 @@ const BlogPosts = ({ data }) => {
     <Layout>
       <SEO title="My Writing" />
       <div className="flex flex-col">
-        <h1 className="flex-initial text-2xl text-gray-200 text-center font-semibold">
+        <h1 className="flex-initial text-3xl text-gray-200 text-center font-semibold">
           My writing
         </h1>
-        <div className="flex p-4 justify-center">
-          <p className="text-sm text-center w-full md:w-10/12 lg:w-7/12 xl:w-1/2 text-gray-400 font-light">
-            Here is some of my developer writing I've gathered. These are
-            normally a short walk through of a question I am asked commonly at
-            work. They also could be something I found and wanted to share
-          </p>
-        </div>
+
         <div className="flex justify-center mb-4">
           <input
             alt="Search"
