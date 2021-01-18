@@ -31,7 +31,7 @@ const Header = ({ data }) => {
             to="/"
             aria-label="Home"
             className="h-full hover:bg-indigo-800 py-2 px-4"
-            activeClassName="bg-indigo-800"
+            activeClassName="bg-indigo-900"
           >
             <img src={favicon} className="w-8" alt="Home" />
           </Link>

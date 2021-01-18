@@ -16,7 +16,7 @@ export default function ProjectCard({
   return (
     <div
       key={title}
-      className="rounded-lg w-full shadow font-light text-lg bg-gray-900 hover:bg-gray-800 hover:text-white text-indigo-100 transition duration-500 ease-in-out transform shadow-2xl"
+      className="flex flex-col rounded-lg w-full shadow font-light text-lg bg-gray-800  hover:text-white text-indigo-100 transition duration-500 ease-in-out transform shadow-2xl"
     >
       <div className="pb-4 pt-2 justify-center">
         <h3 className="text-xl font-semibold tracking-wide text-center select-none">
@@ -27,8 +27,12 @@ export default function ProjectCard({
         fluid={image?.childImageSharp?.fluid}
         className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
       />
-      <div className="flex flex-1 flex-col justify-items-end">
-        <p className="px-4 text-sm text-justify select-none py-2">{description}</p>
+      <div className="flex flex-col justify-items-end">
+        <p className="px-4 text-sm text-justify select-none py-2">
+          {description}
+        </p>
+      </div>
+      <div className="flex flex-1 flex-col justify-end">
         <div className="flex flex-row justify-evenly py-3">
           {github && (
             <a href={github} target="__blank" className="">
@@ -51,9 +55,8 @@ export default function ProjectCard({
             </a>
           )}
         </div>
-      </div>
-      <Tags tags={tags} />
-      <div className="flex justify-between text-sm text-left p-4">
+        <Tags tags={tags} />
+        <div className="flex justify-between text-sm text-left p-4">
           <div className="flex items-center space-x-2">
             <Icon path={mdiCalendar} title="Last Updated" size={1} />
             <p className="text-xs">
@@ -64,6 +67,7 @@ export default function ProjectCard({
             <Icon path={mdiCalendar} title="Release" size={1} />
             <p className="text-xs">{dayjs(date).format("MMM DD YYYY")}</p>
           </div>
+        </div>
       </div>
     </div>
   );
