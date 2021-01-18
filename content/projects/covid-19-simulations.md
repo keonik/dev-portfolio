@@ -9,7 +9,6 @@ tags:
   - javascript
   - typescript
   - covid-19
-  - ""
 image: /img/screen-shot-2021-01-18-at-12.57.49-am.png
 date: 2020-07-29T04:48:20.388Z
 lastUpdated: 2020-09-15T04:48:20.395Z
