@@ -7,11 +7,10 @@ const NotFoundPage = () => (
   <Layout>
     <div
       style={{
-        backgroundImage:
-          'url("/img/rrg-sunset.jpg")',
+        backgroundImage: 'url("/img/rrg-sunset.jpg")',
       }}
     >
-    <SEO title="404: Not found" />
+      <SEO title="404: Not found" />
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </div>

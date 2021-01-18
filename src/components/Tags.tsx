@@ -15,7 +15,7 @@ export default function Tags({ tags, maxTags }: Props): ReactElement {
         <ul className="flex items-center justify-center flex-initial flex-wrap">
           {items?.map((label, index) => (
             <span
-              className={`bg-indigo-600 text-white text-sm py-1 px-2 m-1 rounded shadow-sm lowercase`}
+              className={`bg-indigo-600 text-white text-sm py-1 px-2 m-1 rounded shadow-sm lowercase select-none`}
               key={index}
             >
               {label}

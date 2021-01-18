@@ -2,7 +2,7 @@
 title: React UI Building Blocks
 link: https://keonik.github.io/react-ui-bb/
 github: https://github.com/keonik/react-ui-bb
-description: React component library to help learn how to publish npm packages
+description: I wanted to learn what it would take to host my own component library using Styleguidist, React, and TypeScript. I haven't decided if I will continue to add to it or use it as a reference. Feel free to add to it or create your own.
 tags:
   - npm
   - react
