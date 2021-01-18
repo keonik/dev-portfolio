@@ -4,7 +4,7 @@ link: http://covid-act-now-graphql.herokuapp.com/
 github: https://github.com/keonik/covid-graphql
 description:
   As part of a blog post I made a GraphQL API to consume daily
-  Covid-19 US impact using the Covid Act Now API REST as it's data source
+  Covid-19 US impact using the Covid Act Now API REST as it's data source. Feel free to use this in your own Covid-19 dashboard.
 tags:
   - graphql
   - rest
