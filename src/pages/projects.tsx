@@ -17,7 +17,6 @@ export const projectPosts = graphql`
             title
             link
             github
-            description
             tags
             date
             lastUpdated
@@ -30,6 +29,7 @@ export const projectPosts = graphql`
               }
             }
           }
+          html
         }
       }
     }
@@ -38,7 +38,6 @@ export const projectPosts = graphql`
 
 export interface ProjectFrontmatter {
   date: Date;
-  description: string;
   github: string;
   image: any;
   lastUpdated: Date;
@@ -48,7 +47,7 @@ export interface ProjectFrontmatter {
 }
 
 interface ProjectEdge {
-  node: { frontmatter: ProjectFrontmatter };
+  node: { html: string; frontmatter: ProjectFrontmatter };
 }
 interface ProjectRemark {
   allMarkdownRemark: { edges: ProjectEdge[] };
@@ -61,18 +60,10 @@ export default function projects({ data }: Props): ReactElement {
   const projects = data.allMarkdownRemark.edges.map(
     ({
       node: {
-        frontmatter: {
-          date,
-          description,
-          github,
-          image,
-          lastUpdated,
-          link,
-          tags,
-          title,
-        },
+        html,
+        frontmatter: { date, github, image, lastUpdated, link, tags, title },
       },
-    }) => ({ date, description, github, image, lastUpdated, link, tags, title })
+    }) => ({ date, html, github, image, lastUpdated, link, tags, title })
   );
 
   return (
