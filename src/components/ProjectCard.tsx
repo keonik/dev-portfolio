@@ -30,7 +30,7 @@ export default function ProjectCard({
       </div>
       <Img
         fluid={image?.childImageSharp?.fluid}
-        className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
+        className=" h-auto w-auto object-center rounded-t-lg"
       />
       <section
         className="flex flex-col justify-items-end markdown px-4 text-sm select-none py-2"

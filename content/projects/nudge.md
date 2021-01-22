@@ -6,7 +6,7 @@ tags:
   - material-ui
   - javascript
   - pwa
-image: /img/image-from-ios.jpg
+image: /img/nudge.png
 date: 2019-11-02T02:29:30.917Z
 lastUpdated: 2020-02-29T05:00:00.000Z
 ---
