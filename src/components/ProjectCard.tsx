@@ -3,7 +3,12 @@ import Img from "gatsby-image";
 import { ProjectFrontmatter } from "../pages/projects";
 import Tags from "./Tags";
 import Icon from "@mdi/react";
-import { mdiCalendar, mdiGithub, mdiLinkVariant } from "@mdi/js";
+import {
+  mdiCalendarEdit,
+  mdiCalendarStar,
+  mdiGithub,
+  mdiLinkVariant,
+} from "@mdi/js";
 import dayjs from "dayjs";
 
 interface Props {
@@ -11,7 +16,7 @@ interface Props {
 }
 
 export default function ProjectCard({
-  project: { date, description, github, image, lastUpdated, link, tags, title },
+  project: { date, html, github, image, lastUpdated, link, tags, title },
 }: Props): ReactElement {
   return (
     <div
@@ -25,13 +30,12 @@ export default function ProjectCard({
       </div>
       <Img
         fluid={image?.childImageSharp?.fluid}
-        className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
+        className=" h-auto w-auto object-center rounded-t-lg"
       />
-      <div className="flex flex-col justify-items-end">
-        <p className="px-4 text-sm text-justify select-none py-2">
-          {description}
-        </p>
-      </div>
+      <section
+        className="flex flex-col justify-items-end markdown px-4 text-sm select-none py-2"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
       <div className="flex flex-1 flex-col justify-end">
         <div className="flex flex-row justify-evenly py-3">
           {github && (
@@ -58,14 +62,18 @@ export default function ProjectCard({
         <Tags tags={tags} />
         <div className="flex justify-between text-sm text-left p-4">
           <div className="flex items-center space-x-2">
-            <Icon path={mdiCalendar} title="Last Updated" size={1} />
+            <Icon path={mdiCalendarStar} title="Release" size={1}>
+              Released
+            </Icon>
+            <p className="text-xs font-semibold">Released:</p>
+            <p className="text-xs">{dayjs(date).format("MMM DD YYYY")}</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Icon path={mdiCalendarEdit} title="Last Updated" size={1} />
+            <p className="text-xs font-semibold">Updated:</p>
             <p className="text-xs">
               {dayjs(lastUpdated).format("MMM DD YYYY")}
             </p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Icon path={mdiCalendar} title="Release" size={1} />
-            <p className="text-xs">{dayjs(date).format("MMM DD YYYY")}</p>
           </div>
         </div>
       </div>
