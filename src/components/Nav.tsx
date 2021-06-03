@@ -30,10 +30,11 @@ const Header = ({ data }) => {
           <Link
             to="/"
             aria-label="Home"
-            className="h-full hover:bg-indigo-800 py-2 px-4"
-            activeClassName="bg-indigo-900"
+            className="block p-2 lg:inline-block lg:mt-0 lg:px-3 lg:h-full font-light text-lg text-gray-300 hover:text-white hover:bg-indigo-800"
+            activeClassName="bg-indigo-900 text-white"
+            style={{ marginBottom: 0 }}
           >
-            <img src={favicon} className="w-8" alt="Home" />
+            John Fay
           </Link>
         </div>
         <div className="block mr-2 lg:hidden" style={{ marginBottom: 0 }}>
@@ -61,7 +62,7 @@ const Header = ({ data }) => {
               <Link
                 className="block p-2 lg:inline-block lg:mt-0 lg:px-3 lg:h-full font-light text-lg text-gray-300 hover:text-white hover:bg-indigo-800"
                 to={to}
-                activeClassName="bg-indigo-800"
+                activeClassName="bg-indigo-800 text-white"
                 key={to}
                 style={{ marginBottom: 0 }}
               >

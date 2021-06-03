@@ -154,7 +154,7 @@ body{
         width: 80px;
         height: 80px;
         
-        animation-delay: 2s;
+        animation-delay: 1.2s;
         animation-duration: 17s;
       }
     
@@ -215,7 +215,7 @@ body{
         width: 10px;
         height: 10px;
         
-        animation-delay: 2s;
+        animation-delay: 1.2s;
         animation-duration: 40s;
         background-color: rgba(129, 140, 248, .60);
       }
@@ -231,10 +231,10 @@ body{
   
   @-webkit-keyframes square {
     0%   { transform: translateY(0); }
-    100% { transform: translateY(-700px) rotate(600deg); }
+    100% { transform: translateY(-800px) rotate(600deg); }
   }
   @keyframes square {
     0%   { transform: translateY(0); }
-    100% { transform: translateY(-700px) rotate(600deg); }
+    100% { transform: translateY(-800px) rotate(600deg); }
   }
   /* purgecss end ignore */

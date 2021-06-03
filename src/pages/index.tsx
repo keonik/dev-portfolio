@@ -37,14 +37,22 @@ const IndexPage = ({ data }) => {
             <p className="text-sm text-gray-300">
               I make web applications, usually with React, Node, and Postgres
             </p>
+            <p className="text-sm text-gray-300">
+              Right now I'm really interested in Next.js, Prisma, and GraphQL
+            </p>
           </div>
         </div>
-        {image && (
-          <Img
-            fluid={image}
-            className="m-4 sm:my-4 w-64 rounded-full shadow-2xl border-indigo-400 border-4"
-          />
-        )}
+        <div className="m-8 sm:my-8 w-48 h-48 rounded-lg shadow-2xl border-indigo-400 transition-colors duration-300 hover:border-gray-800 border-4 rotate-45 transform overflow-hidden">
+          <div className="w-64  h-64">
+            {image && (
+              <Img
+                fluid={image}
+                style={{ minHeight: "110%", minWidth: "110%" }}
+                className="transform -rotate-45 -translate-x-14 -translate-y-12 cursor-default"
+              />
+            )}
+          </div>
+        </div>
         <ul className="transform-norm bg-bubbles">
           <li></li>
           <li></li>
