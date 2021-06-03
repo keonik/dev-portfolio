@@ -37,8 +37,14 @@ export const BlogPostQuery = graphql`
 `;
 
 const BlogPost = ({ data }): ReactElement => {
-  const { title, description, date, image, lastUpdated, tags } =
-    data.markdownRemark.frontmatter;
+  const {
+    title,
+    description,
+    date,
+    image,
+    lastUpdated,
+    tags,
+  } = data.markdownRemark.frontmatter;
   const { html } = data.markdownRemark;
 
   return (
@@ -49,7 +55,7 @@ const BlogPost = ({ data }): ReactElement => {
           {image && (
             <Img
               fluid={image.childImageSharp.fluid}
-              className="min-h-full min-w-full  rounded-t-lg"
+              className="min-h-full min-w-full rounded-t-lg"
             />
           )}
           <div className="p-4 flex flex-col items-center">

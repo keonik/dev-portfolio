@@ -43,10 +43,11 @@ export default function PreviewCard({ node }: Props): ReactElement {
             {title}
           </h3>
         </div>
-        <Tags tags={tags} />
         <div className="flex flex-1 flex-col justify-between">
           <p className="px-4 text-sm text-justify">{description}</p>
         </div>
+        <Tags tags={tags} />
+
         <div className="justify-self-end">
           <div className="flex justify-between text-sm text-left p-4">
             <div className="flex items-center">

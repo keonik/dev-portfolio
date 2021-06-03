@@ -8,7 +8,7 @@ tags:
   - emotion-css
   - typescript
   - styleguidist
-image: /img/react.png
+image: /img/react-ui-bb.png
 date: 2020-02-05T05:25:06.582Z
 lastUpdated: 2020-03-19T04:25:06.662Z
 ---

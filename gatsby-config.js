@@ -3,6 +3,7 @@ require("dotenv").config({
 });
 
 module.exports = {
+  flags: { FAST_DEV: true, DEV_SSR: true },
   siteMetadata: {
     title: `John Fay`,
     description: `Software Engineer`,
