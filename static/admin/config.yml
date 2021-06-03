@@ -27,7 +27,7 @@ collections:
       - { name: title, label: Title }
       - { name: link, label: Link, required: false }
       - { name: github, label: Github, required: false }
-      - { name: description, label: Description, widget: markdown }
+      - { name: body, label: Body, widget: markdown }
       - { name: tags, label: Tags, widget: list }
       - { name: image, label: Image, widget: image }
       - { name: date, label: Date, widget: date }

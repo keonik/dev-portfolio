@@ -37,14 +37,8 @@ export const BlogPostQuery = graphql`
 `;
 
 const BlogPost = ({ data }): ReactElement => {
-  const {
-    title,
-    description,
-    date,
-    image,
-    lastUpdated,
-    tags,
-  } = data.markdownRemark.frontmatter;
+  const { title, description, date, image, lastUpdated, tags } =
+    data.markdownRemark.frontmatter;
   const { html } = data.markdownRemark;
 
   return (
