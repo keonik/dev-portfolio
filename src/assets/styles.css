@@ -246,7 +246,7 @@ body{
     top: auto;
     right: 3em;
     z-index: -1;
-    transform: translateY(-12rem);
+    transform: translateY(-10rem);
     transition-duration: .5s;
   }
 
@@ -260,14 +260,6 @@ body{
     z-index: -1;
     transform: translateY(10rem);
     transition-duration: .3s;
-  }
-
-  @screen sm {
-    .hide-dex {
-    }
-    .show-dex {
-      
-    }
   }
   
   @screen md {
