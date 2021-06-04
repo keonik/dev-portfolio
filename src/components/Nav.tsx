@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import { mdiClose, mdiMenu } from "@mdi/js";
 import { Icon } from "@mdi/react";
 
-// @ts-ignore
-import favicon from "../../content/img/home-icon.png";
-
 const LINKS = [
   { to: "/about", content: "About" },
   { to: "/blog", content: "Writing" },
@@ -23,10 +20,7 @@ const Header = ({ data }) => {
         aria-label="main navigation"
         className="flex items-center justify-between flex-wrap"
       >
-        <div
-          className="block flex items-center flex-shrink-0 text-white mr-6 mb-0"
-          // style={{ marginBottom: 0 }}
-        >
+        <div className="flex items-center flex-shrink-0 text-white mr-6 mb-0">
           <Link
             to="/"
             aria-label="Home"
