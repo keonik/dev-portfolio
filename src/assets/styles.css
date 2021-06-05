@@ -246,7 +246,7 @@ body{
     top: auto;
     right: 3em;
     z-index: -1;
-    transform: translateY(-10rem);
+    transform: translateY(-8rem);
     transition-duration: .5s;
   }
 
@@ -258,7 +258,7 @@ body{
     right: 3em;
     top: auto;
     z-index: -1;
-    transform: translateY(10rem);
+    transform: translateY(8rem);
     transition-duration: .3s;
   }
   
