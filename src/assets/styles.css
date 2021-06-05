@@ -254,17 +254,18 @@ body{
     min-height: 5em;
     min-width: 5em;
     position: absolute;
-    bottom: -1em;
+    bottom: 0em;
     right: 3em;
     top: auto;
     z-index: -1;
-    transform: translateY(8rem);
     transition-duration: .3s;
   }
-  
+
   @screen md {
     .hide-dex {
-      transform: translateY(8rem);
+      max-height: 5em;
+      overflow: hidden;
+      transform: translateY(-2rem);
     }
     .show-dex {
       transform: translateY(-8rem);
@@ -273,7 +274,9 @@ body{
 
   @screen lg {
     .hide-dex {
-      transform: translateY(8rem);
+      transform: translateY(-2rem);
+      max-height: 5em;
+      overflow: hidden;
     }
     .show-dex {
       transform: translateY(-8rem);

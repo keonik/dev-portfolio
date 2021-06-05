@@ -81,8 +81,8 @@ const IndexPage = ({ data }) => {
         </ul>
       </div>
       {dex && (
-        <div className={dexterClassName}>
-          <Img fluid={dex} />
+        <div className={`${dexterClassName}`}>
+          <Img fluid={dex} className="hidden md:block" />
         </div>
       )}
     </Layout>

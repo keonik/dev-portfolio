@@ -28,7 +28,8 @@ export default function SocialLink({
       aria-label={label}
     >
       <Icon size={size} path={iconPath} color={color} />
-      {label}
+
+      <p className="hidden md:block">{label}</p>
     </a>
   );
 }
