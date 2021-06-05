@@ -10,9 +10,8 @@ const LINKS = [
   { to: "/contact", content: "Contact" },
 ];
 
-const Header = ({ data }) => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const fluid = data?.file?.childImageSharp?.fluid;
   return (
     <header className="w-full z-10 fixed bg-indigo-700">
       <nav

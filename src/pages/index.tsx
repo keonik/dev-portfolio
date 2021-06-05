@@ -67,24 +67,24 @@ const IndexPage = ({ data }) => {
             )}
           </div>
         </div>
-        <ul className="transform-norm bg-bubbles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
       </div>
       {dex && (
         <div className={`${dexterClassName}`}>
           <Img fluid={dex} className="hidden md:block" />
         </div>
       )}
+      <ul className="transform-norm bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </Layout>
   );
 };

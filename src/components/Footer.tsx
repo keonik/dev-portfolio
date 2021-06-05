@@ -33,9 +33,7 @@ export default function Footer({}: Props): ReactElement {
         />
       </div>
       <div className="py-4 md:px-4 text-white">
-        © {new Date().getFullYear()}, Built by
-        {` `}
-        John Fay. All rights reserved
+        © {new Date().getFullYear()}, Built by John Fay. All rights reserved
       </div>
     </footer>
   );
