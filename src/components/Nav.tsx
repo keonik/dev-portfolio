@@ -57,6 +57,7 @@ const Header = () => {
                 to={to}
                 activeClassName="bg-indigo-800 text-white"
                 key={to}
+                aria-label={content}
                 style={{ marginBottom: 0 }}
               >
                 {content}

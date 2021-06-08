@@ -41,9 +41,17 @@ const JOBS: Job[] = [
     startDate: new Date(2020, 3),
     endDate: new Date(),
     description:
-      "I've had opportunities to bring new quality tools and libraries such as typescript and graphql to further advance the software development experience and throughput. At this time I took on more leadership roles to help share my knowledge and progress the people around me. It's been a wonderful experience thus far!",
+      "I've had opportunities to bring new quality tools and libraries such as typescript and graphql to further advance the software development experience. At this time I took on more leadership roles to help share my knowledge and progress the people around me. It's been a wonderful experience thus far!",
     location: "Dayton, OH.",
-    tags: ["react", "typescript", "graphql", "apollo"],
+    tags: [
+      "javascript",
+      "react",
+      "typescript",
+      "graphql",
+      "apollo",
+      "next.js",
+      "prisma",
+    ],
     icon: mdiGraphql,
     color: "rgb(33, 150, 243)",
   },
@@ -55,7 +63,14 @@ const JOBS: Job[] = [
     description:
       "I transitioned to a 70/30 frontend/backend developer role. I got the chance to head up the code quality working group and instill tooling to improve quality, proficiency, and most importantly developer experience",
     location: "Dayton, OH.",
-    tags: ["react", "redux", "postgres", "python", "code quality"],
+    tags: [
+      "javascript",
+      "react",
+      "redux",
+      "postgres",
+      "python",
+      "code quality",
+    ],
     icon: mdiReact,
     color: "#016848",
   },
@@ -111,7 +126,21 @@ const about = () => {
   return (
     <Layout>
       <SEO title="About Me" />
-      <div className="text-white flex flex-col items-center gap-8">
+      <div className="text-white flex flex-col items-center gap-8 pb-8">
+        <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
+          About me
+        </h2>
+        <p className="text-base text-justify text-gray-400 max-w-screen-sm">
+          I'm a husband to a wonderful wife, dog parent to two pups, and in
+          pursuit of financial independence. I currently am most interested in
+          disc golf, biking, and hiking. Reach out if you're interested in
+          chatting about my interests, pursuing financial independence, or
+          software development
+        </p>
+        <Slideshow />
+        <h2 className="font-light tracking-widest text-center text-2xl text-gray-300 m-6">
+          My career moves
+        </h2>
         <Link
           to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
           target="_blank"
@@ -120,10 +149,6 @@ const about = () => {
         >
           View PDF Resume
         </Link>
-
-        <h2 className="font-light tracking-widest text-center text-2xl text-gray-300 m-6">
-          My career moves
-        </h2>
         <VerticalTimeline>
           {JOBS.map(
             ({
@@ -160,17 +185,6 @@ const about = () => {
             )
           )}
         </VerticalTimeline>
-        <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
-          About me
-        </h2>
-        <p className="text-base text-justify text-gray-400 max-w-screen-sm my-4">
-          I'm a husband to a wonderful wife, dog parent to two pups, and in
-          pursuit of financial independence. I currently am most interested in
-          disc golf, biking, hiking, and whitewater. Reach out if you're
-          interested in chatting about my interests, pursuing financial
-          independence, or software development
-        </p>
-        <Slideshow />
       </div>
     </Layout>
   );

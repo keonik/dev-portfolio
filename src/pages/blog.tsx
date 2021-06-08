@@ -84,7 +84,7 @@ const BlogPosts = ({ data }) => {
           />
           <Badge count={posts.length} />
         </div>
-        <div className="grid grid-flow-row grid-rows-auto grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4 gap-8">
+        <div className="pb-8 grid grid-flow-row grid-rows-auto grid-cols-1 md:grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4 gap-8">
           {posts.map(({ node }) => (
             <PreviewCard node={node} key={node.id} />
           ))}
