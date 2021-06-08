@@ -50,7 +50,7 @@ const BlogPost = ({ data }): ReactElement => {
   return (
     <Layout>
       <SEO title={title} />
-      <div className="justify-center overflow-hidden max-w-3xl">
+      <div className="justify-center max-w-4xl">
         <section className="bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg">
           {image && (
             <Img
@@ -103,9 +103,9 @@ const BlogPost = ({ data }): ReactElement => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         )}
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <Subscribe />
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
