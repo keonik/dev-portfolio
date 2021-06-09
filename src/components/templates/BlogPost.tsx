@@ -50,7 +50,7 @@ const BlogPost = ({ data }): ReactElement => {
   return (
     <Layout>
       <SEO title={title} />
-      <div className="justify-center max-w-3xl">
+      <div className="justify-center overflow-x-hidden max-w-3xl">
         <section className="bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg">
           {image && (
             <Img
