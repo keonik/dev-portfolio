@@ -7,7 +7,7 @@ tags:
   - typescript
   - node
   - mermaid
-image: /img/screen-shot-2021-07-13-at-11.45.45-pm.png
+image: /img/screen-shot-2021-07-14-at-12.14.21-am.png
 date: 2021-07-02T03:42:56.699Z
 lastUpdated: 2021-07-14T03:42:56.706Z
 ---
