@@ -9,7 +9,7 @@ tags:
   - javascript
 image: /img/covid-act-now-logo.png
 date: 2021-01-03T05:20:09.309Z
-lastUpdated: 2021-01-08T05:20:09.521Z
+lastUpdated: 2021-07-14T05:00:00.000Z
 ---
 
 As part of a blog post I made a GraphQL API to consume daily
