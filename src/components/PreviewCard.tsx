@@ -31,7 +31,7 @@ export default function PreviewCard({ node }: Props): ReactElement {
     <Link
       className="rounded-lg w-full  shadow hover:shadow-xl font-light text-lg hover:bg-gray-800 bg-gray-900 hover:text-white text-indigo-100 transition duration-500 ease-in-out transform hover:scale-105"
       key={id}
-      to={`/blog${fields.slug}`}
+      to={fields.slug}
     >
       <div className="flex flex-col h-full">
         <Img
