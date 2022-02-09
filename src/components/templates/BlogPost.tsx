@@ -4,32 +4,32 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import dayjs from "dayjs";
 import Icon from "@mdi/react";
 import { mdiCalendar, mdiCalendarSync } from "@mdi/js";
-
-import Layout from "../Layout";
 import Tags from "../Tags";
 import SEO from "../seo";
-import Subscribe from "../Subscribe";
+import Footer from "../Footer";
+import Nav from "../Nav";
 
-export const BlogPostQuery = graphql`query BlogPostQuery($slug: String) {
-  markdownRemark(fields: {slug: {eq: $slug}}) {
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-      description
-      image {
-        childImageSharp {
-          gatsbyImageData(height: 500, quality: 100, layout: CONSTRAINED)
-        }
+export const BlogPostQuery = graphql`
+  query BlogPostQuery($slug: String) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
       }
-      date
-      lastUpdated
-      tags
+      frontmatter {
+        title
+        description
+        image {
+          childImageSharp {
+            gatsbyImageData(height: 500, quality: 100, layout: CONSTRAINED)
+          }
+        }
+        date
+        lastUpdated
+        tags
+      }
+      html
     }
-    html
   }
-}
 `;
 
 const BlogPost = ({ data }): ReactElement => {
@@ -38,14 +38,17 @@ const BlogPost = ({ data }): ReactElement => {
   const { html } = data.markdownRemark;
 
   return (
-    <Layout>
-      <SEO title={title} />
-      <div className="justify-center max-w-3xl">
-        <section className="bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg">
+    <div className="min-h-screen max-h-screen overflow-hidden flex flex-col bg-gradient-to-r from-indigo-900 to-indigo-700 font-sans z-0">
+      <Nav />
+      <main className="flex-col flex-auto sm:flex-1 justify-center overflow-y-auto w-full mt-8 pt-8 z-0 px-4">
+        <SEO title={title} />
+        <section className="flex-col items-center justify-center bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg max-w-3xl overflow-x-hidden mx-auto">
           {image && (
             <GatsbyImage
+              alt={""}
               image={image.childImageSharp.gatsbyImageData}
-              className="min-h-full min-w-full rounded-t-lg" />
+              className="min-h-full min-w-full rounded-t-lg"
+            />
           )}
           <div className="p-4 flex flex-col items-center">
             <h1 className="text-3xl font-light tracking-wide text-indigo-100">
@@ -86,17 +89,17 @@ const BlogPost = ({ data }): ReactElement => {
           </div>
           <Tags tags={tags} />
         </section>
-        {html && (
-          <section
-            className="markdown pb-8"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        )}
-        {/* <div className="flex justify-center">
-          <Subscribe />
-        </div> */}
-      </div>
-    </Layout>
+        <div className="max-w-3xl overflow-x-hidden mx-auto justify-center">
+          {html && (
+            <section
+              className="markdown pb-8"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          )}
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 };
 export default BlogPost;
