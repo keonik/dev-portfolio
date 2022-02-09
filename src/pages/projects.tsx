@@ -5,35 +5,31 @@ import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";
 import SEO from "../components/seo";
 
-export const projectPosts = graphql`
-  query Projects {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-      filter: { fields: { slug: { regex: "/projects/" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            link
-            github
-            tags
-            date
-            lastUpdated
-            image {
-              childImageSharp {
-                fluid(maxHeight: 300, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
+export const projectPosts = graphql`query Projects {
+  allMarkdownRemark(
+    sort: {order: DESC, fields: frontmatter___date}
+    filter: {fields: {slug: {regex: "/projects/"}}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          link
+          github
+          tags
+          date
+          lastUpdated
+          image {
+            childImageSharp {
+              gatsbyImageData(height: 300, quality: 100, layout: CONSTRAINED)
             }
           }
-          html
         }
+        html
       }
     }
   }
+}
 `;
 
 export interface ProjectFrontmatter {

@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { ProjectFrontmatter } from "../pages/projects";
 import Tags from "./Tags";
 import Icon from "@mdi/react";
@@ -23,12 +23,11 @@ export default function ProjectCard({
       key={title}
       className="flex flex-col rounded-lg w-full font-light text-lg bg-gray-800  hover:text-white text-indigo-100 transition duration-500 ease-in-out transform shadow-2xl"
     >
-      <Img
-        fluid={image?.childImageSharp?.fluid}
+      <GatsbyImage
+        image={image?.childImageSharp?.gatsbyImageData}
         // style={{ minWidth: "18rem", maxHeight: "18rem" }}
         // className="object-center rounded-t-lg self-center"
-        className="min-w-full object-scale-down h-60 rounded-t-lg"
-      />
+        className="min-w-full object-scale-down h-60 rounded-t-lg" />
       <div className="pb-4 pt-5 justify-center">
         <h3 className="text-xl font-semibold tracking-wide text-center select-none">
           {title}

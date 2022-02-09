@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import dayjs from "dayjs";
 import Icon from "@mdi/react";
 import { mdiCalendar, mdiCalendarSync } from "@mdi/js";
@@ -10,30 +10,26 @@ import Tags from "../Tags";
 import SEO from "../seo";
 import Subscribe from "../Subscribe";
 
-export const BlogPostQuery = graphql`
-  query BlogPostQuery($slug: String) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        description
-        image {
-          childImageSharp {
-            fluid(maxHeight: 500, quality: 100) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
-        }
-        date
-        lastUpdated
-        tags
-      }
-      html
+export const BlogPostQuery = graphql`query BlogPostQuery($slug: String) {
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    fields {
+      slug
     }
+    frontmatter {
+      title
+      description
+      image {
+        childImageSharp {
+          gatsbyImageData(height: 500, quality: 100, layout: CONSTRAINED)
+        }
+      }
+      date
+      lastUpdated
+      tags
+    }
+    html
   }
+}
 `;
 
 const BlogPost = ({ data }): ReactElement => {
@@ -47,10 +43,9 @@ const BlogPost = ({ data }): ReactElement => {
       <div className="justify-center max-w-3xl">
         <section className="bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg">
           {image && (
-            <Img
-              fluid={image.childImageSharp.fluid}
-              className="min-h-full min-w-full rounded-t-lg"
-            />
+            <GatsbyImage
+              image={image.childImageSharp.gatsbyImageData}
+              className="min-h-full min-w-full rounded-t-lg" />
           )}
           <div className="p-4 flex flex-col items-center">
             <h1 className="text-3xl font-light tracking-wide text-indigo-100">

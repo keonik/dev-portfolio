@@ -1,12 +1,12 @@
 import { useStaticQuery, graphql } from "gatsby";
 import React, { useState } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 function Slideshow() {
   const [index, setIndex] = useState(0);
   const { allFile } = useStaticQuery(
     graphql`
-      query {
+      {
         allFile(
           sort: { fields: name, order: DESC }
           filter: { relativeDirectory: { eq: "slideshow" } }
@@ -16,9 +16,7 @@ function Slideshow() {
               id
               name
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(height: 420, layout: FIXED)
               }
             }
           }
@@ -37,11 +35,11 @@ function Slideshow() {
   return (
     <div className="">
       <div className="max-w-screen-md">
-        <Img
-          fluid={node.childImageSharp.fluid}
+        <GatsbyImage
+          image={node.childImageSharp.gatsbyImageData}
           key={node.id}
           alt={node.name.replace(/-/g, " ").substring(2)}
-          className="max-w-screen-md rounded h-64 shadow-xl"
+          className="w-3/6 rounded h-64 shadow-xl"
         />
       </div>
       <div className="flex py-4 gap-4 justify-between">

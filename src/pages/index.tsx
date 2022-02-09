@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo";
 
 export const query = graphql`
-  query {
+  {
     profile: file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
+        gatsbyImageData(quality: 100, layout: CONSTRAINED)
       }
     }
     dex: file(relativePath: { eq: "dex.png" }) {
       childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
+        gatsbyImageData(quality: 100, layout: CONSTRAINED)
       }
     }
   }
@@ -28,8 +22,8 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const [dexterClassName, setDexterClassName] = useState("hide-dex");
-  const profile = data?.profile?.childImageSharp?.fluid;
-  const dex = data?.dex?.childImageSharp?.fluid;
+  const profile = getImage(data?.profile);
+  const dex = getImage(data?.dex);
 
   return (
     <Layout>
@@ -39,7 +33,7 @@ const IndexPage = ({ data }) => {
           <div className="flex flex-auto flex-col">
             <h1 className="text-4xl text-gray-200 font-thin">John Fay</h1>
             <h2 className="text-base text-indigo-100 tracking-widest">
-              Software Engineer
+              Software Engineer Manager
             </h2>
             <p className="text-sm text-gray-300">
               Hey there! I'm working remotely from Ohio, US.
@@ -59,8 +53,9 @@ const IndexPage = ({ data }) => {
         >
           <div className="w-64  h-64">
             {profile && (
-              <Img
-                fluid={profile}
+              <GatsbyImage
+                image={profile}
+                alt="Profile"
                 style={{ minHeight: "110%", minWidth: "110%" }}
                 className="transform -rotate-45 -translate-x-14 -translate-y-12 cursor-default"
               />
@@ -70,7 +65,7 @@ const IndexPage = ({ data }) => {
       </div>
       {dex && (
         <div className={`${dexterClassName}`}>
-          <Img fluid={dex} className="hidden md:block" />
+          <GatsbyImage alt="Dexter" image={dex} className="hidden md:block" />
         </div>
       )}
       <ul className="transform-norm bg-bubbles">

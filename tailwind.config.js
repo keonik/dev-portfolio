@@ -1,14 +1,11 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    standardFontWeights: true,
-  },
-  purge: [],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   theme: {
     extend: {},
   },
   variants: {},
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin")],
 };
