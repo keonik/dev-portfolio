@@ -33,13 +33,13 @@ function Slideshow() {
     index === 0 ? setIndex(length) : setIndex(index - 1);
   const { node } = allFile.edges[index];
   return (
-    <div className="">
+    <div>
       <div className="max-w-screen-md">
         <GatsbyImage
           image={node.childImageSharp.gatsbyImageData}
           key={node.id}
           alt={node.name.replace(/-/g, " ").substring(2)}
-          className="w-3/6 rounded h-64 shadow-xl"
+          className="w-3/6 rounded shadow-xl"
         />
       </div>
       <div className="flex py-4 gap-4 justify-between">

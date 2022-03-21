@@ -5,13 +5,14 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 
-export const query = graphql`{
-  file(relativePath: {eq: "success-page.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 250, layout: FIXED)
+export const query = graphql`
+  {
+    file(relativePath: { eq: "success-page.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 250, layout: FIXED)
+      }
     }
   }
-}
 `;
 const Success = ({ data }) => {
   const image = data?.file?.childImageSharp?.gatsbyImageData;
@@ -24,7 +25,13 @@ const Success = ({ data }) => {
       </Helmet>
       <div className="columns">
         <span className="column">
-          {image && <GatsbyImage image={image} style={{ borderRadius: "50%" }} />}
+          {image && (
+            <GatsbyImage
+              alt="Success"
+              image={image}
+              style={{ borderRadius: "50%" }}
+            />
+          )}
         </span>
         <div className="column">
           <h3 className="title is-3">Contact form submitted!</h3>

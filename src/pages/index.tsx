@@ -12,18 +12,11 @@ export const query = graphql`
         gatsbyImageData(quality: 100, layout: CONSTRAINED)
       }
     }
-    dex: file(relativePath: { eq: "dex.png" }) {
-      childImageSharp {
-        gatsbyImageData(quality: 100, layout: CONSTRAINED)
-      }
-    }
   }
 `;
 
 const IndexPage = ({ data }) => {
-  const [dexterClassName, setDexterClassName] = useState("hide-dex");
   const profile = getImage(data?.profile);
-  const dex = getImage(data?.dex);
 
   return (
     <Layout>
@@ -46,11 +39,7 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
         </div>
-        <div
-          onMouseEnter={() => setDexterClassName("show-dex")}
-          onMouseLeave={() => setDexterClassName("hide-dex")}
-          className="m-8 sm:my-8 w-48 h-48 rounded-lg shadow-2xl border-indigo-400 transition-colors duration-300 hover:border-gray-800 border-4 rotate-45 transform overflow-hidden"
-        >
+        <div className="m-8 sm:my-8 w-48 h-48 rounded-lg shadow-2xl border-indigo-400 transition-colors duration-300 hover:border-gray-800 border-4 rotate-45 transform overflow-hidden">
           <div className="w-64  h-64">
             {profile && (
               <GatsbyImage
@@ -63,11 +52,6 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      {dex && (
-        <div className={`${dexterClassName}`}>
-          <GatsbyImage alt="Dexter" image={dex} className="hidden md:block" />
-        </div>
-      )}
       <ul className="transform-norm bg-bubbles">
         <li></li>
         <li></li>
