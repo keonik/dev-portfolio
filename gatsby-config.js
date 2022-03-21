@@ -14,16 +14,13 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
     `gatsby-remark-images`,
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [require("tailwindcss")],
-      },
-    },
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {

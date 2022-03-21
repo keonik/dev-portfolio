@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import dayjs from "dayjs";
 import { Icon } from "@mdi/react";
@@ -34,10 +34,9 @@ export default function PreviewCard({ node }: Props): ReactElement {
       to={fields.slug}
     >
       <div className="flex flex-col h-full">
-        <Img
-          fluid={image?.childImageSharp?.fluid}
-          className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
-        />
+        <GatsbyImage
+          image={image?.childImageSharp?.gatsbyImageData}
+          className="h-64 lg:h-48 min-w-full object-top rounded-t-lg" />
         <div className="pt-4 pb-2 justify-center">
           <h3 className="text-xl font-semibold tracking-wide text-center">
             {title}

@@ -7,7 +7,7 @@ import {
   mdiAccountSupervisorCircle,
   mdiBriefcase,
   mdiGraphql,
-  mdiReact,
+  mdiAccountGroup,
   mdiRocketLaunch,
   mdiSchool,
 } from "@mdi/js";
@@ -21,6 +21,7 @@ import Tags from "../components/Tags";
 import "react-vertical-timeline-component/style.min.css";
 import { Link } from "gatsby";
 import Slideshow from "../components/Slideshow";
+import Carousel from "../components/Carousel";
 
 interface Job {
   title: string;
@@ -36,12 +37,30 @@ interface Job {
 
 const JOBS: Job[] = [
   {
-    title: "Senior Software Engineer",
+    title: "Software Engineer Manager",
     employer: "Mile Two",
-    startDate: new Date(2020, 3),
+    startDate: new Date(2021, 8),
     endDate: new Date(),
     description:
-      "I've had opportunities to bring new quality tools and libraries such as typescript and graphql to further advance the software development experience. At this time I took on more leadership roles to help share my knowledge and progress the people around me. It's been a wonderful experience thus far!",
+      "I'm learning how to build efficient teams to accomplish goals for a portfolio of projects. There are many struggles to overcome as a manager, and all of them lead to new lessons learned. I'm excited to see what I can accomplish with my team.",
+    location: "Dayton, OH.",
+    tags: [
+      "management",
+      "professional-development",
+      "growth",
+      "typescript",
+      "graphql-mesh",
+    ],
+    icon: mdiAccountGroup,
+    color: "#223f9a",
+  },
+  {
+    title: "Senior Software Engineer",
+    employer: "Mile Two",
+    startDate: new Date(2019, 1),
+    endDate: new Date(2021, 7),
+    description:
+      "I've had opportunities to bring new quality tools and libraries such as typescript and graphql to further advance the software development experience. At this time I took on more leadership roles to help share my knowledge and progress the people around me. This role made me realize I enjoy improving developer experience(DX) and as a side-effect of improving DX we all write better code on more efficient timelines",
     location: "Dayton, OH.",
     tags: [
       "javascript",
@@ -51,27 +70,12 @@ const JOBS: Job[] = [
       "apollo",
       "next.js",
       "prisma",
-    ],
-    icon: mdiGraphql,
-    color: "rgb(33, 150, 243)",
-  },
-  {
-    title: "Software Engineer",
-    employer: "Mile Two",
-    startDate: new Date(2019, 1),
-    endDate: new Date(2020, 2),
-    description:
-      "I transitioned to a 70/30 frontend/backend developer role. I got the chance to head up the code quality working group and instill tooling to improve quality, proficiency, and most importantly developer experience",
-    location: "Dayton, OH.",
-    tags: [
-      "javascript",
-      "react",
       "redux",
       "postgres",
       "python",
       "code quality",
     ],
-    icon: mdiReact,
+    icon: mdiGraphql,
     color: "#016848",
   },
   {
@@ -130,25 +134,33 @@ const about = () => {
         <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
           About me
         </h2>
-        <p className="text-base text-justify text-gray-400 max-w-screen-sm">
-          I'm a husband to a wonderful wife, dog parent to two pups, and in
-          pursuit of financial independence. I currently am most interested in
-          disc golf, biking, and hiking. Reach out if you're interested in
-          chatting about my interests, pursuing financial independence, or
-          software development
-        </p>
-        <Slideshow />
+        <div className="grid md:grid-flow-col gap-16">
+          <div className="space-x-4">
+            <p className="text-base text-justify text-gray-200 pb-10 max-w-xs">
+              I most enjoy my time spent outdoors. During the week I try very
+              hard to disc golf and go for day hikes with my family and friends.
+              I curently am researching the plausability of working at campsites
+              so I can see a bit more of the United States and increasing my
+              time away to more than a weekend warrior. Any advice is
+              appreciated!
+            </p>
+            <div className="flex justify-center">
+              <Link
+                to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
+                target="_blank"
+                className="inline-flex  items-center bg-gray-900 hover:bg-green-600 text-white hover:text-white font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                aria-label="Download PDF Resume"
+              >
+                View Resume
+              </Link>
+            </div>
+          </div>
+          <Carousel />
+        </div>
         <h2 className="font-light tracking-widest text-center text-2xl text-gray-300 m-6">
           My career moves
         </h2>
-        <Link
-          to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
-          target="_blank"
-          className="inline-flex items-center bg-gray-900 hover:bg-green-600 text-white hover:text-white font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-          aria-label="Download Resume in pdf format"
-        >
-          View PDF Resume
-        </Link>
+
         <VerticalTimeline>
           {JOBS.map(
             ({

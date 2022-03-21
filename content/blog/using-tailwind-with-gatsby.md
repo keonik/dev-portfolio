@@ -195,7 +195,10 @@ const IndexPage = ({ data }) => {
         </div>
         <div className="column">
           {image && (
-            <Img style={{ borderRadius: "50%" }} fixed={image} />
+            <GatsbyImage
+              style={{ borderRadius: "50%" }}
+              fixed={image}
+            />
           )}
         </div>
       </div>

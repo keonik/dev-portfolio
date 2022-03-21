@@ -1,14 +1,13 @@
 import React, { ReactElement } from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import dayjs from "dayjs";
 import Icon from "@mdi/react";
 import { mdiCalendar, mdiCalendarSync } from "@mdi/js";
-
-import Layout from "../Layout";
 import Tags from "../Tags";
 import SEO from "../seo";
-import Subscribe from "../Subscribe";
+import Footer from "../Footer";
+import Nav from "../Nav";
 
 export const BlogPostQuery = graphql`
   query BlogPostQuery($slug: String) {
@@ -21,10 +20,7 @@ export const BlogPostQuery = graphql`
         description
         image {
           childImageSharp {
-            fluid(maxHeight: 500, quality: 100) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
+            gatsbyImageData(height: 500, quality: 100, layout: CONSTRAINED)
           }
         }
         date
@@ -42,13 +38,15 @@ const BlogPost = ({ data }): ReactElement => {
   const { html } = data.markdownRemark;
 
   return (
-    <Layout>
-      <SEO title={title} />
-      <div className="justify-center max-w-3xl">
-        <section className="bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg">
+    <div className="min-h-screen max-h-screen overflow-hidden flex flex-col bg-gradient-to-r from-indigo-900 to-indigo-700 font-sans z-0">
+      <Nav />
+      <main className="flex-col flex-auto sm:flex-1 justify-center overflow-y-auto w-full mt-8 pt-8 z-0 px-4">
+        <SEO title={title} />
+        <section className="flex-col items-center justify-center bg-gray-800 text-gray-200 mb-4 pb-8 rounded-lg max-w-3xl overflow-x-hidden mx-auto">
           {image && (
-            <Img
-              fluid={image.childImageSharp.fluid}
+            <GatsbyImage
+              alt={""}
+              image={image.childImageSharp.gatsbyImageData}
               className="min-h-full min-w-full rounded-t-lg"
             />
           )}
@@ -91,17 +89,17 @@ const BlogPost = ({ data }): ReactElement => {
           </div>
           <Tags tags={tags} />
         </section>
-        {html && (
-          <section
-            className="markdown pb-8"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        )}
-        {/* <div className="flex justify-center">
-          <Subscribe />
-        </div> */}
-      </div>
-    </Layout>
+        <div className="max-w-3xl overflow-x-hidden mx-auto justify-center">
+          {html && (
+            <section
+              className="markdown pb-8"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          )}
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 };
 export default BlogPost;

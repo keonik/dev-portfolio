@@ -6,42 +6,38 @@ import SEO from "../components/seo";
 import PreviewCard from "../components/PreviewCard";
 import Badge from "../components/Badge";
 
-export const blogPosts = graphql`
-  query BlogPosts {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-      filter: { fields: { slug: { regex: "/blog/" } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            description
-            tldr
-            tags
-            date
-            lastUpdated
-            image {
-              childImageSharp {
-                fluid(maxHeight: 350, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
+export const blogPosts = graphql`query BlogPosts {
+  allMarkdownRemark(
+    sort: {order: DESC, fields: frontmatter___date}
+    filter: {fields: {slug: {regex: "/blog/"}}}
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          description
+          tldr
+          tags
+          date
+          lastUpdated
+          image {
+            childImageSharp {
+              gatsbyImageData(height: 350, quality: 100, layout: CONSTRAINED)
             }
           }
-          wordCount {
-            words
-          }
+        }
+        wordCount {
+          words
         }
       }
     }
   }
+}
 `;
 
 const BlogPosts = ({ data }) => {
