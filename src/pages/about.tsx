@@ -134,23 +134,24 @@ const about = () => {
         <h2 className="font-light tracking-widest text-center text-3xl text-gray-300">
           About me
         </h2>
-        <div className="grid grid-flow-col gap-16">
-          <div className="">
-            <p className="text-base text-justify text-gray-200 max-w-sm pb-10">
-              I'm a husband to a wonderful wife, father of a daughter, dog
-              parent to two pups and in pursuit of financial independence. I
-              currently am most interested in disc golf, biking, and hiking.
-              Reach out if you're interested in chatting about my interests,
-              pursuing financial independence, or software development
+        <div className="grid md:grid-flow-col gap-16">
+          <div className="space-x-4">
+            <p className="text-base text-justify text-gray-200 pb-10 max-w-xs">
+              I most enjoy my time spent outdoors. During the week I try very
+              hard to disc golf and go for day hikes with my family and friends.
+              I curently am researching the plausability of working at campsites
+              so I can see a bit more of the United States and increasing my
+              time away to more than a weekend warrior. Any advice is
+              appreciated!
             </p>
             <div className="flex justify-center">
               <Link
                 to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
                 target="_blank"
                 className="inline-flex  items-center bg-gray-900 hover:bg-green-600 text-white hover:text-white font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-                aria-label="Download Resume in pdf format"
+                aria-label="Download PDF Resume"
               >
-                View PDF Resume
+                View Resume
               </Link>
             </div>
           </div>
