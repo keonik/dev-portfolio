@@ -29,14 +29,16 @@ export default function PreviewCard({ node }: Props): ReactElement {
   } = frontmatter;
   return (
     <Link
-      className="rounded-lg w-full  shadow hover:shadow-xl font-light text-lg hover:bg-gray-800 bg-gray-900 hover:text-white text-indigo-100 transition duration-500 ease-in-out transform hover:scale-105"
+      className="rounded-lg w-full  shadow hover:shadow-xl font-light text-lg hover:bg-gray-700 bg-slate-800 hover:text-white text-indigo-100 transition duration-500 ease-in-out transform hover:scale-105"
       key={id}
       to={fields.slug}
     >
       <div className="flex flex-col h-full">
         <GatsbyImage
+          alt={`${title} image`}
           image={image?.childImageSharp?.gatsbyImageData}
-          className="h-64 lg:h-48 min-w-full object-top rounded-t-lg" />
+          className="h-64 lg:h-48 min-w-full object-top rounded-t-lg"
+        />
         <div className="pt-4 pb-2 justify-center">
           <h3 className="text-xl font-semibold tracking-wide text-center">
             {title}

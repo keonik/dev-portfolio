@@ -7,7 +7,7 @@ body{
 }
 
 .markdown {
-    @apply leading-relaxed text-xs text-indigo-200; 
+    @apply leading-relaxed text-xs text-white; 
   }
   
   @screen sm {
@@ -25,13 +25,13 @@ body{
   /* Headers */
   .markdown h1,
   .markdown h2 {
-    @apply text-xl my-6 font-semibold text-purple-200;
+    @apply text-xl my-6 font-semibold text-slate-200;
   }
   .markdown h3,
   .markdown h4,
   .markdown h5,
   .markdown h6 {
-    @apply text-lg my-3 font-semibold text-purple-100;
+    @apply text-lg my-3 font-semibold text-slate-100;
   }
   
   @screen sm {
@@ -88,7 +88,7 @@ body{
   }
 
   .markdown th{
-    @apply bg-indigo-100 text-black;
+    @apply bg-slate-100 text-black;
   }
 
   .markdown tr {
@@ -121,9 +121,8 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100vh);
     overflow:hidden;
-    transform: translateY(-1em);
     z-index: -100;
   }
 
@@ -134,7 +133,7 @@ body{
       display: block;
       width: 40px;
       height: 40px;
-      background-color: rgba(129, 140, 248, .30);
+      background-color: rgb(244, 63, 94, .30);
       bottom: -150px;
       border-radius: 10%;
       
@@ -153,7 +152,7 @@ body{
         
         width: 80px;
         height: 80px;
-        
+        background-color: rgb(253, 186, 116, .40);
         animation-delay: 1.2s;
         animation-duration: 17s;
       }
@@ -172,7 +171,7 @@ body{
         
         animation-duration: 22s;
         
-        background-color: rgba(129, 140, 248, .50);
+        background-color: rgba(190, 242, 100, .60);
       }
     
       
@@ -187,15 +186,16 @@ body{
         height: 120px;
         
         animation-delay: 3s;
-        background-color: rgba(129, 140, 248, .40);
+        background-color: rgba(6 ,182, 212, .40);
       }
     
       
     .bg-bubbles > li:nth-child(7){
         left: 32%;
-        width: 160px;
-        height: 160px;
-        
+        width: 130px;
+        height: 130px;
+        background-color: rgba(79, 70, 229, .60);
+
         animation-delay: 7s;
       }
     
@@ -207,6 +207,7 @@ body{
         
         animation-delay: 15s;
         animation-duration: 40s;
+        background-color: rgb(236, 72, 153, .40);
       }
     
       
@@ -217,15 +218,16 @@ body{
         
         animation-delay: 1.2s;
         animation-duration: 40s;
-        background-color: rgba(129, 140, 248, .60);
+        background-color: rgba(79, 70, 229, .60);
       }
     
       
     .bg-bubbles > li:nth-child(10){
         left: 90%;
-        width: 160px;
-        height: 160px;
-        
+        width: 140px;
+        height: 140px;
+        background-color: rgba(79, 70, 229, .60);
+
         animation-delay: 11s;
       }
   
@@ -236,51 +238,6 @@ body{
   @keyframes square {
     0%   { transform: translateY(20px); }
     100% { transform: translateY(-845px) rotate(600deg); }
-  }
-
-  .show-dex{
-    min-height: 5em;
-    min-width: 5em;
-    position: absolute;
-    bottom: -1em;
-    top: auto;
-    right: 3em;
-    z-index: -1;
-    transform: translateY(-8rem);
-    transition-duration: .5s;
-  }
-
-  .hide-dex {
-    min-height: 5em;
-    min-width: 5em;
-    position: absolute;
-    bottom: 0em;
-    right: 3em;
-    top: auto;
-    z-index: -1;
-    transition-duration: .3s;
-  }
-
-  @screen md {
-    .hide-dex {
-      max-height: 5em;
-      overflow: hidden;
-      transform: translateY(-2rem);
-    }
-    .show-dex {
-      transform: translateY(-8rem);
-    }
-  }
-
-  @screen lg {
-    .hide-dex {
-      transform: translateY(-2rem);
-      max-height: 5em;
-      overflow: hidden;
-    }
-    .show-dex {
-      transform: translateY(-8rem);
-    }
   }
 
   /* purgecss end ignore */

@@ -38,7 +38,7 @@ const BlogPost = ({ data }): ReactElement => {
   const { html } = data.markdownRemark;
 
   return (
-    <div className="min-h-screen max-h-screen overflow-hidden flex flex-col bg-gradient-to-r from-indigo-900 to-indigo-700 font-sans z-0">
+    <div className="min-h-screen max-h-screen overflow-hidden flex flex-col bg-zinc-900 font-sans z-0">
       <Nav />
       <main className="flex-col flex-auto sm:flex-1 justify-center overflow-y-auto w-full mt-8 pt-8 z-0 px-4">
         <SEO title={title} />
@@ -98,7 +98,6 @@ const BlogPost = ({ data }): ReactElement => {
           )}
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

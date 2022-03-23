@@ -148,7 +148,7 @@ const about = () => {
               <Link
                 to="https://drive.google.com/file/d/1r-ig7KP032I12AdoL65ZTAvQmFdgXR-O/view?usp=sharing"
                 target="_blank"
-                className="inline-flex  items-center bg-gray-900 hover:bg-green-600 text-white hover:text-white font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                className="inline-flex  items-center  text-white bg-sky-800  hover:bg-sky-700 font-bold py-2 px-4 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                 aria-label="Download PDF Resume"
               >
                 View Resume

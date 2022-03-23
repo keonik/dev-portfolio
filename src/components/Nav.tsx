@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { mdiClose, mdiMenu } from "@mdi/js";
 import { Icon } from "@mdi/react";
 
-const LINKS = [
+export const LINKS = [
   { to: "/about", content: "About" },
   { to: "/blog", content: "Writing" },
   { to: "/projects", content: "Projects" },
@@ -13,7 +13,7 @@ const LINKS = [
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="w-full z-10 fixed bg-indigo-700">
+    <header className="w-full z-10 fixed bg-slate-900">
       <nav
         role="navigation"
         aria-label="main navigation"
@@ -23,8 +23,8 @@ const Header = () => {
           <Link
             to="/"
             aria-label="Home"
-            className="block p-2 lg:inline-block lg:mt-0 lg:px-3 lg:h-full font-light text-lg text-gray-300 hover:text-white hover:bg-indigo-800"
-            activeClassName="bg-indigo-900 text-white"
+            className="block p-2 lg:inline-block lg:mt-0 lg:px-3 lg:h-full font-light text-lg text-gray-300 hover:text-white hover:bg-slate-800"
+            activeClassName="bg-sky-800 text-white"
             style={{ marginBottom: 0 }}
           >
             John Fay
@@ -33,7 +33,7 @@ const Header = () => {
         <div className="block mr-2 lg:hidden" style={{ marginBottom: 0 }}>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`flex items-center px-3 py-2 rounded-full text-white hover:text-indigo-200 transition-all duration-500 focus:outline-none  hover:bg-indigo-800`}
+            className={`flex items-center px-3 py-2 rounded-full text-white hover:text-indigo-200 transition-all duration-500 focus:outline-none  hover:bg-slate-800`}
           >
             <Icon
               path={menuOpen ? mdiClose : mdiMenu}
@@ -53,9 +53,9 @@ const Header = () => {
           <div className={`text-sm lg:flex-grow`}>
             {LINKS.map(({ content, to }) => (
               <Link
-                className="block p-2 lg:inline-block lg:mt-0 lg:px-3 lg:h-full font-light text-lg text-gray-300 hover:text-white hover:bg-indigo-800"
+                className="block p-2 lg:inline-block lg:mt-0 lg:px-3 lg:h-full font-light text-lg text-gray-300 hover:text-white hover:bg-slate-800"
                 to={to}
-                activeClassName="bg-indigo-800 text-white"
+                activeClassName="bg-slate-700 text-white"
                 key={to}
                 aria-label={content}
                 style={{ marginBottom: 0 }}

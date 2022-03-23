@@ -29,7 +29,7 @@ const Contact = () => (
           </div>
           <div className="w-full">
             <input
-              className="bg-indigo-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-indigo-600 focus:border-gray-500 placeholder-gray-400"
+              className="bg-slate-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-sky-900 focus:border-gray-500 placeholder-gray-300"
               type="text"
               placeholder="e.g Alex Smith"
               required
@@ -49,7 +49,7 @@ const Contact = () => (
           </div>
           <div className="w-full">
             <input
-              className="bg-indigo-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-indigo-600 focus:border-gray-500 placeholder-gray-400"
+              className="bg-slate-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-sky-900 focus:border-gray-500 placeholder-gray-300"
               type="email"
               placeholder="e.g. alexsmith@gmail.com"
               required
@@ -69,7 +69,7 @@ const Contact = () => (
           </div>
           <div className="w-full">
             <input
-              className="bg-indigo-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-indigo-600 focus:border-gray-500 placeholder-gray-400"
+              className="bg-slate-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-sky-900 focus:border-gray-500 placeholder-gray-300"
               type="phone"
               placeholder="111-111-1111"
               required
@@ -89,7 +89,7 @@ const Contact = () => (
           </div>
           <div className="w-full">
             <textarea
-              className="bg-indigo-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-indigo-600 focus:border-gray-500 placeholder-gray-400"
+              className="bg-slate-700 appearance-none border-2 border-gray-700 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:bg-sky-900 focus:border-gray-500 placeholder-gray-300"
               placeholder="Hey John! I'd love to chat about working together"
               id="message"
               name="message"
@@ -99,7 +99,7 @@ const Contact = () => (
         </div>
 
         <button
-          className="mt-6 bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors duration-300"
+          className="mt-6 bg-sky-800 text-white py-2 px-4 rounded hover:bg-sky-700 transition-colors duration-300"
           type="submit"
         >
           Submit
