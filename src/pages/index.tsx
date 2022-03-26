@@ -88,7 +88,7 @@ const IndexPage = ({ data }) => {
             iconPath={mdiLinkedin}
           />
           <SocialLink
-            to="https://twitter.com/John00864617"
+            to="https://twitter.com/dev_so_below"
             label="Twitter"
             iconPath={mdiTwitter}
           />
