@@ -18,7 +18,7 @@ export default function Carousel({}: Props): ReactElement {
               id
               name
               childImageSharp {
-                gatsbyImageData(width: 384, layout: FIXED)
+                gatsbyImageData(width: 320, layout: FIXED)
               }
             }
           }
@@ -54,13 +54,13 @@ export default function Carousel({}: Props): ReactElement {
           ></button>
         ))}
       </div>
-      <div className="carousel-inner relative w-full overflow-hidden">
-        <div className="carousel-item active float-left w-96">
+      <div className="carousel-inner relative overflow-hidden">
+        <div className="carousel-item active float-left md:w-96 sm:max-w-fit">
           <GatsbyImage
             image={node.childImageSharp.gatsbyImageData}
             key={node.id}
             alt={node.name.replace(/-/g, " ").substring(2)}
-            className="w-3/6 rounded h-64 shadow-xl"
+            className="md:w-3/6 sm:w-4 rounded h-64 shadow-xl"
           />
         </div>
       </div>
